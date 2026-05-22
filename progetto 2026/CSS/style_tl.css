@@ -1,0 +1,175 @@
+/* New Home - Orange Dark Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Consolas', monospace; 
+    background: #0f0a06; /* Sfondo principale: Nero con riflessi ambra/marroni */
+    color: #e2e8f0; /* Testo principale: Grigio chiarissimo neutro */
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar { 
+    position: sticky; top: 0; z-index: 1000; 
+    background: #1a110a; /* Sfondo navbar leggermente più chiaro del body */
+    border-bottom: 1px solid #3d2616; /* Bordo color ruggine scuro */
+    padding: 15px 0; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; 
+}
+
+.navbar a {
+    color: #f97316; /* Link: Arancione brillante molto visibile */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold; 
+}
+
+/* Stile per l'Header Hero della pagina della materia */
+.hero {
+    background: rgba(11, 21, 36, 0.15); /* Sfondo del box blu scuro opaco al 15% */
+    border: 1px solid #1e2d42;          /* Contorno del box in blu navy scuro */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    
+}
+
+/* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
+.hero h1 {
+    font-size: 3.5rem;                   /* Reso più grande per valorizzare l'effetto */
+    font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
+    color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
+    
+    /* Crea il contorno del font con il colore azzurro/blu principale */
+    -webkit-text-stroke: 2px #fb923c;    
+    text-stroke: 2px #fb923c;            
+    
+    letter-spacing: 4px;                 /* Spaziatura tra le lettere stile cyberpunk */
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #cbd5e1;                      /* Sottotitolo azzurro ghiaccio chiaro */
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Header Materia Centrato */
+.materia-header { 
+    background: #24170e; /* Sfondo header marrone scuro */
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 2px solid #ea580c; /* Linea d'accento arancione vibrante */
+    gap: 15px;
+}
+
+.materia-header h2 {
+    color: #fff7ed; /* Titolo principale: Bianco caldo con punta di arancione */
+    text-align: center;
+}
+
+.materia-header span {
+    color: #718096; /* Testo secondario */
+    font-size: 1rem;
+}
+
+/* Griglia UDA */
+.uda-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    background: #3d2616; /* Spessore dei bordi della griglia (ruggine scuro) */
+    gap: 1px;
+}
+
+.uda-box { 
+    background: #1a110a; /* Box interno scuro */
+    padding: 25px; 
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.uda-box:hover {
+    background: #24170e; /* Schiarimento al passaggio del mouse */
+}
+
+.uda-box h4, .uda-box h3 {
+    color: #f97316; /* Titolo della scheda arancione brillante */
+    transition: 0.3s;
+}
+
+/* LOGICA SPOILER AUTOMATICA */
+.spoiler-mode .uda-box p, h2 span {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #ffedd5; /* Testo dello spoiler: Pesca chiaro ad alta leggibilità */
+    font-size: 0.85rem;
+}
+
+.spoiler-mode .uda-box:hover p {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.spoiler-mode .uda-box:hover h4 {
+    transform: translateY(-5px);
+}
+
+/* Bottone Top */
+.top-btn { 
+    position: fixed; bottom: 25px; right: 25px; 
+    background: #c2410c; /* Bottone arancione scuro intenso */
+    color: white; width: 45px; height: 45px;
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 5px; text-decoration: none; font-weight: bold;
+    transition: background 0.2s;
+}
+
+.top-btn:hover {
+    background: #ea580c; /* Si illumina leggermente all'hover */
+}
+
+footer { 
+    text-align: center;
+    padding: 40px 0; 
+    color: #6e5645; /* Testo footer terra bruciata spento */
+}
+
+footer a{ 
+    color: #c2410c;
+    text-decoration-line: none;
+}
+
+footer a:hover{ 
+    color: #ea580c;
+}

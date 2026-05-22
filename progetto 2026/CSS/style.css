@@ -1,0 +1,144 @@
+/* New Home - Grayscale Dark Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Consolas', monospace; 
+    background: #0a0a0a; /* Sfondo principale: Nero profondo */
+    color: #cccccc; /* Testo principale: Grigio medio-chiaro */
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar { 
+    position: sticky; top: 0; z-index: 1000; 
+    background: #141414; /* Sfondo navbar leggermente più chiaro del body */
+    border-bottom: 1px solid #2d2d2d; /* Bordo grigio scuro */
+    padding: 15px 0; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; 
+}
+
+.navbar a {
+    color: #ffffff; /* Link: Bianco puro per il massimo contrasto */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold; 
+}
+
+/* Header Materia Centrato */
+.materia-header { 
+    background: #1f1f1f; /* Sfondo header antracite */
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0; /* Linea d'accento grigio chiaro/argento */
+    gap: 15px;
+}
+
+.materia-header h2 {
+    color: #ffffff; /* Titolo principale: Bianco */
+    text-align: center;
+}
+
+.materia-header span {
+    color: #7a7a7a; /* Testo secondario: Grigio disattivato */
+    font-size: 1rem;
+}
+
+/* Griglia UDA */
+.uda-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    background: #2d2d2d; /* Spessore dei bordi della griglia (grigio scuro) */
+    gap: 1px;
+}
+
+.uda-box { 
+    background: #141414; /* Box interno scuro */
+    padding: 25px; 
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.uda-box:hover {
+    background: #1f1f1f; /* Schiarimento al passaggio del mouse */
+}
+
+.uda-box h4 {
+    color: #e0e0e0; /* Titolo della scheda grigio chiaro brillante */
+    transition: 0.3s;
+}
+
+/* LOGICA SPOILER AUTOMATICA */
+.spoiler-mode .uda-box p, h2 span {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #b3b3b3; /* Testo dello spoiler: Grigio chiaro ad alta leggibilità */
+    font-size: 0.85rem;
+}
+
+.spoiler-mode .uda-box:hover p {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.spoiler-mode .uda-box:hover h4 {
+    transform: translateY(-5px);
+}
+
+/* Bottone Top */
+.top-btn { 
+    position: fixed; bottom: 25px; right: 25px; 
+    background: #333333; /* Bottone grigio scuro solido */
+    color: white; width: 45px; height: 45px;
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 5px; text-decoration: none; font-weight: bold;
+    transition: background 0.2s;
+}
+
+.top-btn:hover {
+    background: #444444; /* Si illumina leggermente all'hover */
+}
+
+footer { 
+    text-align: center;
+    padding: 40px 0; 
+    color: #555555; /* Testo footer grigio scuro spento */
+}
+
+footer a{ 
+    color: #888888;
+    text-decoration-line: none;
+}
+
+footer a:hover{ 
+    color: #bbbbbb;
+}

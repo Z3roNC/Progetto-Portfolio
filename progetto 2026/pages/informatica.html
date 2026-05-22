@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio di Alex [Capolavoro]</title>
+    <link rel="stylesheet" href="../CSS/style_if.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Alex [Portfolio]</span>
+            <ul>
+                <li><a href="../home.html">Home</a></li>                
+                <!-- <li><a href="informatica.html">Informatica</a></li> -->
+                <li><a href="tlc.html">TLC</a></li>
+                <li><a href="sistemi.html">Sistemi</a></li>                
+                <li><a href="tpsi.html">TPSI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>INFORMATICA</h1>
+        <p>Raccolta Unità Didattiche di Apprendimento - 2025/2026</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- INFORMATICA (363h) -->
+        <section id="informatica" class="materia-card">
+            <div class="materia-header">
+                <!-- <h2>Informatica <span>363h</span></h2> -->
+            </div>
+            <!-- Classe spoiler-mode aggiunta qui una volta sola -->
+            <div class="uda-container spoiler-mode">
+                <div class="uda-box" onclick="location.href='informatica.html#algoritmi'">
+                    <h4>Algoritmi e diagrammi di flusso</h4>
+                    <p>33 ore - Analisi dei problemi e logica.</p>
+                </div>
+                <div class="uda-box" onclick="location.href='informatica.html#prog'">
+                    <h4>Programmazione imperativa</h4>
+                    <p>45 ore - Strutture di controllo e linguaggi.</p>
+                </div>
+                <div class="uda-box" onclick="location.href='informatica.html#mod'">
+                    <h4>Modularizzazione del software</h4>
+                    <p>30 ore - Funzioni e gestione scope.</p>
+                </div>
+                <div class="uda-box" onclick="location.href='informatica.html#web'">
+                    <h4>Linguaggio HTML e CSS</h4>
+                    <p>57 ore - Sviluppo interfacce e design.</p>
+                </div>
+            </div>
+        </section> <br><br><br>
+
+        <!-- Temporaneo... -->
+        <h2>Fonte
+            <a href="https://www.edrawsoft.com/it/explain-algorithm-flowchart.html?srsltid=AfmBOoq0kVKSRxC0ppQ9kZDtkF27qlSeqVMjwWbPCLQg8dIB_s0PQQT1"
+                target="_blank">preview</a> poi verra rielaborato.
+            </h2><br><br>
+            <!-- ...da cancellare -->
+               
+
+        <div class="uda-box" id="algoritmi">
+
+            <h3>Algoritmi e diagrammi di flusso</h3>
+            <p>Analisi dei problemi e logica computazionale.</p><br>
+
+            <p>Nel contesto della programmazione informatica e della risoluzione dei problemi (problem solving), l'algoritmo e il diagramma di flusso (flowchart) costituiscono due strumenti complementari fondamentali. Essi permettono di formalizzare, analizzare e visualizzare la logica strutturale che risiede dietro lo sviluppo di un software o l'esecuzione di un processo complesso.</p>
+
+            <section>
+                <h2>1. Definizione e Caratteristiche di un Algoritmo</h2>
+                <p>Un algoritmo è definito come la sequenza logica, ordinata e passo-passo di istruzioni necessarie per risolvere un determinato problema o completare un'attività di calcolo ed elaborazione dati. Rappresenta la fase concettuale primaria nella progettazione informatica e può essere formulato mediante linguaggio naturale, pseudocodice o espressioni matematiche. Le sue proprietà essenziali includono la finitezza (deve terminare dopo un numero finito di passi) e l'univocità delle istruzioni.</p>
+            </section>
+
+            <section>
+                <h2>2. Definizione e Simbologia del Diagramma di Flusso</h2>
+                <p>Il diagramma di flusso è la rappresentazione grafica o pittorica di un algoritmo. Attraverso l'uso di forme geometriche standardizzate collegate da frecce direzionali, visualizza l'andamento del flusso esecutivo e le relazioni tra le diverse operazioni.</p>
+                <p>I principali simboli convenzionali utilizzati includono:</p>
+
+                <ul class="lista-flex">
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/inf_flow_simb1.png" alt="Terminale Ovale">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Scatola dei terminali (Ovale):</strong> Indica il punto di Inizio o di Fine del flusso all'interno del diagramma.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/inf_flow_simb2.png" alt="Parallelogramma">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Ingresso / Uscita (Parallelogramma):</strong> Rappresenta la lettura dei dati provenienti dall'esterno (Input) o la stampa/visualizzazione dei risultati (Output).
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/inf_flow_simb3.png" alt="Rettangolo">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Processo / Istruzione (Rettangolo):</strong> Identifica un'azione di calcolo, un'assegnazione di variabile o un'elaborazione interna dei dati.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/inf_flow_simb4.png" alt="Rombo di Decisione">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Decisione (Rombo):</strong> Introduce una condizione logico-booleana (es. Vero/Falso, Sì/No) che devia il flusso su percorsi alternativi a seconda del risultato.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/inf_flow_simb5.png" alt="Linee di flusso">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Linee di flusso (Frecce):</strong> Collegano visivamente i blocchi geometrici indicando l'ordine esatto e la direzione di esecuzione del processo.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Analisi Comparativa: Algoritmo vs Diagramma di Flusso</h2>
+                <p>Sebbene descrivano il medesimo processo, i due strumenti divergono marcatamente sotto il profilo strutturale ed operativo:</p>
+                
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Caratteristica</th>
+                                <th>Algoritmo</th>
+                                <th>Diagramma di Flusso (Flowchart)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Formato</strong></td>
+                                <td>Procedura analitica testuale passo-passo.</td>
+                                <td>Rappresentazione grafica e blocchi visivi.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Linguaggio</strong></td>
+                                <td>Espresso principalmente in linguaggio naturale o pseudocodice.</td>
+                                <td>Espresso mediante simboli geometrici standardizzati.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Comprensione</strong></td>
+                                <td>Spesso complesso, astratto e più ostico da interpretare a colpo d'occhio.</td>
+                                <td>Intuitivo, immediato e di facile comprensione visiva.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fase di Debug</strong></td>
+                                <td>Agevola la fase di debug (rilevazione e correzione degli errori logici).</td>
+                                <td>Risulta più difficile ed articolato effettuare il debug direttamente sulla grafica.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gestione Complessità</strong></td>
+                                <td>Ottimizzato per la scomposizione e risoluzione di problemi complessi.</td>
+                                <td>La gestione grafica di problemi eccessivamente complessi risulta laboriosa.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tempo di Creazione</strong></td>
+                                <td>Richiede generalmente più tempo nella stesura testuale dei dettagli.</td>
+                                <td>La sua costruzione (tramite software dedicati) è rapida e immediata.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>4. Classificazione dei Tipologie Fondamentali di Algoritmo</h2>
+                <p>In ambito informatico si identificano svariate logiche di computazione. La letteratura di settore sintetizza la classificazione in sei macro-categorie funzionali:</p>
+                
+                <div class="sezione4-flex-wrapper">
+                    <div class="col-lista-sinistra">
+                        <ol class="lista-normale">
+                            <li><strong>Algoritmo Ricorsivo:</strong> Risolve un problema complesso frammentandolo ripetutamente in sotto-problemi più piccoli della medesima natura, richiamando se stesso all'interno della propria definizione (es. il problema classico della Torre di Hanoi).</li>
+                            <li><strong>Algoritmo Dividi e Conquista (Divide et Impera):</strong> Si articola in due fasi distinte: suddivide il problema in sottoproblemi indipendenti e di dimensioni inferiori, per poi risolverli singolarmente e ricombinarne i risultati nella soluzione finale. La sua efficienza dipende dalla semplicità dei sottoproblemi generati.</li>
+                            <li><strong>Algoritmo di Programmazione Dinamica:</strong> Ideato da Richard Bellman negli anni '50, viene impiegato per problemi di ottimizzazione. Scompone il problema in sottoproblemi che, a differenza del modello divide et impera, presentano aree di sovrapposizione. Memorizza i risultati parziali passati per riutilizzarli ed evitare calcoli ridondanti.</li>
+                            <li><strong>Algoritmo Greedy (Ingordo):</strong> Adottato per problemi di ottimizzazione, effettua a ogni singolo passo la scelta che risulta localmente ottimale al momento, senza valutare le implicazioni globali future. Non garantisce sempre l'ottimo assoluto, ma è computazionalmente rapido.</li>
+                            <li><strong>Algoritmo di Forza Bruta (Brute Force):</strong> Costituisce l'approccio più lineare e diretto. Itera e valuta in modo esaustivo tutte le possibili soluzioni ammissibili descritte dal problema fino a individuare quella corretta. Strategia semplice ma costosa in termini di tempo e risorse per dataset estesi.</li>
+                            <li><strong>Algoritmo di Backtracking:</strong> Basato su una ricerca ricorsiva in profondità (depth-first), esplora i percorsi di soluzione possibili. Se un percorso non soddisfa i vincoli richiesti, l'algoritmo torna sui propri passi ("backtrack") per tentare una diramazione alternativa (es. il rompicapo delle otto regine).</li>
+                        </ol>
+                    </div>
+
+
+                </div>
+            </section>
+            <section class="sezione-centrata">
+                <img src="../img/inf_flow_type_Blor.jpg" alt="Classificazione Tipologie Algoritmi">
+            </section>
+        </div><br><br><br>
+
+    <!-- FINE UDA 1 -->
+
+    <!-- INIZIO UDA 2: PROGRAMMAZIONE IMPERATIVA -->
+
+        <div class="uda-box" id="prog">
+            <h3>Programmazione imperativa</h3>
+            <p>Strutture di controllo, paradigmi e linguaggi di alto livello in C.</p><br>
+
+            <p>
+                Il paradigma di programmazione imperativa rappresenta uno dei modelli di 
+                computazione più storici e capillarmente diffusi nell'ambito dell'ingegneria 
+                del software[cite: 1, 4]. Esso si fonda sul concetto di stato del programma 
+                e su sequenze di istruzioni esplicite capaci di modificare tale stato nel tempo. 
+                Dal punto di vista teorico, il paradigma rispecchia in modo speculare 
+                l'architettura hardware di von Neumann, in cui la CPU preleva ed esegue 
+                istruzioni in sequenza, operando modifiche dirette sui registri e sulla memoria centrale.
+            </p>
+
+            <section>
+                <h2>1. Introduzione alla Programmazione Imperativa</h2>
+                <p>
+                    In un linguaggio imperativo come il C, lo stato è memorizzato e strutturato 
+                    mediante le variabili, mentre le transizioni di stato sono governate dalle 
+                    espressioni e dalle assegnazioni[cite: 7]. Le caratteristiche essenziali del 
+                    paradigma comprendono:
+                </p><br>
+                <ul>
+                    <li><strong>Esecuzione sequenziale:</strong> Le istruzioni vengono elaborate 
+                        riga dopo riga nell'ordine in cui compaiono, salvo esplicita deviazione 
+                        del flusso di controllo.</li>
+                    <li><strong>Assegnazione:</strong> L'operazione fondamentale che sovrascrive 
+                        il valore contenuto in una locazione di memoria, alterando lo stato globale o locale del sistema.</li>
+                    <li><strong>Effetti collaterali (Side Effects):</strong> La modifica dello 
+                        stato interno dovuta alla valutazione di un'espressione o alla chiamata di una routine.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. Classificazione dei Linguaggi e il Ruolo del C</h2>
+                <p>
+                    I linguaggi di programmazione possono essere classificati in base al loro 
+                    livello di astrazione rispetto all'hardware sottostante. 
+                    Al livello più basso risiede il codice macchina, seguito dal linguaggio Assembly, 
+                    strettamente dipendente dall'Instruction Set Architecture (ISA) dello specifico processore. 
+                    I linguaggi di alto livello (come Java, Python, C++) introducono potenti astrazioni 
+                    orientate alla logica del problema da risolvere, svincolando lo sviluppatore dalla 
+                    gestione manuale delle risorse fisiche.
+                </p>
+                <p>
+                    Il linguaggio C, ideato da Dennis Ritchie presso i Bell Labs nei primi anni '70, 
+                    si posiziona in modo unico in questa gerarchia: pur possedendo tutte le 
+                    strutture di controllo e di astrazione tipiche di un linguaggio di alto livello, 
+                    conserva costrutti espressivi che permettono l'accesso diretto alla memoria 
+                    (puntatori, bitwise operator), venendo spesso definito un linguaggio di medio 
+                    livello o un "Assembly evoluto".
+                </p><br>
+                <blockquote>
+                    <strong>Nota Architetturale:</strong> Il C garantisce un'efficienza 
+                    d'esecuzione  prossima a quella del codice macchina nativo,
+                    rendendolo la scelta d'elezione per lo sviluppo di sistemi operativi,
+                    driver, firmware e sistemi embedded ad alte prestazioni.
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>3. Il Teorema di Jacopini-Böhm e la Programmazione Strutturata</h2>
+                <p>
+                    Prima dell'avvento della programmazione strutturata, i flussi logici erano governati 
+                    da salti incondizionati (istruzioni <code>goto</code>), i quali portavano 
+                    alla creazione del cosiddetto <em>spaghetti code</em>, un codice intricato, 
+                    difficilmente leggibile e incline a bug subdoli. 
+                    Nel 1966, gli informatici italiani Corrado Böhm e Giuseppe Jacopini formularono 
+                    un teorema fondamentale che decretò il declino del goto.
+                </p>
+                <p>
+                    Il Teorema di Jacopini-Böhm dimostra che qualunque algoritmo espresso tramite un 
+                    diagramma di flusso può essere codificato utilizzando esclusivamente tre 
+                    strutture di controllo fondamentali:
+                    </p>
+                <br>
+                <ol class="lista-normale">
+                    <li><strong>Sequenza:</strong> Successione lineare di blocchi di istruzioni.</li>
+                    <li><strong>Selezione (Alternativa):</strong> Scelta tra due percorsi logici in 
+                        base al valore di verità di una condizione booleana.</li>
+                    <li><strong>Iterazione (Ciclo):</strong> Ripetizione di un blocco finché una 
+                        condizione rimane vera.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>4. Le Strutture di Controllo Condizionali nel Linguaggio C</h2>
+                <p>
+                    Il linguaggio C implementa la selezione attraverso due costrutti 
+                    principali: <code>if-else</code> e <code>switch</code>.
+                </p><br>
+                <h3>A. Il costrutto if / else</h3>
+                <p>
+                    Consente l'esecuzuione di un blocco di codice condizionata dal valore di un'espressione. 
+                    In C, non esiste un tipo booleano nativo originario (introdotto solo in seguito come 
+                    <code>_Bool</code> in C99); pertanto, una condizione è considerata falsa se valutata 
+                    a zero (0), e vera per qualsiasi valore diverso da zero.
+                </p><br>
+                <pre class="code-block">
+    <code>
+        #include &lt;stdio.h&gt;
+
+        int main() {
+            int punteggio = 85;
+
+            if (punteggio &gt;= 90) {
+                printf("Eccellente\n");
+            } else if (punteggio &gt;= 60) {
+                printf("Superato\n");
+            } else {
+                printf("Non superato\n");
+            }
+            return 0;
+        }
+    </code></pre><br>
+
+                <h3>B. Il costrutto switch-case</h3>
+                <p>Utilizzato per selezioni multiple basate sul valore di un'espressione intera o di 
+                    tipo carattere[cite: 46]. È fondamentale inserire l'istruzione <code>break</code> 
+                    al termine di ciascun case per evitare il fenomeno del <em>fall-through</em>, 
+                    ovvero la propagazione dell'esecuzione nei case successivi.</p>
+                <br>
+                <pre class="code-block">
+    <code>
+        switch (scelta) {
+            case 1:
+                printf("Opzione 1 selezionata\n");
+                break;
+            case 2:
+                printf("Opzione 2 selezionata\n");
+                break;
+            default:
+                printf("Opzione non valida\n");
+        }
+    </code></pre><br>
+            </section>
+
+            <section>
+                <h2>5. Le Strutture di Controllo Iterative (I Cicli)</h2>
+                <p>L'iterazione consente la ripetizione efficiente di porzioni di codice[cite: 61]. Il C offre tre diverse strutture, ciascuna ottimizzata per specifici scenari computazionali[cite: 61]:</p>
+                <br>
+                
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Struttura Ciclo</th>
+                                <th>Tipo di Controllo</th>
+                                <th>Esecuzioni Minime</th>
+                                <th>Uso Ideale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong><code>while</code></strong></td>
+                                <td>Pre-condizionale (test in testa)</td>
+                                <td>0 </td>
+                                <td>Quando il numero di iterazioni non è noto a priori].</td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>do-while</code></strong></td>
+                                <td>Post-condizionale (test in coda) </td>
+                                <td>1 ]</td>
+                                <td>Validazione di input, cicli che devono eseguire almeno una volta.</td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>for</code></strong></td>
+                                <td>Definito (contatore integrato)</td>
+                                <td>0 </td>
+                                <td>Scansione di array, cicli con numero di iterazioni prefissato.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><br>
+
+                <h3>A. Il Ciclo while e do-while</h3>
+                <pre class="code-block">
+    <code>
+        // Esempio while (controllo preventivo)
+        int i = 0;
+        while (i &lt; 5) {
+            printf("%d", i);
+            i++;
+        }
+
+        // Esempio do-while (controllo successivo)
+        int input;
+        do {
+            printf("Inserisci un numero positivo: ");
+            scanf("%d", &input);
+        } while (input &lt;= 0);
+    </code></pre><br>
+
+                <h3>B. Il Ciclo for</h3>
+                <p>Il ciclo <code>for</code> sintetizza in un'unica riga l'inizializzazione, la condizione di
+                    permanenza e l'espressione di incremento/aggiornamento della variabile di controllo, riducendo
+                    gli errori di programmazione legati alla dimenticanza dell'aggiornamento del contatore.</p>
+                <br>
+                <pre class="code-block">
+    <code>
+        for (int j = 0; j &lt; 10; j++) {
+            printf("Iterazione numero %d\n", j);
+        }
+    </code></pre><br>
+            </section>
+
+            <section>
+                <h2>6. Operatori Logici, Relazionali e Precedenza delle Espressioni</h2>
+                <p>
+                    La corretta valutazione delle condizioni all'interno delle strutture di controllo dipende 
+                    dall'utilizzo rigoroso degli operatori relazionali e logici. Il C implementa i seguenti operatori fondamentali:                    
+                </p>
+                <br>
+                <ul>
+                    <li><strong>Relazionali:</strong> <code>==</code> (uguaglianza),
+                    <code>!=</code> (disuguaglianza), <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</li>
+                    <li><strong>Logici:</strong> <code>&amp;&amp;</code> (AND logico),
+                        <code>||</code> (OR logico), <code>!</code> (NOT logico).</li>
+                </ul>
+                <br>
+                <p>Un aspetto cardine del C è la <strong>valutazione a corto circuito</strong>: nell'espressione <code>A &amp;&amp; B</code>, se <code>A</code> risulta falsa, <code>B</code> non viene minimamente valutata, poiché l'intera espressione non potrà mai essere vera[cite: 87]. Specularmente, per <code>A || B</code>, se <code>A</code> è vera, la valutazione di <code>B</code> viene omessa[cite: 88].</p>
+            </section>
+
+            <section>
+                <h2>7. Best Practices e Prevenzione degli Errori Comuni</h2>
+                <p>Nell'applicazione pratica delle strutture di controllo imperativo in C, si riscontrano frequentemente errori sistematici che possono compromettere la stabilità e la sicurezza dell'applicativo[cite: 90]. È doveroso prestare attenzione ai seguenti aspetti[cite: 91]:</p>
+                <br>
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Errore Tipico</th>
+                                <th>Meccanismo ed Effetto Low-Level</th>
+                                <th>Implicazione Software</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Assegnazione involontaria nell'if</strong></td>
+                                <td>Scrivere <code>if (x = 5)</code> anziché <code>if (x == 5)</code>.
+                                    Il primo assegna 5 a <code>x</code>.</td>
+                                <td>Poiché 5 è diverso da 0, la condizione risulta sempre matematicamente vera.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cicli infiniti</strong></td>
+                                <td>Omettere l'aggiornamento della variabile di ciclo o impostare una condizione logica impossibile da invalidare.</td>
+                                <td>Il programma si blocca bloccando il thread esecutivo e saturando le risorse della CPU.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Omissione delle parentesi graffe</strong></td>
+                                <td>Se non si usano le graffe, solo la prima istruzione successiva fa parte dell'<code>if</code> o del ciclo.</td>
+                                <td>Può generare ambiguità logiche devastanti e falle di sicurezza (es. il celebre bug Apple <em>goto fail</em>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><br>
+            </section>
+        </div><br><br><br>
+        
+              
+    <!-- FINE UDA 2 -->
+
+    <!-- INIZIO UDA 3: MODULARIZZAZIONE DEL SOFTWARE -->
+
+        <div class="uda-box" id="mod">
+            <h3>Modularizzazione del software</h3>
+            <p>Funzioni, scope e gestione del codice e Gestione della Memoria in C.</p><br>
+
+
+
+            <p>La modularizzazione è una metodologia di progettazione software orientata alla scomposizione di un sistema complesso in sottosistemi autonomi, indipendenti e logicamente omogenei chiamati moduli. Questo paradigma risponde al principio cardine del <em>Divide et Impera</em>, consentendo di affrontare problemi di vasta scala riducendone la complessità cognitiva.</p>
+
+            <section>
+                <h4>1. Il Concetto di Modularizzazione</h4>
+                <p>I vantaggi ingegneristici derivanti da una corretta modularizzazione includono:</p>
+                <ul>
+                    <li><strong>Manutenibilità:</strong> Ciascun modulo isola una specifica funzionalità, rendendo la localizzazione e la risoluzione dei bug circoscritta.</li>
+                    <li><strong>Riutilizzabilità del codice:</strong> Moduli ben definiti possono essere impiegati in progetti differenti senza alcuna modifica interna.</li>
+                    <li><strong>Astrazione:</strong> Lo sviluppatore interagisce con il modulo esclusivamente tramite la sua interfaccia pubblica, ignorandone i dettagli implementativi (Information Hiding).</li>
+                    <li><strong>Lavoro in Team:</strong> Sviluppatori diversi possono lavorare in parallelo su moduli distinti senza incorrere in conflitti sul codice sorgente.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>2. Le Funzioni in C: Unità Modulari Fondamentali</h4>
+                <p>Nel linguaggio C, l'unità base di modularizzazione è rappresentata dalla funzione. Una funzione è una porzione di codice isolata che esegue un compito specifico, riceve opzionalmente dei parametri in ingresso e restituisce un valore in uscita al chiamante.</p>
+                
+                <h5>2.1 Prototipo, Definizione e Chiamata</h5>
+                <p>Il compilatore C richiede la conoscenza della firma di una funzione prima che questa venga invocata. Questo meccanismo impone la separazione tra la dichiarazione (prototipo) e l'implementazione effettiva.</p>
+                <pre class="code-block">
+    <code>
+        #include &lt;stdio.h&gt;
+
+        // Prototipo della funzione (Dichiarazione)
+        int calcolaFattoriale(int n);
+
+        int main() {
+            int numero = 5;
+            int risultato = calcolaFattoriale(numero);
+            printf("Il fattoriale di %d e' %d\n", numero, risultato);
+            return 0;
+        }
+
+        // Definizione della funzione (Implementazione)
+        int calcolaFattoriale(int n) {
+            int fatt = 1;
+            for (int i = 1; i &lt;= n; i++) {
+                fatt *= i;
+            }
+            return fatt;
+        }
+    </code></pre>
+            </section>
+
+            <section>
+                <h4>3. Meccanismi di Passaggio dei Parametri</h4>
+                <p>Il C supporta nativamente il passaggio dei parametri esclusivamente per valore (by value). La funzione riceve una copia locale del valore delle variabili; modifiche all'interno della funzione non alterano le variabili originali.</p>
+                <p>Per simulare il passaggio per riferimento (by reference), si utilizzano i puntatori per accedere direttamente all'indirizzo di memoria della variabile.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Meccanismo</th>
+                            <th>Cosa viene passato</th>
+                            <th>Modifiche nel chiamante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Per Valore</strong></td>
+                            <td>Copia del valore</td>
+                            <td>No, isolate nella funzione</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Per Riferimento</strong></td>
+                            <td>Indirizzo di memoria</td>
+                            <td>Sì, permanenti</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h4>4. Regole di Scope e Classi di Memorizzazione</h4>
+                <ul>
+                    <li><strong>Scope Locale (Block Scope):</strong> Variabili dichiarate all'interno di un blocco {}, allocate nello Stack. Deallocate automaticamente all'uscita dal blocco.</li>
+                    <li><strong>Scope Globale (File Scope):</strong> Variabili dichiarate fuori da ogni funzione, risiedono nel segmento dati per tutta la durata dell'applicativo.</li>
+                </ul>
+                <p><em>Regola d'oro:</em> L'uso delle variabili globali deve essere ridotto al minimo per evitare accoppiamenti e side effect incontrollati.</p>
+                
+                <h5>4.1 Modificatori static e extern</h5>
+                <ul>
+                    <li><strong>static:</strong> Mantiene il valore tra chiamate successive (variabile locale) o limita la visibilità al file corrente (variabile/funzione globale).</li>
+                    <li><strong>extern:</strong> Dichiara una variabile/funzione definita in un altro modulo.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>5. Strutturazione in Multi-File</h4>
+                <p>La suddivisione rigorosa prevede:</p>
+                <ol>
+                    <li><strong>File Header (.h):</strong> Definizioni, macro e prototipi.</li>
+                    <li><strong>File Sorgente (.c):</strong> Implementazione della logica e funzioni statiche private.</li>
+                </ol>
+                <p>Si utilizzano le <em>Inclusion Guards</em> per prevenire doppie inclusioni:</p>
+                <pre class="code-block">
+    <code>
+        #ifndef MODULO_H
+        #define MODULO_H
+
+        // Definizione di strutture e prototipi
+        void eseguiCompito(int dato);
+        #endif
+    </code></pre>
+
+            </section>
+
+            <section>
+                <h4>6. Gestione della Memoria: Stack vs Heap</h4>
+                <ul>
+                    <li><strong>Stack:</strong> Gestito dalla CPU (LIFO). Ospita record di attivazione e variabili locali. Veloce ma limitato.</li>
+                    <li><strong>Heap:</strong> Allocazione dinamica (malloc/calloc). Richiede la deallocazione manuale (free) per evitare Memory Leak.</li>
+                </ul>
+            </section>
+
+        </div><br><br><br>
+
+    <!-- FINE UDA 3 -->
+
+    <!-- INIZIO UDA 4: LINGUAGGIO HTML E CSS -->
+
+
+        <div class="uda-box" id="web">
+            <h3>Linguaggio HTML e CSS</h3>
+            <p>Sviluppo interfacce web e responsive design (HTML5, CSS3, Architetture di Layout).</p><br>
+
+            <section>
+                <h4>1. Introduzione: Come Funziona il Web?</h4>
+                <p>
+                    Il World Wide Web opera su un modello fondamentale noto come 
+                    <strong>Client-Server</strong> (Cliente e Servitore), basato interamente 
+                    sul concetto di interazione e scambio di informazioni.
+                </p>
+                
+                <ul>
+                    <li><strong>Il Client:</strong> È lo strumento utilizzato dall'utente finale, 
+                        ovvero il browser installato su computer, tablet o smartphone.</li>
+                    <li><strong>Il Server:</strong> È un computer remoto, costantemente acceso e connesso a Internet, 
+                        posizionato in un data center. Il suo compito è custodire i file del sito web e "servirli" su richiesta.</li>
+                </ul><br>
+                <p>
+                    Questo scambio avviene mediante una conversazione formale regolata dal 
+                    protocollo <strong>HTTP</strong> (HyperText Transfer Protocol). 
+                    Quando si clicca un link, il browser invia una <em>Richiesta HTTP</em>; 
+                    il server la analizza e restituisce una <em>Risposta HTTP</em> contrassegnata 
+                    da un codice di stato (come <code>200 OK</code> in caso di successo, 
+                    o <code>404 Not Found</code> se la risorsa non esiste).</p><br>
+                <p>
+                    I file inviati dal server sono testi che il browser interpreta e trasforma 
+                    nell'interfaccia visiva grazie a tre linguaggi cardine:
+                </p>
+                <ul>
+                    <li><strong>HTML:</strong> Definisce lo scheletro, la struttura e il contenuto grezzo della pagina.</li>
+                    <li><strong>CSS:</strong> Gestisce l'estetica, i colori, i caratteri e la disposizione nello spazio.</li>
+                    <li><strong>JavaScript:</strong> Rende la pagina dinamica e interattiva (animazioni, calcoli, aggiornamenti in tempo reale).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>2. HTML: La Struttura di Base</h4>
+                <p>
+                    L'HTML è un linguaggio di <strong>marcatura</strong> (non di programmazione). 
+                    Il suo scopo è etichettare i testi attraverso dei marcatori detti 
+                    <strong>tag</strong> per comunicare al browser la loro natura logica.
+                </p>
+                <p>
+                    Un tag è racchiuso tra parentesi angolari. La maggior parte degli 
+                    elementi richiede un tag di apertura e uno di chiusura 
+                    (contraddistinto dalla barra diagonale <code>/</code>).
+                </p>
+                
+                <h5>2.1 Anatomia di un Elemento HTML</h5>
+                <p>
+                    I tag possono ospitare degli <strong>attributi</strong> all'interno 
+                    del marcatore di apertura per fornire informazioni aggiuntive 
+                    (sotto forma di coppie nome-valore):
+                </p>
+                <pre class="code-block">
+    <code>
+        &lt;a href="https://www.esempio.com"&gt;Visita il sito&lt;/a&gt;
+    </code></pre>
+                <p>
+                    In questo esempio, <code>&lt;a&gt;</code> è il tag di apertura per un collegamento 
+                    ipertestuale, <code>href</code> è l'attributo che indica la destinazione del link, 
+                    e <code>&lt;/a&gt;</code> è il tag di chiusura.
+                </p>
+            </section>
+        
+            <section>
+                <h4>3. La Struttura Globale di un Documento HTML5</h4>
+                <p>
+                    Ogni pagina web segue uno schema strutturale rigido e standardizzato. 
+                    Il codice non inizia mai direttamente con i contenuti visibili, 
+                    ma con delle dichiarazioni fondamentali per il browser.
+                </p>
+                
+                <pre class="code-block">
+    <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="it"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;Titolo della Pagina&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;!-- Il contenuto visibile del sito va qui --&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </code></pre><br>
+                <h5>3.1 Analisi dei Componenti Principali</h5>
+                <ul>
+                    <li><strong><code>&lt;!DOCTYPE html&gt;</code>:</strong> Non è un tag HTML, ma una dichiarazione 
+                        iniziale che comunica al browser di interpretare la pagina secondo gli standard moderni di HTML5.</li>
+                    <li><strong><code>&lt;html&gt;</code>:</strong> Il contenitore radice (root) dell'intero documento. 
+                        L'attributo <code>lang="it"</code> specifica la lingua per facilitare i motori di ricerca e le tecnologie assistive.</li>
+                    <li><strong><code>&lt;head&gt;</code>:</strong> La sezione "invisibile" che racchiude i metadati, 
+                        le informazioni di configurazione, i collegamenti ai fogli di stile esterni e il titolo della scheda del browser.</li>
+                    <li><strong><code>&lt;meta charset="UTF-8"&gt;</code>:</strong> Imposta la codifica dei caratteri 
+                        universale, garantendo la corretta visualizzazione di accenti e simboli speciali.</li>
+                    <li><strong><code>&lt;body&gt;</code>:</strong> Il corpo del documento, contenente tutto ciò che 
+                        viene effettivamente renderizzato a schermo (testi, immagini, video, tabelle).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>4. L'Albero del DOM (Document Object Model)</h4>
+                <p>
+                    Quando il browser carica un file HTML, esegue un processo di parsing e costruisce 
+                    una struttura gerarchica ad albero chiamata <strong>DOM (Document Object Model)</strong>. 
+                    In questo modello, ogni tag si trasforma in un "nodo" dell'albero.
+                </p><br>
+                <p>
+                    I nodi sviluppano relazioni di parentela analoghe a un albero genealogico:
+                </p>
+                <ul>
+                    <li><strong>Parent (Genitore):</strong> Un elemento che racchiude direttamente altri tag (es. <code>&lt;html&gt;</code> è il genitore di <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>).</li>
+                    <li><strong>Child (Figlio):</strong> Un elemento contenuto direttamente dentro un altro.</li>
+                    <li><strong>Sibling (Fratello):</strong> Elementi che condividono lo stesso identico genitore (es. <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code> sono fratelli).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>5. Marcatori di Testo e Formattazione</h4>
+                <p>
+                    Per strutturare i testi in modo gerarchico e logico, l'HTML fornisce 
+                    tag dedicati che evitano flussi continui e disordinati di parole:
+                </p>
+                <br>
+                <ul>
+                    <li><strong>I Titoli (da <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>):</strong> Definiscono 
+                        la gerarchia dell'informazione. <code>&lt;h1&gt;</code> rappresenta il titolo principale 
+                        del documento (consigliato uno solo per pagina per motivi SEO), mentre gli altri tag 
+                        rappresentano sottotitoli a livelli crescenti di nidificazione.</li>
+                    <li><strong>I Paragrafi (<code>&lt;p&gt;</code>):</strong> Utilizzati per blocchi di testo standard. 
+                        Il browser inserisce automaticamente uno spazio verticale prima e dopo ogni paragrafo.</li>
+                    <li><strong>Enfasi e Rilevanza:</strong> Il tag <code>&lt;strong&gt;</code> indica che il testo 
+                        ha una forte importanza logica (visivamente reso in grassetto), mentre 
+                        <code>&lt;em&gt;</code> attribuisce un'enfasi espressiva (visivamente reso in corsivo).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>6. Collegamenti Ipertestuali e Navigazione</h4>
+                <p>
+                    I collegamenti ipertestuali (link) costituiscono l'essenza stessa del World Wide Web, 
+                    consentendo di connettere tra loro pagine diverse dello stesso sito o risorse situate su server remoti. 
+                    Il marcatore deputato a questa funzione è il tag <code>&lt;a&gt;</code> (anchor), 
+                    il quale necessita tassativamente dell'attributo <code>href</code> per specificare la destinazione.
+                </p><br>
+                <pre class="code-block">
+    <code>
+        &lt;!-- Collegamento esterno --&gt;
+        &lt;a href="https://www.google.com" target="_blank"&gt;Apri Google in una nuova scheda&lt;/a&gt;
+
+        &lt;!-- Collegamento interno (ancora) --&gt;
+        &lt;a href="#struttura"&gt;Torna al capitolo della struttura&lt;/a&gt;
+    </code></pre><br>
+                <h5>6.1 Percorsi Assoluti vs Percorsi Relativi</h5>
+                <ul>
+                    <li><strong>Percorsi Assoluti:</strong> Includono l'URL completo, comprensivo di protocollo 
+                        (es. <code>https://</code>). Si utilizzano esclusivamente per indirizzare l'utente verso siti web esterni.</li>
+                    <li><strong>Percorsi Relativi:</strong> Fanno riferimento alla posizione del file 
+                        rispetto alla cartella corrente del progetto (es. <code>contatti.html</code> o <code>../pagine/servizi.html</code>). 
+                        Si utilizzano per la navigazione interna al proprio sito, garantendo il funzionamento dei 
+                        link anche in locale o se si cambia il nome del dominio.</li>
+                </ul>
+                <p>
+                    L'attributo opzionale <code>target="_blank"</code> istruisce il browser ad 
+                    aprire il collegamento in una nuova scheda, preservando la sessione di navigazione 
+                    dell'utente sulla pagina di origine.
+                </p>
+            </section>
+
+            <section>
+                <h4>7. Inserimento di Contenuti Multimediali: Le Immagini</h4>
+                <p>
+                    Le immagini vengono inserite mediante il tag <code>&lt;img&gt;</code>. 
+                    A differenza della maggior parte dei marcatori HTML, si tratta di un tag **vuoto** 
+                    (self-closing), ovvero non racchiude testo e non possiede un tag di chiusura separato.
+                </p>
+                <p>
+                    Per funzionare correttamente e rispettare gli standard di accessibilità, 
+                    richiede due attributi fondamentali:
+                </p><br>
+                <ul>
+                    <li><strong><code>src</code> (source):</strong> Specifica il percorso relativo o 
+                        assoluto del file d'immagine da caricare.</li>
+                    <li><strong><code>alt</code> (alternative text):</strong> Fornisce una descrizione 
+                        testuale del contenuto visivo. È vitale per l'indicizzazione dei motori di ricerca 
+                        e per gli screen reader utilizzati da utenti ipovedenti o non vedenti.</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        &lt;img src="immagini/logo.png" alt="Logo ufficiale del Portfolio Professionale" width="300"&gt;
+    </code></pre>
+            </section>
+
+            <section>
+                <h4>8. Strutture Elencative: Liste Ordinate, Liste Non Ordinate e Tabelle</h4>
+                <p>
+                    L'organizzazione sistematica delle informazioni in elenchi o tabelle previene il disordine
+                    visivo e strutturale all'interno del codice.
+                </p><br>
+                
+                <h5>8.1 Elenchi Non Ordinati (Puntati) ed Elenchi Ordinati (Numerati)</h5>
+                <p>
+                    Gli elenchi non ordinati si aprono con il tag <code>&lt;ul&gt;</code> (Unordered List), 
+                    mentre quelli ordinati utilizzano il tag <code>&lt;ol&gt;</code> (Ordered List). 
+                    In entrambi i casi, ogni singolo elemento della lista deve essere tassativamente 
+                    racchiuso all'interno del tag <code>&lt;li&gt;</code> (List Item).
+                </p><br>
+                <pre class="code-block">
+    <code>
+        &lt;ul&gt;
+            &lt;li&gt;Primo elemento puntato&lt;/li&gt;
+            &lt;li&gt;Secondo elemento puntato&lt;/li&gt;
+        &lt;/ul&gt;
+    </code></pre>
+                <br>
+
+                <h5>8.2 Le Tabelle (Data Tables)</h5>
+                <p>
+                    Le tabelle in HTML5 servono esclusivamente per organizzare dati strutturati 
+                    in righe e colonne. La loro architettura prevede una suddivisione semantica rigida:
+                </p>
+                <ul>
+                    <li><strong><code>&lt;table&gt;</code>:</strong> Il contenitore principale della struttura.</li>
+                    <li><strong><code>&lt;thead&gt;</code>:</strong> La sezione che racchiude la riga di intestazione.</li>
+                    <li><strong><code>&lt;tbody&gt;</code>:</strong> Il corpo della tabella contenente i dati effettivi.</li>
+                    <li><strong><code>&lt;tr&gt;</code> (Table Row):</strong> Definisce una riga della tabella.</li>
+                    <li><strong><code>&lt;th&gt;</code> (Table Header):</strong> Definisce una cella di intestazione 
+                        (il testo appare in grassetto e centrato di default).</li>
+                    <li><strong><code>&lt;td&gt;</code> (Table Data):</strong> Definisce una comune cella di dati.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>9. I Form di Input: Interazione con l'Utente</h4>
+                <p>
+                    I moduli di input (Form) rappresentano lo strumento fondamentale con cui un sito web raccoglie 
+                    dati digitati dall'utente (creazione di account, barre di ricerca, inserimento di commenti). 
+                    Un'area di input si delimita tramite il tag <code>&lt;form&gt;</code>, all'interno 
+                    del quale si posizionano marcatori specifici:
+                </p><br>
+                <ul>
+                    <li><strong><code>&lt;input&gt;</code>:</strong> Un tag vuoto (self-closing) la cui natura 
+                        cambia radicalmente in base all'attributo <code>type</code> (es. <code>type="text"</code> 
+                        per stringhe generiche, <code>type="email"</code> per indirizzi di posta, 
+                        <code>type="password"</code> per nascondere i caratteri digitati).</li>
+                    <li><strong><code>&lt;label&gt;</code>:</strong> Definisce l'etichetta testuale associata 
+                        a un input. L'uso dell'attributo <code>for</code> (collegato all'<code>id</code> dell'input) 
+                        migliora drasticamente l'accessibilità e l'ergonomia.</li>
+                    <li><strong><code>&lt;textarea&gt;</code>:</strong> Consente l'inserimento di testi lunghi multi-riga.</li>
+                    <li><strong><code>&lt;button&gt;</code>:</strong> Elemento cliccabile che, se impostato con 
+                        <code>type="submit"</code>, inoltra i dati accumulati verso il server.</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        &lt;form action="/salva-dati" method="POST"&gt;
+            &lt;label for="utente"&gt;Nome Utente:&lt;/label&gt;
+            &lt;input type="text" id="utente" name="username" required&gt;
+            
+            &lt;button type="submit"&gt;Invia Dati&lt;/button&gt;
+        &lt;/form&gt;
+    </code></pre>
+            </section>
+
+            <section>
+                <h4>10. Introduzione a CSS3: Sintassi e Regole di base</h4>
+                <p>
+                    Finito lo sviluppo strutturale con l'HTML, i fogli di stile **CSS3** intervengono 
+                    per governare l'estetica, la formattazione visuale e la disposizione spaziale dei componenti. 
+                    Il funzionamento del CSS si basa su un set di regole. Ciascuna regola è composta da 
+                    un **selettore** e da un **blocco di dichiarazioni** racchiuso tra parentesi graffe.
+                </p><br>
+                
+                <h5>10.1 Anatomia di una Regola CSS</h5>
+                <p>
+                    Una dichiarazione è una combinazione accoppiata di una <strong>proprietà</strong> 
+                    (cosa si vuole modificare) e di un <strong>valore</strong> (come lo si vuole modificare), 
+                    separati dai due punti e terminati obbligatoriamente dal punto e virgola.
+                </p><br>
+                <pre class="code-block">
+    <code>
+        /* Sintassi: selettore { proprieta: valore; } */
+
+        p {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </code></pre>
+            </section>
+
+            <section>
+                <h4>11. I Selettori Fondamentali</h4>
+                <p>
+                    I selettori comunicano al browser quali nodi dell'albero del DOM devono 
+                    essere intercettati per l'applicazione degli stili:
+                </p><br>
+                <ul>
+                    <li><strong>Selettore di Tipo (o Tag):</strong> Punta a tutti gli elementi che corrispondono 
+                        a quel tag specifico (es. <code>h1</code> intercetta tutti i titoli primari della pagina).</li>
+                    <li><strong>Selettore di Classe:</strong> Identificato da un punto (<code>.</code>) 
+                        seguito dal nome della classe. Intercetta tutti i tag che ospitano l'attributo 
+                        <code>class=""</code>. È riutilizzabile su elementi diversi all'interno della stessa pagina.</li>
+                    <li><strong>Selettore di ID:</strong> Identificato da un cancelletto (<code>#</code>) 
+                        seguito dal nome dell'ID. Punta a un elemento univoco provvisto dell'attributo 
+                        <code>id=""</code>. Non può mai essere duplicato all'interno dello stesso file HTML.</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        /* Selettore di tipo */
+        span { color: blue; }
+
+        /* Selettore di classe */
+        .testo-evidenziato { background-color: yellow; }
+
+        /* Selettore di ID */
+        #bottone-principale { border-radius: 5px; }
+    </code></pre>
+            </section>
+
+
+            <!-- arrivato qua a sistemare layout scalato male -->
+
+                    <section>
+                <h4>12. Selettori di Parentela e Combinatori</h4>
+                <p>
+                    I combinatori permettono di affinare la mira dei selettori CSS combinando più tag in base 
+                    alla loro posizione gerarchica all'interno dell'albero del DOM:
+                </p><br>
+                <ul>
+                    <li><strong>Selettore Discendente (Spazio vuoto):</strong> Punta a tutti gli elementi che si trovano ovunque all'interno del tag genitore, anche se molto nidificati (es. <code>div p</code> seleziona tutti i paragrafi che stanno dentro a un div).</li>
+                    <li><strong>Selettore Figlio Diretto (<code>&gt;</code>):</strong> Intercetta esclusivamente gli elementi che sono figli di primo livello del genitore (es. <code>ul &gt; li</code> intercetta solo i list item immediati, ignorando eventuali sottoliste nidificate).</li>
+                    <li><strong>Selettore Fratello Adiacente (<code>+</code>):</strong> Seleziona l'elemento immediatamente successivo che si trova sullo stesso livello di parentela (es. <code>h1 + p</code> applica lo stile solo al primo paragrafo che segue subito un titolo).</li>
+                </ul>
+                <br>
+                <pre class="code-block"><code>/* Solo i paragrafi figli diretti del div */
+        div &gt; p { margin-bottom: 20px; }
+
+        /* Il paragrafo subito dopo un h2 */
+        h2 + p { font-weight: bold; }</code></pre>
+            </section>
+
+            <section>
+                <h4>13. Pseudo-classi e Pseudo-elementi</h4>
+                <p>Le pseudo-classi e gli pseudo-elementi introducono astrazioni per intercettare stati dinamici dell'interfaccia o porzioni specifiche di testo senza aggiungere classi artificiali nell'HTML.</p>
+                <br>
+                
+                <h5>13.1 Le Pseudo-classi (Stati dinamici)</h5>
+                <p>Si identificano con un singolo due punti (<code>:</code>) e modificano lo stile di un elemento quando si trova in una determinata condizione:</p>
+                <ul>
+                    <li><code>:hover</code>: Si attiva quando l'utente passa il cursore del mouse sopra l'elemento (fondamentale per bottoni e link).</li>
+                    <li><code>:focus</code>: Si attiva quando un elemento riceve l'attenzione del sistema, ad esempio quando si clicca dentro un campo di input per digitare.</li>
+                    <li><code>:nth-child(n)</code>: Permette di selezionare un figlio specifico in base alla sua posizione numerica (es. per colorare le righe alterne di una tabella).</li>
+                </ul>
+                <br>
+
+                <h5>13.2 Gli Pseudo-elementi (Porzioni strutturali)</h5>
+                <p>Si identificano convenzionalmente con il doppio due punti (<code>::</code>) e creano elementi virtuali o isolano parti specifiche:</p>
+                <ul>
+                    <li><code>::before</code> e <code>::after</code>: Consentono di iniettare contenuti decorativi grafici subito prima o subito dopo il contenuto reale di un tag, agendo via CSS.</li>
+                    <li><code>::first-letter</code>: Isola la prima lettera di un blocco di testo per creare un effetto capolettera tipografico.</li>
+                </ul>
+                <br>
+                <pre class="code-block"><code>/* Effetto hover sul bottone */
+        .btn:hover { background-color: #0056b3; }
+
+        /* Input evidenziato durante la digitazione */
+        input:focus { border: 2px solid #007bff; }</code></pre>
+            </section>
+
+            <section>
+                <h4>14. Il Meccanismo della Cascata e l'Ereditarietà</h4>
+                <p>Il nome <em>Cascading Style Sheets</em> deriva dal fatto che le regole stilistiche fluiscono dall'alto verso il basso della gerarchia. Molte proprietà (come i font e i colori del testo) vengono trasmesse per <strong>ereditarietà</strong> dai nodi genitori ai figli, a meno che non intervenga una regola più specifica a sovrascriverle.</p>
+                <p>Quando più selettori si contendono lo stile dello stesso identico tag, il browser risolve il conflitto applicando la regola con il valore di <strong>specificità</strong> più alto, calcolato secondo un punteggio geometrico standardizzato (Tag = 1 punto, Classe = 10 punti, ID = 100 punti, Stile in linea = 1000 punti).</p>
+            </section>
+
+            <section>
+                <h4>15. Gestione del Colore nel CSS3</h4>
+                <p>Il CSS3 offre diverse metodologie per definire i colori degli elementi (testo, sfondi, bordi), permettendo di passare da dichiarazioni semplici a configurazioni avanzate con trasparenze:</p>
+                <br>
+                <ul>
+                    <li><strong>Sintassi Esadecimale (HEX):</strong> Rappresentata da un cancelletto (<code>#</code>) seguito da sei caratteri alfanumerici (0-9, A-F) divisi in tre coppie, che indicano rispettivamente l'intensità di Rosso, Verde e Blu (es. <code>#FF0000</code> è rosso puro).</li>
+                    <li><strong>Sintassi RGB / RGBA:</strong> Modello additivo basato sui tre colori primari espressi con valori da 0 a 255. La variante <strong>RGBA</strong> introduce un quarto parametro, il canale <em>Alpha</em> (da 0.0 a 1.0), che governa il livello di opacità e trasparenza.</li>
+                    <li><strong>Sintassi HSL / HSLA:</strong> Modello intuitivo basato su tre parametri: <em>Hue</em> (Tonalità espressa in gradi da 0 a 360 sulla ruota dei colori), <em>Saturation</em> (Saturazione in percentuale) e <em>Lightness</em> (Luminosità in percentuale). Anche qui la variante <strong>HSLA</strong> supporta il canale Alpha.</li>
+                </ul>
+                <br>
+                <pre class="code-block"><code>/* Esempi di colore di sfondo equivalenti */
+        .box-colore {
+            background-color: #3498db; /* Esadecimale */
+            background-color: rgb(52, 152, 219); /* RGB */
+            background-color: rgba(52, 152, 219, 0.8); /* RGBA con trasparenza al 80% */
+            background-color: hsl(204, 70%, 53%); /* HSL */
+        }</code></pre>
+            </section>
+
+            <section>
+                <h4>16. Tipografia e Font Web</h4>
+                <p>La gestione dei testi si affida a proprietà specifiche che controllano lo stile, la dimensione e la famiglia tipografica. Nella definizione dei font è essenziale indicare sempre una <strong>font family di fallback</strong> (di riserva), in modo che il browser sappia cosa mostrare qualora il font principale non fosse installato sul computer dell'utente.</p>
+                <br>
+                
+                <h5>16.1 Famiglie di Caratteri Generiche</h5>
+                <ul>
+                    <li><strong>Serif:</strong> Caratteri provvisti di "grazie" o allungamenti alle estremità (es. Times New Roman), adatti alla stampa cartacea.</li>
+                    <li><strong>Sans-Serif:</strong> Caratteri lineari, puliti e privi di grazie (es. Arial, Helvetica), ideali per la lettura su schermi digitali.</li>
+                    <li><strong>Monospace:</strong> Caratteri in cui ogni singola lettera occupa esattamente lo stesso spazio orizzontale (es. Courier, Consolas), utilizzati universalmente nei blocchi di codice.</li>
+                </ul>
+                <br>
+
+                <h5>16.2 Proprietà Tipografiche Fondamentali</h5>
+                <p>Le regole di formattazione del testo includono controlli geometrici precisi per migliorare la leggibilità dell'interfaccia:</p>
+                <ul>
+                    <li><code>font-size</code>: Determina la dimensione del carattere.</li>
+                    <li><code>font-weight</code>: Regola lo spessore della linea (es. <code>bold</code> per il grassetto o valori numerici come <code>400</code> per il regular e <code>700</code> per il bold).</li>
+                    <li><code>line-height</code>: Imposta l'interlinea, ovvero lo spazio verticale tra le righe di uno stesso paragrafo.</li>
+                    <li><code>text-align</code>: Allinea il testo a sinistra, a destra, al centro o giustificato.</li>
+                </ul>
+                <br>
+                <pre class="code-block"><code>.articolo-testo {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: justify;
+        }</code></pre>
+            </section>
+
+            <section>
+                <h4>17. Il CSS Box Model: La Struttura Visiva degli Elementi</h4>
+                <p>Per disporre correttamente i componenti nello spazio e creare interfacce strutturate, è indispensabile comprendere la regola d'oro del rendering web: <strong>ogni singolo elemento presente nella pagina è considerato dal browser come una scatola rettangolare invisibile</strong>.</p>
+                <p>Questa scatola (Box) è composta da quattro strati concentrici che si influenzano geometricamente a vicenda:</p>
+                
+                
+                <br>
+                <ul>
+                    <li><strong>Content Area:</strong> L'area centrale più interna che ospita il contenuto effettivo del tag (testo, immagini o altri tag figli). Le sue dimensioni possono essere forzate tramite le proprietà <code>width</code> (larghezza) e <code>height</code> (altezza).</li>
+                    <li><strong>Padding (Spaziatura interna):</strong> Cuscinetto di spazio vuoto e trasparente situato tra il contenuto e il bordo dell'elemento. Serve a far "respirare" i testi evitando che collidano con i margini della scatola. Prende il colore di sfondo dell'elemento stesso.</li>
+                    <li><strong>Border (Bordo):</strong> La linea perimetrale che racchiude il contenuto e il padding. Può essere personalizzata in spessore, stile e colore (es. <code>border: 2px solid #333;</code>).</li>
+                    <li><strong>Margin (Margine esterno):</strong> Spazio vuoto posizionato al di fuori del bordo. Viene utilizzato per distanziare l'elemento corrente dalle altre scatole adiacenti presenti nella pagina. È sempre completamente trasparente.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>18. Controllo Avanzato delle Dimensioni: Box-Sizing</h4>
+                <p>Di default, il browser calcola lo spazio totale occupato da un elemento sommando: <em>Larghezza del contenuto + Padding + Bordo</em>. Questo significa che se impostiamo un blocco a <code>width: 300px;</code> e successivamente aggiungiamo 20px di padding, la larghezza reale diventerà di 340px, scombinando i calcoli del layout.</p>
+                <p>Per azzerare questo comportamento e rendere i calcoli intuitivi, i professionisti applicano un reset globale tramite il selettore universale (<code>*</code>), forzando la proprietà <code>box-sizing: border-box;</code>. In questo modo, padding e bordi vengono assorbiti all'interno della larghezza impostata.</p>
+                <br>
+                <pre class="code-block"><code>/* Reset Globale Professionale del Box Model */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }</code></pre>
+            </section>
+
+            <section>
+                <h4>19. I Meccanismi di Posizionamento (Position)</h4>
+                <p>La proprietà <code>position</code> permette di deviare un elemento dal normale flusso lineare della pagina per collocarlo in punti specifici dello schermo dello smartphone o del computer:</p>
+                <br>
+                <ul>
+                    <li><strong>Static (Predefinito):</strong> L'elemento segue il normale flusso documentale della pagina, posizionandosi uno dopo l'altro dall'alto verso il basso.</li>
+                    <li><strong>Relative:</strong> L'elemento viene spostato rispetto alla sua posizione originaria nel flusso tramite le coordinate <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>, lasciando però intatto lo spazio vuoto dove si trovava prima.</li>
+                    <li><strong>Absolute:</strong> L'elemento si sgancia totalmente dal flusso della pagina (gli altri elementi si comportano come se non esistesse) e si ancora rispetto al primo elemento genitore che possiede a sua volta un posizionamento diverso da static.</li>
+                    <li><strong>Fixed:</strong> Il blocco si ancora rigidamente alle coordinate della finestra del browser e rimane bloccato nello stesso punto dello schermo anche quando l'utente scorre la pagina (es. i menu di navigazione sempre visibili in alto).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>20. Disposizione Monodimensionale: Il Motore Flexbox</h4>
+                <p>Nelle prime fasi storiche dello sviluppo web, allineare due elementi l'uno di fianco all'altro richiedeva l'uso di stratagemmi complessi e fragili (come i vecchi float). Oggi, per gestire la disposizione degli elementi lungo un unico asse (una riga orizzontale o una colonna verticale), si utilizza lo standard potente denominato <strong>Flexbox (Flexible Box Layout)</strong>.</p>
+                <p>Il sistema si attiva applicando la proprietà <code>display: flex;</code> su un elemento contenitore padre (chiamato <strong>Flex Container</strong>). Da quel momento, tutti gli elementi situati direttamente al suo interno (<strong>Flex Items</strong>) diventano flessibili, si dispongono automaticamente in linea ed evitano collisioni.</p>
+                <br>
+                
+                <h5>20.1 Proprietà del Contenitore Flex</h5>
+                <ul>
+                    <li><code>flex-direction</code>: Definisce l'orientamento dell'asse principale (<code>row</code> per disporre i figli in orizzontale, <code>column</code> per disporre i figli in verticale).</li>
+                    <li><code>justify-content</code>: Distribuisce lo spazio vuoto lungo l'asse orizzontale (es. <code>space-between</code> spinge il primo elemento a sinistra e l'ultimo a destra; <code>center</code> raggruppa tutto al mezzo).</li>
+                    <li><code>align-items</code>: Governa l'allineamento verticale dei componenti (es. <code>center</code> per centrarli perfettamente in altezza).</li>
+                    <li><code>gap</code>: Definisce uno spazio nativo di separazione fisso tra un elemento e l'altro, senza dover ricorrere ai margini esterni sui figli.</li>
+                </ul>
+                <br>
+                <pre class="code-block"><code>/* Esempio di una barra di navigazione flessibile */
+        .barra-navigazione {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background-color: #1a2e40;
+            padding: 10px 20px;
+        }</code></pre>
+                <br>
+                <h5>20.2 Flessibilità dei Singoli Componenti</h5>
+                <p>Oltre a controllare il contenitore, è possibile assegnare proprietà specifiche ai singoli elementi figli. La proprietà <code>flex: 1;</code> comunicata a un blocco indica al browser di consentire a quel determinato componente di espandersi fino a occupare tutto lo spazio vuoto residuo all'interno della riga, comprimendo gli altri elementi al loro ingombro minimo iniziale.</p>
+            </section>
+
+            <section>
+                <h4>21. Disposizione Bidimensionale: Il CSS Grid Layout</h4>
+                <p>Se Flexbox è lo strumento ideale per gestire elementi disposti lungo un unico asse, lo sviluppo di interfacce complesse richiede un controllo totale su <strong>due dimensioni contemporaneamente: le righe e le colonne</strong>. A questo scopo risponde lo standard <strong>CSS Grid Layout</strong>, un motore di rendering che permette di tracciare una vera e propria griglia geometrica sopra la pagina.</p>
+                <p>Si attiva impostando <code>display: grid;</code> sul contenitore e definendo la struttura dei binari geometrici tramite le proprietà <code>grid-template-columns</code> e <code>grid-template-rows</code>.</p>
+                <br>
+                <pre class="code-block"><code>/* Creazione di una griglia a 3 colonne simmetriche */
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }</code></pre>
+                <br>
+                <h5>21.1 L'Unità di Misura Fractional (fr)</h5>
+                <p>L'unità di misura <code>fr</code> (fractional unit) rappresenta una delle innovazioni più significative del CSS moderno. Invece di vincolare le colonne a misure fisse in pixel, l'unità <code>1fr</code> indica al browser di dividere lo spazio totale disponibile in parti uguali. Se lo schermo dell'utente si allarga o si stringe, le colonne si espanderanno o comprimeranno in modo perfettamente proporzionale, preservando intatta la simmetria geometrica impostata.</p>
+            </section>
+
+            <section>
+                <h4>22. Responsive Web Design e l'Approccio Mobile-First</h4>
+                <p>Il <strong>Responsive Web Design (RWD)</strong> è la metodologia progettuale che permette alle interfacce di adattarsi in modo fluido e automatico a qualsiasi risoluzione dello schermo (smartphone, tablet, laptop o desktop). Il pilastro fondamentale di questa tecnica è la filosofia del <strong>Mobile-First</strong>: si sviluppa inizialmente lo stile lineare dedicato agli schermi più piccoli, per poi aggiungere progressivamente elementi di complessità visiva man mano che lo spazio a disposizione aumenta.</p>
+                <p>Questo controllo condizionale viene gestito nel foglio di stile attraverso le <strong>Media Queries</strong>, le quali intercettano la larghezza del viewport del dispositivo ed applicano regole dedicate oltre una certa soglia geometrica (detta <strong>Breakpoint</strong>).</p>
+                <br>
+                <pre class="code-block"><code>/* Stili base per Mobile (schermi piccoli) */
+        .colonna {
+            width: 100%;
+        }
+
+        /* Breakpoint per Tablet (schermi da 768px in su) */
+        @media screen and (min-width: 768px) {
+            .colonna {
+                width: 50%;
+            }
+        }
+
+        /* Breakpoint per Desktop (schermi da 1024px in su) */
+        @media screen and (min-width: 1024px) {
+            .colonna {
+                width: 33.33%;
+            }
+        }</code></pre>
+            </section>
+
+            <section>
+                <h4>23. Unità di Misura Relative e Scalabilità</h4>
+                <p>Per realizzare un'interfaccia flessibile e accessibile, i fogli di stile professionali evitano l'uso di unità di misura fisse e assolute (come i pixel per le dimensioni dei testi), preferendo le unità di misura relative:</p>
+                <ul>
+                    <li><strong>em:</strong> Relativo alla dimensione del carattere dell'elemento genitore diretto.</li>
+                    <li><strong>rem (root em):</strong> Relativo alla dimensione del font impostata sull'elemento radice <code>&lt;html&gt;</code> (di default pari a 16px). Garantisce che l'intero layout si ridimensioni proporzionalmente se l'utente modifica le impostazioni di accessibilità del proprio browser.</li>
+                    <li><strong>vw / vh (Viewport Width / Height):</strong> Unità basate sulla percentuale della finestra visibile del browser (es. <code>100vh</code> occupa esattamente il 100% dell'altezza dello schermo).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>24. Linee Guida e Buone Pratiche Professionali</h4>
+                <p>Per assicurare la massima qualità nello sviluppo di interfacce web, è fondamentale seguire tre regole metodologiche raccomandate dagli standard internazionali:</p>
+                <br>
+                <ul>
+                    <li><strong>Validità e Pulizia della Struttura:</strong> Ogni tag aperto deve essere chiuso correttamente nel giusto ordine di nidificazione. Il codice deve essere formattato in modo ordinato applicando un'indentazione coerente, riducendo drasticamente la presenza di bug sintattici.</li>
+                    <li><strong>Separazione Rigida delle Competenze:</strong> L'HTML deve descrivere unicamente il significato logico e la natura dei contenuti. L'aspetto estetico, le dimensioni e le proprietà cromatiche devono essere governate esclusivamente all'interno del file CSS, evitando l'uso di attributi di stile in linea.</li>
+                    <li><strong>Inclusione e Accessibilità Universale:</strong> Fornire sempre l'attributo <code>alt</code> descrittivo su tutte le immagini per consentire la navigazione tramite screen reader agli utenti ipovedenti, e garantire un contrasto cromatico sufficientemente elevato tra il testo e lo sfondo per facilitare la lettura in qualsiasi condizione di luce ambientale.</li>
+                </ul>
+            </section>
+
+
+
+        </div><br><br><br> 
+
+    </main>
+
+
+    <a href="#" class="top-btn">↑</a>
+
+    <footer>
+        <p>&copy; 2026 Alex - Portfolio [Capolavoro] | <a href="form.html#recensioni">Area Recensioni</a></p>
+    </footer>
+
+</body>
+</html>

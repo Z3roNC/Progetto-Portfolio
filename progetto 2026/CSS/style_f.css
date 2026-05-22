@@ -1,0 +1,294 @@
+/* ==========================================================================
+   copia della home "Home - Grayscale Dark Theme"
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Consolas', monospace; 
+    background: #0a0a0a; /* Sfondo principale: Nero profondo */
+    color: #cccccc; /* Testo principale: Grigio medio-chiaro */
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar { 
+    position: sticky; top: 0; z-index: 1000; 
+    background: #141414; /* Sfondo navbar leggermente più chiaro del body */
+    border-bottom: 1px solid #2d2d2d; /* Bordo grigio scuro */
+    padding: 15px 0; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; 
+}
+
+.navbar a {
+    color: #ffffff; /* Link: Bianco puro per il massimo contrasto */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold; 
+}
+
+/* Stile per l'Header Hero della pagina della materia */
+.hero {
+    background: rgba(11, 21, 36, 0.15); /* Sfondo del box blu scuro opaco al 15% */
+    border: 1px solid #1e2d42;          /* Contorno del box in blu navy scuro */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    
+}
+
+/* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
+.hero h1 {
+    font-size: 3.5rem;                   /* Reso più grande per valorizzare l'effetto */
+    font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
+    color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
+    
+    /* Crea il contorno del font con il colore azzurro/blu principale */
+    -webkit-text-stroke: 2px #b6b6b6;    
+    text-stroke: 2px #aaaaaa;            
+    
+    letter-spacing: 4px;                 /* Spaziatura tra le lettere stile cyberpunk */
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #cbd5e1;                      /* Sottotitolo azzurro ghiaccio chiaro */
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Header Materia Centrato */
+.materia-header { 
+    background: #1f1f1f; /* Sfondo header antracite */
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0; /* Linea d'accento grigio chiaro/argento */
+    gap: 15px;
+}
+
+.materia-header h2 {
+    color: #ffffff; /* Titolo principale: Bianco */
+    text-align: center;
+}
+
+.materia-header span {
+    color: #7a7a7a; /* Testo secondario: Grigio disattivato */
+    font-size: 1rem;
+}
+
+
+.spoiler-mode .uda-box:hover p {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.spoiler-mode .uda-box:hover h4 {
+    transform: translateY(-5px);
+}
+
+/* Bottone Top */
+.top-btn { 
+    position: fixed; bottom: 25px; right: 25px; 
+    background: #333333; /* Bottone grigio scuro solido */
+    color: white; width: 45px; height: 45px;
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 5px; text-decoration: none; font-weight: bold;
+    transition: background 0.2s;
+}
+
+.top-btn:hover {
+    background: #444444; /* Si illumina leggermente all'hover */
+}
+
+footer { 
+    text-align: center;
+    padding: 40px 0; 
+    color: #555555; /* Testo footer grigio scuro spento */
+}
+
+/* ==========================================================================
+   STILI PER IL FORM E LE RECENSIONI 
+   ========================================================================== */
+
+.form-box {
+    background: #141414;
+    padding: 30px;
+    border: 1px solid #2d2d2d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-wrapper, .rating-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box label {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Text-area Monocromatica con limite a 300 caratteri */
+.form-box textarea {
+    background: #0a0a0a;
+    border: 1px solid #2d2d2d;
+    color: #ffffff;
+    font-family: 'Consolas', monospace;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-box textarea:focus {
+    border-color: #e0e0e0;
+}
+
+/* Bottone di invio */
+.submit-btn {
+    background: #333333;
+    color: #ffffff;
+    border: none;
+    font-family: 'Consolas', monospace;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #444444;
+}
+
+/* LOGICA DELLE STELLE IN CSS (Al contrario per via del selettore fluttuante) */
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.stars input {
+    display: none; /* Nasconde i radio button reali */
+}
+
+.stars label {
+    font-size: 1.8rem;
+    color: #333333; /* Stella spenta */
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0;
+}
+
+/* Quando passi il mouse o selezioni, colora la stella e quelle precedenti */
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #ffffff; /* Stella accesa (Bianca in scala di grigi) */
+}
+
+/* ==========================================================================
+   ANIMAZIONE DELLE RECENSIONI (INFINITE TICKER)
+   ========================================================================== */
+
+.reviews-ticker-container {
+    background: #141414;
+    border: 1px solid #2d2d2d;
+    overflow: hidden; /* Nasconde le recensioni che escono dal bordo */
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Il nastro che si muove */
+.reviews-ticker {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scorriRecensioni 25s linear infinite;
+}
+
+/* Mettere in pausa l'animazione quando l'utente passa il mouse */
+.reviews-ticker-container:hover .reviews-ticker {
+    animation-play-state: paused;
+}
+
+/* Singola scheda recensione nel nastro */
+.review-card {
+    background: #0a0a0a;
+    border: 1px solid #2d2d2d;
+    padding: 20px;
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-stars {
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+    line-height: 1.4;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-size: 0.8rem;
+    color: #7a7a7a;
+    text-align: right;
+}
+
+/* Keyframes per lo scorrimento infinito orizzontale */
+@keyframes scorriRecensioni {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Si sposta esattamente della larghezza delle prime 4 card + gap */
+        transform: translateX(calc(-320px * 4)); 
+    }
+}
+
+/* per le "animazioni" mi sono OVVIAMENTE
+fatto aiutare dato che non'e materiale trattato,
+si impara anche cosi', con i mezzi odirni attuali;
+anzi i tutorial web hanno sempre aiutato da anni. */

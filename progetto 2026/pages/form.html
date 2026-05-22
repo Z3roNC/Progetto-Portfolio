@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recensioni - Portfolio di Alex</title>
+    <link rel="stylesheet" href="../CSS/style_f.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Alex [Portfolio]</span>
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="informatica.html">Informatica</a></li>
+                <li><a href="tlc.html">TLC</a></li>
+                <li><a href="sistemi.html">Sistemi</a></li>                
+                <li><a href="tpsi.html">TPSI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Lascia una Recensione</h1>
+    </header>
+
+    <main class="container">
+        
+        <section class="materia-card">
+            <div class="materia-header">
+                <!-- <h2>Lascia una Recensione</h2> -->
+            </div>
+            <br><br><br>
+            
+            <div class="form-box">
+                <form action="#" method="POST" onsubmit="return false;">
+                    
+                    <div class="rating-wrapper">
+                        <label>La tua valutazione:</label>
+                        <div class="stars">
+                            <input type="radio" name="rating" id="star-5" value="5">
+                            <label for="star-5" class="star">&#9733;</label>
+                            
+                            <input type="radio" name="rating" id="star-4" value="4">
+                            <label for="star-4" class="star">&#9733;</label>
+                            
+                            <input type="radio" name="rating" id="star-3" value="3">
+                            <label for="star-3" class="star">&#9733;</label>
+                            
+                            <input type="radio" name="rating" id="star-2" value="2">
+                            <label for="star-2" class="star">&#9733;</label>
+                            
+                            <input type="radio" name="rating" id="star-1" value="1" required>
+                            <label for="star-1" class="star">&#9733;</label>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="commento">Il tuo commento (max 300 caratteri):</label>
+                        <textarea id="commento" name="commento" rows="5" maxlength="300" placeholder="Scrivi qui cosa ne pensi del progetto..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Invia Recensione</button>
+                </form>
+            </div>
+        </section><br><br><br>
+
+        <section class="materia-card" id="recensioni">
+            <div class="materia-header">
+                <h2>Ultime Recensioni <span>Live</span></h2>
+            </div>
+            
+            <div class="reviews-ticker-container">
+                <div class="reviews-ticker">
+                    
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9734;&#9734;&#9734;&#9734;</div>
+                        <p class="review-text">"Non mi piace lo stile in bianco e nero, mette tristezza. Inoltre lo spoiler mode mi confonde, preferisco vedere subito tutto il testo."</p>
+                        <span class="review-author">- HaterAnonimo</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        <p class="review-text">"Il sito è molto leggero e si naviga bene. Peccato che manchi un vero database per salvare le cose, ma come progetto frontend fa il suo."</p>
+                        <span class="review-author">- Studente_Info</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"Capolavoro assoluto! La grafica monocromatica con font Consolas dà un effetto 'terminale/hacker' pazzesco. Animazioni fluidissime."</p>
+                        <span class="review-author">- Prof_Valutatore</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9734;&#9734;&#9734;</div>
+                        <p class="review-text">"Bello il layout della griglia, ma sul mio telefono vecchio si vede tutto troppo stretto e faccio fatica a cliccare sui box delle UDA."</p>
+                        <span class="review-author">- User99</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <p class="review-text">"Ottima organizzazione delle materie e delle ore. Molto utile il bottone per tornare in cima alla pagina. Pulito e minimale."</p>
+                        <span class="review-author">- AlexFan</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        <p class="review-text">"Nella media. L'idea dello spoiler-mode automatico è carina, ma avrei preferito qualche colore in più invece del grigio totale."</p>
+                        <span class="review-author">- CriticoWeb</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <p class="review-text">"Codice scritto molto bene e senza fronzoli. Ottimo utilizzo delle CSS Grid per la sezione UDA. Complimenti per il lavoro."</p>
+                        <span class="review-author">- Dev_Senior</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#" class="top-btn">↑</a>
+
+    <footer>
+        <p>Ovviamente le recensioni sono Joke Reviews...</p>
+        <br><br>
+        <p>&copy; 2026 Alex - Portfolio [Capolavoro]</a></p>
+        <br><br>
+        <p>[...manca un database con il quale interagire per poter farele reali.]</p>
+    </footer>
+
+</body>
+</html>

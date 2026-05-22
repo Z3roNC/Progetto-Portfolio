@@ -1,0 +1,175 @@
+/* New Home - Green Dark Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Corretto refuso di sintassi */
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Consolas', monospace; 
+    background: #0b0f0c; /* Sfondo principale: Nero/Verde scurissimo */
+    color: #cbd5e1; /* Testo principale: Grigio chiaro neutro */
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar { 
+    position: sticky; top: 0; z-index: 1000; 
+    background: #121814; /* Sfondo navbar leggermente più chiaro del body */
+    border-bottom: 1px solid #223126; /* Bordo verde scuro descrescente */
+    padding: 15px 0; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; 
+}
+
+.navbar a {
+    color: #4ade80; /* Link: Verde brillante ben visibile */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold; 
+}
+
+/* Stile per l'Header Hero della pagina della materia */
+.hero {
+    background: rgba(11, 21, 36, 0.15); /* Sfondo del box blu scuro opaco al 15% */
+    border: 1px solid #1e2d42;          /* Contorno del box in blu navy scuro */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    
+}
+
+/* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
+.hero h1 {
+    font-size: 3.5rem;                   /* Reso più grande per valorizzare l'effetto */
+    font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
+    color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
+    
+    /* Crea il contorno del font con il colore azzurro/blu principale */
+    -webkit-text-stroke: 2px #34d399;    
+    text-stroke: 2px #34d399;            
+    
+    letter-spacing: 4px;                 /* Spaziatura tra le lettere stile cyberpunk */
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #cbd5e1;                      /* Sottotitolo azzurro ghiaccio chiaro */
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Header Materia Centrato */
+.materia-header { 
+    background: #19221b; /* Sfondo header verde/grigio scuro */
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 2px solid #2ecc71; /* Linea d'accento verde smeraldo */
+    gap: 15px;
+}
+
+.materia-header h2 {
+    color: #f0fdf4; /* Titolo principale: Bianco con punta di verde */
+    text-align: center;
+}
+
+.materia-header span {
+    color: #718096; /* Testo secondario */
+    font-size: 1rem;
+}
+
+/* Griglia UDA */
+.uda-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    background: #223126; /* Spessore dei bordi della griglia (verde scuro) */
+    gap: 1px;
+}
+
+.uda-box { 
+    background: #121814; /* Box interno scuro */
+    padding: 25px; 
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.uda-box:hover {
+    background: #19221b; /* Schiarimento al passaggio del mouse */
+}
+
+.uda-box h4, .uda-box h3 {
+    color: #4ade80; /* Titolo della scheda verde brillante */
+    transition: 0.3s;
+}
+
+/* LOGICA SPOILER AUTOMATICA */
+.spoiler-mode .uda-box p, h2 span {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #a7f3d0; /* Testo dello spoiler: Verde menta chiaro e leggibile */
+    font-size: 0.85rem;
+}
+
+.spoiler-mode .uda-box:hover p {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.spoiler-mode .uda-box:hover h4 {
+    transform: translateY(-5px);
+}
+
+/* Bottone Top */
+.top-btn { 
+    position: fixed; bottom: 25px; right: 25px; 
+    background: #15803d; /* Verde bottone scuro "cyber/terminal" */
+    color: white; width: 45px; height: 45px;
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 5px; text-decoration: none; font-weight: bold;
+    transition: background 0.2s;
+}
+
+.top-btn:hover {
+    background: #16a34a; /* Si illumina leggermente all'hover */
+}
+
+footer { 
+    text-align: center;
+    padding: 40px 0; 
+    color: #526356; /* Testo footer verde oliva spento */
+}
+
+footer a{ 
+    color: #15803d;
+    text-decoration-line: none;
+}
+
+footer a:hover{ 
+    color: #16a34a;
+}
