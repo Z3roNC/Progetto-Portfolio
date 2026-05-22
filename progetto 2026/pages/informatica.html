@@ -912,168 +912,259 @@
         #bottone-principale { border-radius: 5px; }
     </code></pre>
             </section>
-
-
-            <!-- arrivato qua a sistemare layout scalato male -->
-
-                    <section>
+            <section>
                 <h4>12. Selettori di Parentela e Combinatori</h4>
                 <p>
                     I combinatori permettono di affinare la mira dei selettori CSS combinando più tag in base 
                     alla loro posizione gerarchica all'interno dell'albero del DOM:
                 </p><br>
                 <ul>
-                    <li><strong>Selettore Discendente (Spazio vuoto):</strong> Punta a tutti gli elementi che si trovano ovunque all'interno del tag genitore, anche se molto nidificati (es. <code>div p</code> seleziona tutti i paragrafi che stanno dentro a un div).</li>
-                    <li><strong>Selettore Figlio Diretto (<code>&gt;</code>):</strong> Intercetta esclusivamente gli elementi che sono figli di primo livello del genitore (es. <code>ul &gt; li</code> intercetta solo i list item immediati, ignorando eventuali sottoliste nidificate).</li>
-                    <li><strong>Selettore Fratello Adiacente (<code>+</code>):</strong> Seleziona l'elemento immediatamente successivo che si trova sullo stesso livello di parentela (es. <code>h1 + p</code> applica lo stile solo al primo paragrafo che segue subito un titolo).</li>
-                </ul>
-                <br>
-                <pre class="code-block"><code>/* Solo i paragrafi figli diretti del div */
+                    <li><strong>Selettore Discendente (Spazio vuoto):</strong> Punta a tutti gli elementi che si trovano ovunque 
+                        all'interno del tag genitore, anche se molto nidificati (es. <code>div p</code> seleziona tutti i paragrafi che stanno dentro a un div).</li>
+                    <li><strong>Selettore Figlio Diretto (<code>&gt;</code>):</strong> Intercetta esclusivamente gli elementi 
+                        che sono figli di primo livello del genitore (es. <code>ul &gt; li</code> intercetta solo i list item 
+                        immediati, ignorando eventuali sottoliste nidificate).</li>
+                    <li><strong>Selettore Fratello Adiacente (<code>+</code>):</strong> Seleziona l'elemento immediatamente 
+                        successivo che si trova sullo stesso livello di parentela (es. <code>h1 + p</code> applica lo stile 
+                        solo al primo paragrafo che segue subito un titolo).</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        /* Solo i paragrafi figli diretti del div */
         div &gt; p { margin-bottom: 20px; }
 
         /* Il paragrafo subito dopo un h2 */
-        h2 + p { font-weight: bold; }</code></pre>
+        h2 + p { font-weight: bold; }
+    </code></pre>
             </section>
 
             <section>
                 <h4>13. Pseudo-classi e Pseudo-elementi</h4>
-                <p>Le pseudo-classi e gli pseudo-elementi introducono astrazioni per intercettare stati dinamici dell'interfaccia o porzioni specifiche di testo senza aggiungere classi artificiali nell'HTML.</p>
-                <br>
+                <p>
+                    Le pseudo-classi e gli pseudo-elementi introducono astrazioni per intercettare stati dinamici 
+                    dell'interfaccia o porzioni specifiche di testo senza aggiungere classi artificiali nell'HTML.
+                </p><br>
                 
                 <h5>13.1 Le Pseudo-classi (Stati dinamici)</h5>
-                <p>Si identificano con un singolo due punti (<code>:</code>) e modificano lo stile di un elemento quando si trova in una determinata condizione:</p>
+                <p>
+                    Si identificano con un singolo due punti (<code>:</code>) e modificano lo stile di un 
+                    elemento quando si trova in una determinata condizione:
+                </p>
                 <ul>
-                    <li><code>:hover</code>: Si attiva quando l'utente passa il cursore del mouse sopra l'elemento (fondamentale per bottoni e link).</li>
-                    <li><code>:focus</code>: Si attiva quando un elemento riceve l'attenzione del sistema, ad esempio quando si clicca dentro un campo di input per digitare.</li>
-                    <li><code>:nth-child(n)</code>: Permette di selezionare un figlio specifico in base alla sua posizione numerica (es. per colorare le righe alterne di una tabella).</li>
-                </ul>
-                <br>
+                    <li><code>:hover</code>: Si attiva quando l'utente passa il cursore del mouse sopra l'elemento 
+                        (fondamentale per bottoni e link).</li>
+                    <li><code>:focus</code>: Si attiva quando un elemento riceve l'attenzione del sistema, ad esempio 
+                        quando si clicca dentro un campo di input per digitare.</li>
+                    <li><code>:nth-child(n)</code>: Permette di selezionare un figlio specifico in base alla sua 
+                        posizione numerica (es. per colorare le righe alterne di una tabella).</li>
+                </ul><br>
 
                 <h5>13.2 Gli Pseudo-elementi (Porzioni strutturali)</h5>
-                <p>Si identificano convenzionalmente con il doppio due punti (<code>::</code>) e creano elementi virtuali o isolano parti specifiche:</p>
+                <p>
+                    Si identificano convenzionalmente con il doppio due punti (<code>::</code>) 
+                    e creano elementi virtuali o isolano parti specifiche:
+                </p>
                 <ul>
-                    <li><code>::before</code> e <code>::after</code>: Consentono di iniettare contenuti decorativi grafici subito prima o subito dopo il contenuto reale di un tag, agendo via CSS.</li>
-                    <li><code>::first-letter</code>: Isola la prima lettera di un blocco di testo per creare un effetto capolettera tipografico.</li>
-                </ul>
-                <br>
-                <pre class="code-block"><code>/* Effetto hover sul bottone */
+                    <li><code>::before</code> e <code>::after</code>: Consentono di iniettare contenuti decorativi 
+                        grafici subito prima o subito dopo il contenuto reale di un tag, agendo via CSS.</li>
+                    <li><code>::first-letter</code>: Isola la prima lettera di un blocco di testo 
+                        per creare un effetto capolettera tipografico.</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        /* Effetto hover sul bottone */
         .btn:hover { background-color: #0056b3; }
 
         /* Input evidenziato durante la digitazione */
-        input:focus { border: 2px solid #007bff; }</code></pre>
+        input:focus { border: 2px solid #007bff; }
+    </code></pre>
             </section>
 
             <section>
                 <h4>14. Il Meccanismo della Cascata e l'Ereditarietà</h4>
-                <p>Il nome <em>Cascading Style Sheets</em> deriva dal fatto che le regole stilistiche fluiscono dall'alto verso il basso della gerarchia. Molte proprietà (come i font e i colori del testo) vengono trasmesse per <strong>ereditarietà</strong> dai nodi genitori ai figli, a meno che non intervenga una regola più specifica a sovrascriverle.</p>
-                <p>Quando più selettori si contendono lo stile dello stesso identico tag, il browser risolve il conflitto applicando la regola con il valore di <strong>specificità</strong> più alto, calcolato secondo un punteggio geometrico standardizzato (Tag = 1 punto, Classe = 10 punti, ID = 100 punti, Stile in linea = 1000 punti).</p>
+                <p>
+                    Il nome <em>Cascading Style Sheets</em> deriva dal fatto che le regole stilistiche fluiscono 
+                    dall'alto verso il basso della gerarchia. Molte proprietà (come i font e i colori del testo) 
+                    vengono trasmesse per <strong>ereditarietà</strong> dai nodi genitori ai figli, a meno che 
+                    non intervenga una regola più specifica a sovrascriverle.
+                </p>
+                <p>
+                    Quando più selettori si contendono lo stile dello stesso identico tag, il browser risolve 
+                    il conflitto applicando la regola con il valore di <strong>specificità</strong> più alto, 
+                    calcolato secondo un punteggio geometrico standardizzato 
+                    (Tag = 1 punto, Classe = 10 punti, ID = 100 punti, Stile in linea = 1000 punti).
+                </p>
             </section>
 
             <section>
                 <h4>15. Gestione del Colore nel CSS3</h4>
-                <p>Il CSS3 offre diverse metodologie per definire i colori degli elementi (testo, sfondi, bordi), permettendo di passare da dichiarazioni semplici a configurazioni avanzate con trasparenze:</p>
-                <br>
+                <p>
+                    Il CSS3 offre diverse metodologie per definire i colori degli elementi (testo, sfondi, bordi), 
+                    permettendo di passare da dichiarazioni semplici a configurazioni avanzate con trasparenze:
+                </p><br>
                 <ul>
-                    <li><strong>Sintassi Esadecimale (HEX):</strong> Rappresentata da un cancelletto (<code>#</code>) seguito da sei caratteri alfanumerici (0-9, A-F) divisi in tre coppie, che indicano rispettivamente l'intensità di Rosso, Verde e Blu (es. <code>#FF0000</code> è rosso puro).</li>
-                    <li><strong>Sintassi RGB / RGBA:</strong> Modello additivo basato sui tre colori primari espressi con valori da 0 a 255. La variante <strong>RGBA</strong> introduce un quarto parametro, il canale <em>Alpha</em> (da 0.0 a 1.0), che governa il livello di opacità e trasparenza.</li>
-                    <li><strong>Sintassi HSL / HSLA:</strong> Modello intuitivo basato su tre parametri: <em>Hue</em> (Tonalità espressa in gradi da 0 a 360 sulla ruota dei colori), <em>Saturation</em> (Saturazione in percentuale) e <em>Lightness</em> (Luminosità in percentuale). Anche qui la variante <strong>HSLA</strong> supporta il canale Alpha.</li>
-                </ul>
-                <br>
-                <pre class="code-block"><code>/* Esempi di colore di sfondo equivalenti */
+                    <li><strong>Sintassi Esadecimale (HEX):</strong> Rappresentata da un cancelletto (<code>#</code>) 
+                        seguito da sei caratteri alfanumerici (0-9, A-F) divisi in tre coppie, che indicano 
+                        rispettivamente l'intensità di Rosso, Verde e Blu (es. <code>#FF0000</code> è rosso puro).</li>
+                    <li><strong>Sintassi RGB / RGBA:</strong> Modello additivo basato sui tre colori primari espressi 
+                        con valori da 0 a 255. La variante <strong>RGBA</strong> introduce un quarto parametro, 
+                        il canale <em>Alpha</em> (da 0.0 a 1.0), che governa il livello di opacità e trasparenza.</li>
+                    <li><strong>Sintassi HSL / HSLA:</strong> Modello intuitivo basato su tre parametri: 
+                        <em>Hue</em> (Tonalità espressa in gradi da 0 a 360 sulla ruota dei colori), <em>Saturation</em> 
+                        (Saturazione in percentuale) e <em>Lightness</em> (Luminosità in percentuale). 
+                        Anche qui la variante <strong>HSLA</strong> supporta il canale Alpha.</li>
+                </ul><br>
+                <pre class="code-block">
+    <code>
+        /* Esempi di colore di sfondo equivalenti */
         .box-colore {
             background-color: #3498db; /* Esadecimale */
             background-color: rgb(52, 152, 219); /* RGB */
             background-color: rgba(52, 152, 219, 0.8); /* RGBA con trasparenza al 80% */
             background-color: hsl(204, 70%, 53%); /* HSL */
-        }</code></pre>
+        }
+    </code></pre>
             </section>
 
             <section>
                 <h4>16. Tipografia e Font Web</h4>
-                <p>La gestione dei testi si affida a proprietà specifiche che controllano lo stile, la dimensione e la famiglia tipografica. Nella definizione dei font è essenziale indicare sempre una <strong>font family di fallback</strong> (di riserva), in modo che il browser sappia cosa mostrare qualora il font principale non fosse installato sul computer dell'utente.</p>
-                <br>
+                <p>
+                    La gestione dei testi si affida a proprietà specifiche che controllano lo stile, la 
+                    dimensione e la famiglia tipografica. Nella definizione dei font è essenziale indicare sempre 
+                    una <strong>font family di fallback</strong> (di riserva), in modo che il browser sappia 
+                    cosa mostrare qualora il font principale non fosse installato sul computer dell'utente.
+                </p><br>
                 
                 <h5>16.1 Famiglie di Caratteri Generiche</h5>
                 <ul>
-                    <li><strong>Serif:</strong> Caratteri provvisti di "grazie" o allungamenti alle estremità (es. Times New Roman), adatti alla stampa cartacea.</li>
-                    <li><strong>Sans-Serif:</strong> Caratteri lineari, puliti e privi di grazie (es. Arial, Helvetica), ideali per la lettura su schermi digitali.</li>
-                    <li><strong>Monospace:</strong> Caratteri in cui ogni singola lettera occupa esattamente lo stesso spazio orizzontale (es. Courier, Consolas), utilizzati universalmente nei blocchi di codice.</li>
-                </ul>
-                <br>
+                    <li><strong>Serif:</strong> Caratteri provvisti di "grazie" o allungamenti alle estremità 
+                        (es. Times New Roman), adatti alla stampa cartacea.</li>
+                    <li><strong>Sans-Serif:</strong> Caratteri lineari, puliti e privi di grazie 
+                        (es. Arial, Helvetica), ideali per la lettura su schermi digitali.</li>
+                    <li><strong>Monospace:</strong> Caratteri in cui ogni singola lettera occupa esattamente 
+                        lo stesso spazio orizzontale (es. Courier, Consolas), utilizzati universalmente nei blocchi di codice.</li>
+                </ul><br>
 
                 <h5>16.2 Proprietà Tipografiche Fondamentali</h5>
                 <p>Le regole di formattazione del testo includono controlli geometrici precisi per migliorare la leggibilità dell'interfaccia:</p>
                 <ul>
                     <li><code>font-size</code>: Determina la dimensione del carattere.</li>
-                    <li><code>font-weight</code>: Regola lo spessore della linea (es. <code>bold</code> per il grassetto o valori numerici come <code>400</code> per il regular e <code>700</code> per il bold).</li>
+                    <li><code>font-weight</code>: Regola lo spessore della linea (es. <code>bold</code> 
+                        per il grassetto o valori numerici come <code>400</code> per il regular e <code>700</code> per il bold).</li>
                     <li><code>line-height</code>: Imposta l'interlinea, ovvero lo spazio verticale tra le righe di uno stesso paragrafo.</li>
                     <li><code>text-align</code>: Allinea il testo a sinistra, a destra, al centro o giustificato.</li>
                 </ul>
                 <br>
-                <pre class="code-block"><code>.articolo-testo {
+                <pre class="code-block">
+    <code>
+        .articolo-testo {
             font-family: 'Roboto', Helvetica, Arial, sans-serif;
             font-size: 1.1rem;
             font-weight: 400;
             line-height: 1.6;
             text-align: justify;
-        }</code></pre>
+        }
+    </code></pre>
             </section>
 
             <section>
                 <h4>17. Il CSS Box Model: La Struttura Visiva degli Elementi</h4>
-                <p>Per disporre correttamente i componenti nello spazio e creare interfacce strutturate, è indispensabile comprendere la regola d'oro del rendering web: <strong>ogni singolo elemento presente nella pagina è considerato dal browser come una scatola rettangolare invisibile</strong>.</p>
-                <p>Questa scatola (Box) è composta da quattro strati concentrici che si influenzano geometricamente a vicenda:</p>
+                <p>
+                    Per disporre correttamente i componenti nello spazio e creare interfacce strutturate, 
+                    è indispensabile comprendere la regola d'oro del rendering web: <strong>ogni singolo elemento
+                        presente nella pagina è considerato dal browser come una scatola rettangolare invisibile</strong>.
+                    </p>
+                <p>
+                    Questa scatola (Box) è composta da quattro strati concentrici che si influenzano geometricamente a vicenda:
+                </p>
                 
                 
                 <br>
                 <ul>
-                    <li><strong>Content Area:</strong> L'area centrale più interna che ospita il contenuto effettivo del tag (testo, immagini o altri tag figli). Le sue dimensioni possono essere forzate tramite le proprietà <code>width</code> (larghezza) e <code>height</code> (altezza).</li>
-                    <li><strong>Padding (Spaziatura interna):</strong> Cuscinetto di spazio vuoto e trasparente situato tra il contenuto e il bordo dell'elemento. Serve a far "respirare" i testi evitando che collidano con i margini della scatola. Prende il colore di sfondo dell'elemento stesso.</li>
-                    <li><strong>Border (Bordo):</strong> La linea perimetrale che racchiude il contenuto e il padding. Può essere personalizzata in spessore, stile e colore (es. <code>border: 2px solid #333;</code>).</li>
-                    <li><strong>Margin (Margine esterno):</strong> Spazio vuoto posizionato al di fuori del bordo. Viene utilizzato per distanziare l'elemento corrente dalle altre scatole adiacenti presenti nella pagina. È sempre completamente trasparente.</li>
+                    <li><strong>Content Area:</strong> L'area centrale più interna che ospita il contenuto effettivo del 
+                        tag (testo, immagini o altri tag figli). Le sue dimensioni possono essere forzate tramite le 
+                        proprietà <code>width</code> (larghezza) e <code>height</code> (altezza).</li>
+                    <li><strong>Padding (Spaziatura interna):</strong> Cuscinetto di spazio vuoto e trasparente situato tra 
+                        il contenuto e il bordo dell'elemento. Serve a far "respirare" i testi evitando che collidano 
+                        con i margini della scatola. Prende il colore di sfondo dell'elemento stesso.</li>
+                    <li><strong>Border (Bordo):</strong> La linea perimetrale che racchiude il contenuto e il padding. 
+                        Può essere personalizzata in spessore, stile e colore (es. <code>border: 2px solid #333;</code>).</li>
+                    <li><strong>Margin (Margine esterno):</strong> Spazio vuoto posizionato al di fuori del bordo. 
+                        Viene utilizzato per distanziare l'elemento corrente dalle altre scatole adiacenti presenti nella pagina. 
+                        È sempre completamente trasparente.</li>
                 </ul>
             </section>
 
             <section>
                 <h4>18. Controllo Avanzato delle Dimensioni: Box-Sizing</h4>
-                <p>Di default, il browser calcola lo spazio totale occupato da un elemento sommando: <em>Larghezza del contenuto + Padding + Bordo</em>. Questo significa che se impostiamo un blocco a <code>width: 300px;</code> e successivamente aggiungiamo 20px di padding, la larghezza reale diventerà di 340px, scombinando i calcoli del layout.</p>
-                <p>Per azzerare questo comportamento e rendere i calcoli intuitivi, i professionisti applicano un reset globale tramite il selettore universale (<code>*</code>), forzando la proprietà <code>box-sizing: border-box;</code>. In questo modo, padding e bordi vengono assorbiti all'interno della larghezza impostata.</p>
-                <br>
-                <pre class="code-block"><code>/* Reset Globale Professionale del Box Model */
+                <p>Di default, il browser calcola lo spazio totale occupato da un elemento sommando: <em>Larghezza del 
+                    contenuto + Padding + Bordo</em>. Questo significa che se impostiamo un blocco a <code>width: 300px;</code> 
+                    e successivamente aggiungiamo 20px di padding, la larghezza reale diventerà di 340px, scombinando i calcoli del layout.</p>
+                <p>Per azzerare questo comportamento e rendere i calcoli intuitivi, i professionisti applicano un reset 
+                    globale tramite il selettore universale (<code>*</code>), forzando la proprietà <code>box-sizing: border-box;</code>. 
+                    In questo modo, padding e bordi vengono assorbiti all'interno della larghezza impostata.</p><br>
+                <pre class="code-block">
+    <code>
+        /* Reset Globale Professionale del Box Model */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }</code></pre>
+        }
+    </code></pre>
             </section>
 
             <section>
                 <h4>19. I Meccanismi di Posizionamento (Position)</h4>
-                <p>La proprietà <code>position</code> permette di deviare un elemento dal normale flusso lineare della pagina per collocarlo in punti specifici dello schermo dello smartphone o del computer:</p>
-                <br>
+                <p>
+                    La proprietà <code>position</code> permette di deviare un elemento dal normale flusso lineare della 
+                    pagina per collocarlo in punti specifici dello schermo dello smartphone o del computer:
+                </p><br>
                 <ul>
-                    <li><strong>Static (Predefinito):</strong> L'elemento segue il normale flusso documentale della pagina, posizionandosi uno dopo l'altro dall'alto verso il basso.</li>
-                    <li><strong>Relative:</strong> L'elemento viene spostato rispetto alla sua posizione originaria nel flusso tramite le coordinate <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>, lasciando però intatto lo spazio vuoto dove si trovava prima.</li>
-                    <li><strong>Absolute:</strong> L'elemento si sgancia totalmente dal flusso della pagina (gli altri elementi si comportano come se non esistesse) e si ancora rispetto al primo elemento genitore che possiede a sua volta un posizionamento diverso da static.</li>
-                    <li><strong>Fixed:</strong> Il blocco si ancora rigidamente alle coordinate della finestra del browser e rimane bloccato nello stesso punto dello schermo anche quando l'utente scorre la pagina (es. i menu di navigazione sempre visibili in alto).</li>
+                    <li><strong>Static (Predefinito):</strong> L'elemento segue il normale flusso documentale della pagina,
+                        posizionandosi uno dopo l'altro dall'alto verso il basso.</li>
+                    <li><strong>Relative:</strong> L'elemento viene spostato rispetto alla sua posizione originaria nel 
+                        flusso tramite le coordinate <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>,
+                        lasciando però intatto lo spazio vuoto dove si trovava prima.</li>
+                    <li><strong>Absolute:</strong> L'elemento si sgancia totalmente dal flusso della pagina (gli altri
+                        elementi si comportano come se non esistesse) e si ancora rispetto al primo elemento genitore
+                        che possiede a sua volta un posizionamento diverso da static.</li>
+                    <li><strong>Fixed:</strong> Il blocco si ancora rigidamente alle coordinate della finestra del
+                        browser e rimane bloccato nello stesso punto dello schermo anche quando l'utente scorre la pagina
+                        (es. i menu di navigazione sempre visibili in alto).</li>
                 </ul>
             </section>
 
             <section>
                 <h4>20. Disposizione Monodimensionale: Il Motore Flexbox</h4>
-                <p>Nelle prime fasi storiche dello sviluppo web, allineare due elementi l'uno di fianco all'altro richiedeva l'uso di stratagemmi complessi e fragili (come i vecchi float). Oggi, per gestire la disposizione degli elementi lungo un unico asse (una riga orizzontale o una colonna verticale), si utilizza lo standard potente denominato <strong>Flexbox (Flexible Box Layout)</strong>.</p>
-                <p>Il sistema si attiva applicando la proprietà <code>display: flex;</code> su un elemento contenitore padre (chiamato <strong>Flex Container</strong>). Da quel momento, tutti gli elementi situati direttamente al suo interno (<strong>Flex Items</strong>) diventano flessibili, si dispongono automaticamente in linea ed evitano collisioni.</p>
-                <br>
+                <p>
+                    Nelle prime fasi storiche dello sviluppo web, allineare due elementi l'uno di fianco all'altro richiedeva
+                    l'uso di stratagemmi complessi e fragili (come i vecchi float). Oggi, per gestire la disposizione degli
+                    elementi lungo un unico asse (una riga orizzontale o una colonna verticale), si utilizza lo standard potente
+                    denominato <strong>Flexbox (Flexible Box Layout)</strong>.
+                </p>
+                <p>
+                    Il sistema si attiva applicando la proprietà <code>display: flex;</code> su un elemento contenitore padre
+                    (chiamato <strong>Flex Container</strong>). Da quel momento, tutti gli elementi situati direttamente al suo interno 
+                    (<strong>Flex Items</strong>) diventano flessibili, si dispongono automaticamente in linea ed evitano collisioni.
+                </p><br>
                 
                 <h5>20.1 Proprietà del Contenitore Flex</h5>
                 <ul>
-                    <li><code>flex-direction</code>: Definisce l'orientamento dell'asse principale (<code>row</code> per disporre i figli in orizzontale, <code>column</code> per disporre i figli in verticale).</li>
-                    <li><code>justify-content</code>: Distribuisce lo spazio vuoto lungo l'asse orizzontale (es. <code>space-between</code> spinge il primo elemento a sinistra e l'ultimo a destra; <code>center</code> raggruppa tutto al mezzo).</li>
-                    <li><code>align-items</code>: Governa l'allineamento verticale dei componenti (es. <code>center</code> per centrarli perfettamente in altezza).</li>
-                    <li><code>gap</code>: Definisce uno spazio nativo di separazione fisso tra un elemento e l'altro, senza dover ricorrere ai margini esterni sui figli.</li>
+                    <li><code>flex-direction</code>: Definisce l'orientamento dell'asse principale (<code>row</code> 
+                        per disporre i figli in orizzontale, <code>column</code> per disporre i figli in verticale).</li>
+                    <li><code>justify-content</code>: Distribuisce lo spazio vuoto lungo l'asse orizzontale 
+                        (es. <code>space-between</code> spinge il primo elemento a sinistra e l'ultimo 
+                        a destra; <code>center</code> raggruppa tutto al mezzo).</li>
+                    <li><code>align-items</code>: Governa l'allineamento verticale dei componenti 
+                        (es. <code>center</code> per centrarli perfettamente in altezza).</li>
+                    <li><code>gap</code>: Definisce uno spazio nativo di separazione fisso tra un 
+                        elemento e l'altro, senza dover ricorrere ai margini esterni sui figli.</li>
                 </ul>
                 <br>
-                <pre class="code-block"><code>/* Esempio di una barra di navigazione flessibile */
+                <pre class="code-block">
+    <code>
+        /* Esempio di una barra di navigazione flessibile */
         .barra-navigazione {
             display: flex;
             flex-direction: row;
@@ -1082,34 +1173,65 @@
             gap: 20px;
             background-color: #1a2e40;
             padding: 10px 20px;
-        }</code></pre>
-                <br>
+        }
+    </code></pre><br>
                 <h5>20.2 Flessibilità dei Singoli Componenti</h5>
-                <p>Oltre a controllare il contenitore, è possibile assegnare proprietà specifiche ai singoli elementi figli. La proprietà <code>flex: 1;</code> comunicata a un blocco indica al browser di consentire a quel determinato componente di espandersi fino a occupare tutto lo spazio vuoto residuo all'interno della riga, comprimendo gli altri elementi al loro ingombro minimo iniziale.</p>
+                <p>
+                    Oltre a controllare il contenitore, è possibile assegnare proprietà specifiche ai singoli elementi figli.
+                    La proprietà <code>flex: 1;</code> comunicata a un blocco indica al browser di consentire a quel
+                    determinato componente di espandersi fino a occupare tutto lo spazio vuoto residuo all'interno
+                    della riga, comprimendo gli altri elementi al loro ingombro minimo iniziale.
+                </p>
             </section>
 
             <section>
                 <h4>21. Disposizione Bidimensionale: Il CSS Grid Layout</h4>
-                <p>Se Flexbox è lo strumento ideale per gestire elementi disposti lungo un unico asse, lo sviluppo di interfacce complesse richiede un controllo totale su <strong>due dimensioni contemporaneamente: le righe e le colonne</strong>. A questo scopo risponde lo standard <strong>CSS Grid Layout</strong>, un motore di rendering che permette di tracciare una vera e propria griglia geometrica sopra la pagina.</p>
-                <p>Si attiva impostando <code>display: grid;</code> sul contenitore e definendo la struttura dei binari geometrici tramite le proprietà <code>grid-template-columns</code> e <code>grid-template-rows</code>.</p>
-                <br>
-                <pre class="code-block"><code>/* Creazione di una griglia a 3 colonne simmetriche */
+                <p>
+                    Se Flexbox è lo strumento ideale per gestire elementi disposti lungo un unico asse, lo sviluppo di
+                    interfacce complesse richiede un controllo totale su <strong>due dimensioni contemporaneamente:
+                    le righe e le colonne</strong>. A questo scopo risponde lo standard <strong>CSS Grid Layout</strong>,
+                    un motore di rendering che permette di tracciare una vera e propria griglia geometrica sopra la pagina.
+                </p>
+                <p>
+                    Si attiva impostando <code>display: grid;</code> sul contenitore e definendo la struttura dei
+                    binari geometrici tramite le proprietà <code>grid-template-columns</code> e <code>grid-template-rows</code>.
+                </p><br>
+                <pre class="code-block">
+    <code>
+        /* Creazione di una griglia a 3 colonne simmetriche */
         .catalogo-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
-        }</code></pre>
+        }
+    </code></pre>
                 <br>
                 <h5>21.1 L'Unità di Misura Fractional (fr)</h5>
-                <p>L'unità di misura <code>fr</code> (fractional unit) rappresenta una delle innovazioni più significative del CSS moderno. Invece di vincolare le colonne a misure fisse in pixel, l'unità <code>1fr</code> indica al browser di dividere lo spazio totale disponibile in parti uguali. Se lo schermo dell'utente si allarga o si stringe, le colonne si espanderanno o comprimeranno in modo perfettamente proporzionale, preservando intatta la simmetria geometrica impostata.</p>
+                <p>
+                    L'unità di misura <code>fr</code> (fractional unit) rappresenta una delle innovazioni più significative 
+                    del CSS moderno. Invece di vincolare le colonne a misure fisse in pixel, l'unità <code>1fr</code> indica 
+                    al browser di dividere lo spazio totale disponibile in parti uguali. Se lo schermo dell'utente si allarga o si stringe, 
+                    le colonne si espanderanno o comprimeranno in modo perfettamente proporzionale, preservando intatta la simmetria geometrica impostata.
+                </p>
             </section>
 
             <section>
                 <h4>22. Responsive Web Design e l'Approccio Mobile-First</h4>
-                <p>Il <strong>Responsive Web Design (RWD)</strong> è la metodologia progettuale che permette alle interfacce di adattarsi in modo fluido e automatico a qualsiasi risoluzione dello schermo (smartphone, tablet, laptop o desktop). Il pilastro fondamentale di questa tecnica è la filosofia del <strong>Mobile-First</strong>: si sviluppa inizialmente lo stile lineare dedicato agli schermi più piccoli, per poi aggiungere progressivamente elementi di complessità visiva man mano che lo spazio a disposizione aumenta.</p>
-                <p>Questo controllo condizionale viene gestito nel foglio di stile attraverso le <strong>Media Queries</strong>, le quali intercettano la larghezza del viewport del dispositivo ed applicano regole dedicate oltre una certa soglia geometrica (detta <strong>Breakpoint</strong>).</p>
-                <br>
-                <pre class="code-block"><code>/* Stili base per Mobile (schermi piccoli) */
+                <p>
+                    Il <strong>Responsive Web Design (RWD)</strong> è la metodologia progettuale che permette alle interfacce 
+                    di adattarsi in modo fluido e automatico a qualsiasi risoluzione dello schermo (smartphone, tablet, laptop o desktop). 
+                    Il pilastro fondamentale di questa tecnica è la filosofia del <strong>Mobile-First</strong>: 
+                    si sviluppa inizialmente lo stile lineare dedicato agli schermi più piccoli, per poi aggiungere progressivamente 
+                    elementi di complessità visiva man mano che lo spazio a disposizione aumenta.
+                </p>
+                <p>
+                    Questo controllo condizionale viene gestito nel foglio di stile attraverso le <strong>Media Queries</strong>, 
+                    le quali intercettano la larghezza del viewport del dispositivo ed applicano regole dedicate 
+                    oltre una certa soglia geometrica (detta <strong>Breakpoint</strong>).
+                </p><br>
+                <pre class="code-block">
+    <code>
+        /* Stili base per Mobile (schermi piccoli) */
         .colonna {
             width: 100%;
         }
@@ -1131,26 +1253,39 @@
 
             <section>
                 <h4>23. Unità di Misura Relative e Scalabilità</h4>
-                <p>Per realizzare un'interfaccia flessibile e accessibile, i fogli di stile professionali evitano l'uso di unità di misura fisse e assolute (come i pixel per le dimensioni dei testi), preferendo le unità di misura relative:</p>
+                <p>
+                    Per realizzare un'interfaccia flessibile e accessibile, i fogli di stile professionali evitano l'uso di unità 
+                    di misura fisse e assolute (come i pixel per le dimensioni dei testi), preferendo le unità di misura relative:
+                </p>
                 <ul>
                     <li><strong>em:</strong> Relativo alla dimensione del carattere dell'elemento genitore diretto.</li>
-                    <li><strong>rem (root em):</strong> Relativo alla dimensione del font impostata sull'elemento radice <code>&lt;html&gt;</code> (di default pari a 16px). Garantisce che l'intero layout si ridimensioni proporzionalmente se l'utente modifica le impostazioni di accessibilità del proprio browser.</li>
-                    <li><strong>vw / vh (Viewport Width / Height):</strong> Unità basate sulla percentuale della finestra visibile del browser (es. <code>100vh</code> occupa esattamente il 100% dell'altezza dello schermo).</li>
+                    <li><strong>rem (root em):</strong> Relativo alla dimensione del font impostata sull'elemento radice 
+                        <code>&lt;html&gt;</code> (di default pari a 16px). Garantisce che l'intero layout si ridimensioni 
+                        proporzionalmente se l'utente modifica le impostazioni di accessibilità del proprio browser.</li>
+                    <li><strong>vw / vh (Viewport Width / Height):</strong> Unità basate sulla percentuale della finestra 
+                        visibile del browser (es. <code>100vh</code> occupa esattamente il 100% dell'altezza dello schermo).</li>
                 </ul>
             </section>
 
             <section>
                 <h4>24. Linee Guida e Buone Pratiche Professionali</h4>
-                <p>Per assicurare la massima qualità nello sviluppo di interfacce web, è fondamentale seguire tre regole metodologiche raccomandate dagli standard internazionali:</p>
-                <br>
+                <p>
+                    Per assicurare la massima qualità nello sviluppo di interfacce web, è fondamentale seguire 
+                    tre regole metodologiche raccomandate dagli standard internazionali:
+                </p><br>
                 <ul>
-                    <li><strong>Validità e Pulizia della Struttura:</strong> Ogni tag aperto deve essere chiuso correttamente nel giusto ordine di nidificazione. Il codice deve essere formattato in modo ordinato applicando un'indentazione coerente, riducendo drasticamente la presenza di bug sintattici.</li>
-                    <li><strong>Separazione Rigida delle Competenze:</strong> L'HTML deve descrivere unicamente il significato logico e la natura dei contenuti. L'aspetto estetico, le dimensioni e le proprietà cromatiche devono essere governate esclusivamente all'interno del file CSS, evitando l'uso di attributi di stile in linea.</li>
-                    <li><strong>Inclusione e Accessibilità Universale:</strong> Fornire sempre l'attributo <code>alt</code> descrittivo su tutte le immagini per consentire la navigazione tramite screen reader agli utenti ipovedenti, e garantire un contrasto cromatico sufficientemente elevato tra il testo e lo sfondo per facilitare la lettura in qualsiasi condizione di luce ambientale.</li>
+                    <li><strong>Validità e Pulizia della Struttura:</strong> Ogni tag aperto deve essere chiuso correttamente
+                        nel giusto ordine di nidificazione. Il codice deve essere formattato in modo ordinato applicando
+                        un'indentazione coerente, riducendo drasticamente la presenza di bug sintattici.</li>
+                    <li><strong>Separazione Rigida delle Competenze:</strong> L'HTML deve descrivere unicamente il significato
+                        logico e la natura dei contenuti. L'aspetto estetico, le dimensioni e le proprietà cromatiche devono essere 
+                        governate esclusivamente all'interno del file CSS, evitando l'uso di attributi di stile in linea.</li>
+                    <li><strong>Inclusione e Accessibilità Universale:</strong> Fornire sempre l'attributo <code>alt</code> 
+                        descrittivo su tutte le immagini per consentire la navigazione tramite screen reader agli utenti ipovedenti, 
+                        e garantire un contrasto cromatico sufficientemente elevato tra il testo e lo sfondo per 
+                        facilitare la lettura in qualsiasi condizione di luce ambientale.</li>
                 </ul>
             </section>
-
-
 
         </div><br><br><br> 
 
