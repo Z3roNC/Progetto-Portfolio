@@ -57,44 +57,188 @@
 
         <div class="uda-box" id="rappr">
 
+        <div class="uda-box" id="rappresentazione-info">
+
             <h3>Rappresentazione informazioni</h3>
-            <p>26 ore - Sistemi numerazione e codifica.</p><br>
+            <p>Sistemi di numerazione e codifica</p><br>
 
-        <div>
-                <h4>Topic 1.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
-        
-            <div>
-                <h4>Topic 2.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <p>
+                La comprensione dei meccanismi di astrazione logica che trasformano i fenomeni della realtà in flussi digitali 
+                rappresenta l'architrave computazionale della materia. Questa unità didattica analizza il passaggio dal dato grezzo 
+                fino alla codifica binaria ad alto livello, definendo i formalismi matematici usati dall'hardware per elaborare numeri, 
+                testi e valori relativi.
+            </p>
 
-            <div>
-                <h4>Topic 3.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>1. Il Concetto di Dato, Informazione e Codifica</h2>
+                <p>
+                    Nel dominio dell'informatica è cruciale separare l'elemento numerico o testuale statico dal significato 
+                    semantico acquisito tramite un processo di contestualizzazione:
+                </p>
+                <ul>
+                    <li><strong>Dato:</strong> Rappresentazione oggettiva, elementare e non interpretata della realtà,
+                        priva di contesto (es. la stringa di simboli "384400").</li>
+                    <li><strong>Informazione:</strong> La release concettuale derivata dall'elaborazione e dalla 
+                        contestualizzazione del dato, che rilascia nuova conoscenza (es. "384400 km è la distanza Terra-Luna").</li>
+                    <li><strong>Codifica:</strong> La regola formale (algoritmo o tabella di corrispondenza) per 
+                        associare univocamente un'informazione a una configurazione di simboli binarie comprensibili dalla macchina.</li>
+                </ul>
+            </section>
 
-            <div>
-                <h4>Topic 4.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>2. Sistemi di Numerazione Posizionali e Notazione Polinomiale</h2>
+                <p>
+                    I sistemi moderni utilizzano una logica posizionale in cui il peso quantitativo di ciascuna cifra è strettamente vincolato 
+                    dall'indice della sua posizione all'interno della stringa numerica. Ogni numero espresso in una base b può essere ricondotto 
+                    alla sua forma canonica mediante la <strong>Notazione Polinomiale</strong>:
+                </p>
+                
+                <div class="code-box">
+                    <div><strong>Forma Polinomiale Generale:</strong> <br><br>
+                         <span class="formula-highlight">N = c_n &middot; b^n + c_{n-1} &middot; b^{n-1} + ... + c_0 &middot; b^0 + c_{-1} &middot; b^{-1}</span></div>
+                </div>
+
+                <p>Le basi fondamentali analizzate ed implementate nell'architettura dei calcolatori sono:</p>
+                <ul>
+                    <li><strong>Base 2 (Sistema Binario):</strong> Utilizza i simboli {0, 1}. È l'alfabeto nativo 
+                        dei circuiti digitali a causa della stabilità elettrica degli stati "acceso/spento".</li>
+                    <li><strong>Base 8 (Sistema Ottale):</strong> Utilizza i simboli {0, 1, 2, 3, 4, 5, 6, 7}. 
+                        Riduce la lunghezza delle stringhe binarie raggruppandole a tre a tre.</li>
+                    <li><strong>Base 16 (Sistema Esadecimale):</strong> Utilizza i simboli {0-9} e le lettere 
+                        {A, B, C, D, E, F} per mappare i valori da 10 a 15. Permette una rappresentazione compatta dei byte (raggruppati a quattro a quattro).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Algoritmi di Conversione tra Basi</h2>
+                <p>
+                    Il trasferimento di un valore da una base arbitraria alla base decimale e viceversa si articola su due procedure 
+                    matematiche distinte a seconda della direzione del flusso:
+                </p>
+                
+                <ul class="lista-flex">
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/tps_conv_dec.png" alt="Schema Conversione verso Decimale">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Da Base b a Base 10:</strong> Si applica direttamente la sommatoria della notazione 
+                            polinomiale, moltiplicando ciascuna cifra per la base b elevata alla potenza della sua posizione d'indice.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/tps_conv_div.png" alt="Schema Conversione per Divisioni">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Da Base 10 a Base b:</strong> Si applica l'algoritmo delle divisioni successive per la base b target. 
+                            Il valore convertito viene ottenuto leggendo la sequenza dei resti in ordine inverso (dall'ultimo ottenuto al primo).
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Aritmetica Binaria e Rappresentazione dei Numeri Relativi</h2>
+                <p>
+                    L'ALU esegue le computazioni fondamentali applicando tavole algebriche elementari. Per ottimizzare l'hardware eliminando 
+                    il circuito logico di sottrazione, i numeri negativi vengono codificati tramite il formalismo del <strong>Complemento a 2 (C2)</strong>.
+                </p>
+
+                <div class="code-box code-box-green">
+                    <strong>Algoritmo per il Complemento a 2:</strong><br>
+                    1. Si rappresenta il modulo del numero in binario puro su n bit.<br>
+                    2. Si esegue l'inversione logica di ogni singolo bit (Complemento a 1: gli 0 diventano 1 e gli 1 diventano 0).<br>
+                    3. Si somma il valore bit 1 alla posizione meno significativa (LSB).
+                </div>
+
+                <p>
+                    Grazie a questa codifica, l'operazione aritmetica di sottrazione viene ricondotta ad una sommazione logica standard, 
+                    scartando l'eventuale bit di carry (riporto) oltre l'ennesima posizione:
+                </p>
+                <div class="code-box">
+                    <div><strong>Equivalenza Circuitale:</strong> <span class="formula-highlight">A - B = A + (-B)_{C2}</span></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Struttura dei Limiti di Memoria: l'Overflow</h2>
+                <p>
+                    Lavorando all'interno di registri hardware a dimensione fissa (n bit), l'intervallo dei valori rappresentabili è limitato. 
+                    Quando il risultato di una computazione eccede tali confini logici, si verifica un errore di <strong>Overflow (Traboccamento)</strong>:
+                </p>
+                
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Codifica Numerica</th>
+                                <th>Spazio Allocato (Bit)</th>
+                                <th>Intervallo Minimo (Rappresentabile)</th>
+                                <th>Intervallo Massimo (Rappresentabile)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Interi Senza Segno (Unsigned)</strong></td>
+                                <td>n bit</td>
+                                <td class="formula-highlight">0</td>
+                                <td class="formula-highlight">2^n - 1</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modulo e Segno</strong></td>
+                                <td>n bit</td>
+                                <td>-(2^{n-1} - 1)</td>
+                                <td>+(2^{n-1} - 1)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Complemento a 2 (Signed)</strong></td>
+                                <td>n bit</td>
+                                <td class="formula-highlight">-2^{n-1}</td>
+                                <td class="formula-highlight">+(2^{n-1} - 1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="sezione4-flex-wrapper">
+                    <div class="col-lista-sinistra">
+                        <p><strong>Regola di validazione per la rilevazione dell'Overflow in Complemento a 2:</strong></p>
+                        <ol class="lista-normale">
+                            <li>Se si sommano due numeri con segno concorde (entrambi positivi o entrambi negativi) e il 
+                                risultato presenta un bit di segno discorde, la consistenza logica è violata (Overflow hardware confermato).</li>
+                            <li>La somma di due valori aventi segno nativo opposto non può mai generare una condizione di overflow.</li>
+                        </ol>
+                    </div>
+                    <div class="col-immagine-destra">
+                        <img src="../img/tps_overflow_logic.png" alt="Schema Condizione di Overflow logico">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>6. Codifica di Simboli non Numerici e Numeri Reali</h2>
+                <p>
+                    Oltre ai valori interi relativi, l'UDA analizza l'astrazione di caratteri testuali e stringhe alfanumeriche, 
+                    fino all'introduzione della virgola mobile per l'approssimazione dei numeri reali:
+                </p>
+                <ul>
+                    <li><strong>Codifica ASCII / ASCII Esteso:</strong> Associa a ciascun carattere alfabetico, numerico o 
+                        di controllo un indice binario fisso (rispettivamente su 7 e 8 bit).</li>
+                    <li><strong>Standard Unicode / UTF-8:</strong> Estensione multi-byte a lunghezza variabile nata per 
+                        mappare i set di caratteri di tutti gli idiomi mondiali ed elementi grafici estesi.</li>
+                    <li><strong>Virgola Mobile (Floating Point - Standard IEEE 754):</strong> Suddivide lo spazio binario 
+                        del registro (es. 32 bit per la precisione singola) in tre campi funzionali rigidi per rappresentare i numeri reali in notazione scientifica:
+                        <div class="code-box" style="margin-top: 10px;">
+                            <span class="formula-highlight">1 Bit di Segno (S) + 8 Bit di Esponente (E) + 23 Bit di Mantissa (M)</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="sezione-centrata">
+                <img src="../img/tps_rappresentazione_complete.jpg" alt="Mappa concettiva complessiva sulla codifica e rappresentazione delle informazioni">
+            </section>
 
         </div><br><br><br>
 

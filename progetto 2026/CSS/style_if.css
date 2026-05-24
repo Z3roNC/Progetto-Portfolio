@@ -1,10 +1,51 @@
-/* New Home - Blue Dark Theme */
+/* ==========================================================================
+   FILE: style_if.css
+   TEMA: Blue Dark Theme (Informatica)
+   ========================================================================== */
 
+/* ====================================================
+   [1] LAYOUT RESPONSIVE (MEDIA QUERIES)
+   ==================================================== */
+
+/* Gestione Mobile Sezione 2: Riorganizza la lista a simboli in verticale */
+@media (max-width: 650px) {
+    .item-flex {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    .col-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #1e2d42;
+    }
+}
+
+/* Gestione Mobile Sezione 4: Riorganizza la lista e l'immagine in verticale */
+@media (max-width: 900px) {
+    .sezione4-flex-wrapper {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    
+    .col-immagine-destra {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px; 
+        margin: 10px auto 0 auto;
+    }
+}
+
+
+/* ====================================================
+   [2] RESET GLOBALE E COMPORTAMENTO BASE
+   ==================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    box-sizing: border-box; /* Include padding e bordi nel calcolo di larghezza e altezza */
+    scroll-behavior: smooth; /* Permette lo scorrimento morbido per le ancore interne */
 }
 
 body { 
@@ -19,9 +60,14 @@ body {
     padding: 20px;
 }
 
-/* Navbar */
+
+/* ====================================================
+   [3] BARRA DI NAVIGAZIONE (NAVBAR)
+   ==================================================== */
 .navbar { 
-    position: sticky; top: 0; z-index: 1000; 
+    position: sticky; /* Blocca la barra in cima alla viewport durante lo scorrimento */
+    top: 0; 
+    z-index: 1000; /* Mantiene la navbar sopra ogni altro elemento della pagina */
     background: #0b1524; /* Sfondo navbar leggermente più chiaro del body */
     border-bottom: 1px solid #1e2d42; /* Bordo blu navy scuro */
     padding: 15px 0; 
@@ -45,11 +91,31 @@ body {
 .navbar a {
     color: #38bdf8; /* Link: Blu ciano brillante ad alta visibilità */
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold; 
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    display: inline-block; /* Permette all'elemento di subire la rotazione */
+    transition: transform 0.4s ease, color 0.3s; /* Rende la rotazione fluida */
 }
 
-/* Stile per l'Header Hero della pagina della materia */
+nav a:hover {
+    cursor: pointer;
+    color: #63cbf8;
+    font-size: 1.2rem;
+    
+    /* Simula il grassetto senza far saltare o spostare i link vicini */
+    text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
+    
+    transform: rotate(335deg); /* Ruota su se stesso di 325 gradi */   
+}
+
+
+
+
+
+/* ====================================================
+   [4] SEZIONE HERO (TESTATA PRINCIPALE)
+   ==================================================== */
 .hero {
     background: rgba(11, 21, 36, 0.15); /* Sfondo del box blu scuro opaco al 15% */
     border: 1px solid #1e2d42;          /* Contorno del box in blu navy scuro */
@@ -57,7 +123,6 @@ body {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 10px;
-    
 }
 
 /* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
@@ -66,7 +131,7 @@ body {
     font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
     color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
     
-    /* Crea il contorno del font con il colore azzurro/blu principale */
+    /* Disegna il contorno grafico del font con il colore ciano principale */
     -webkit-text-stroke: 2px #38bdf8;    
     text-stroke: 2px #38bdf8;            
     
@@ -80,7 +145,10 @@ body {
     letter-spacing: 1px;
 }
 
-/* Header Materia Centrato */
+
+/* ====================================================
+   [5] PANNELLO INIZIALE E GRIGLIA BLOCCHI UDA
+   ==================================================== */
 .materia-header { 
     background: #0f1f33; /* Sfondo header blu scuro */
     padding: 20px; 
@@ -101,19 +169,18 @@ body {
     font-size: 1rem;
 }
 
-/* Griglia UDA */
 .uda-container { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    background: #1e2d42; /* Spessore dei bordi della griglia (blu scuro) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonne fluide auto-adattive */
+    background: #1e2d42; /* Colore di sfondo che funge da spessore per i bordi interni della griglia */
     gap: 1px;
 }
 
 .uda-box { 
     background: #0b1524; /* Box interno scuro */
     padding: 25px; 
-    cursor: pointer;
-    transition: background 0.3s;
+    cursor: default;
+    transition: background 0.3s; /* Transizione fluida per il cambio colore dello sfondo */
 }
 
 .uda-box:hover {
@@ -125,29 +192,39 @@ body {
     transition: 0.3s;
 }
 
-/* LOGICA SPOILER AUTOMATICA */
-.spoiler-mode .uda-box p, h2 span {
+
+/* ====================================================
+   [6] LOGICA EFFETTO SPOILER (ISOLATO ALLA GRIGLIA)
+   ==================================================== */
+/* Nasconde e azzera lo spazio verticale delle descrizioni quando la scheda è chiusa */
+.uda-container.spoiler-mode .uda-box p, h2 span {
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
+    overflow: hidden; /* Taglia fuori i testi che escono dal box ad altezza azzerata */
     transition: all 0.4s ease;
-    color: #e0f2fe; /* Testo dello spoiler: Azzurro ghiaccio chiaro e leggibile */
+    color: #b3b3b3; 
     font-size: 0.85rem;
 }
 
-.spoiler-mode .uda-box:hover p {
+/* Espande l'altezza e mostra in dissolvenza il testo all'hover sulla scheda */
+.uda-container.spoiler-mode .uda-box:hover p {
     max-height: 100px;
     opacity: 1;
     margin-top: 15px;
 }
 
-.spoiler-mode .uda-box:hover h4 {
+/* Effetto di micro-sollevamento per il titolo all'hover della scheda */
+.uda-container.spoiler-mode .uda-box:hover h4 {
     transform: translateY(-5px);
 }
 
-/* Bottone Top */
+
+/* ====================================================
+   [7] ELEMENTI DI INTERFACCIA (BOTTONE E FOOTER)
+   ==================================================== */
 .top-btn { 
-    position: fixed; bottom: 25px; right: 25px; 
+    position: fixed; /* Ancoraggio assoluto e fisso rispetto allo schermo del browser */
+    bottom: 25px; right: 25px; 
     background: #0284c7; /* Bottone blu intenso */
     color: white; width: 45px; height: 45px;
     display: flex; align-items: center; justify-content: center; 
@@ -174,7 +251,10 @@ footer a:hover{
     color: #0ea5e9;
 }
 
-/* Sezioni del documento */
+
+/* ====================================================
+   [8] CONTENUTI ED ELENCHI STRUTTURALI STANDARD
+   ==================================================== */
 section {
     margin-bottom: 40px;
     background: #0b1524;
@@ -202,7 +282,6 @@ p {
     font-size: 0.95rem;
 }
 
-/* Elenchi standard */
 ul {
     margin-left: 25px;
     margin-bottom: 20px;
@@ -217,8 +296,9 @@ li strong {
     color: #38bdf8;
 }
 
+
 /* ====================================================
-   LOGICA FLEXBOX PER LA SEZIONE 2 (UL SIMBOLI)
+   [9] LOGICA FLEXBOX PER LA SEZIONE 2 (UL SIMBOLI)
    ==================================================== */
 .lista-flex {
     list-style: none; 
@@ -234,7 +314,7 @@ li strong {
     background: #050b14; 
     border: 1px solid #1e2d42;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: hidden; /* Taglia l'immagine che eccede i bordi arrotondati */
     transition: background 0.3s, border-color 0.3s;
 }
 
@@ -245,7 +325,7 @@ li strong {
 
 /* Colonna Immagine (Posizionata a Sinistra) */
 .col-img {
-    flex: 0 0 420px; /* Larghezza ingrandita originale ripristinata */
+    flex: 0 0 420px; /* Larghezza ingrandita originale bloccata, impedisce il restringimento */
     height: 120px;
     background: #0b1524; 
     display: flex;
@@ -257,7 +337,7 @@ li strong {
 .col-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover; /* Scala e riempie il box ritagliando l'immagine in eccesso senza distorcerla */
     opacity: 0.8;
     transition: opacity 0.3s;
 }
@@ -268,31 +348,19 @@ li strong {
 
 /* Colonna Testo (Posizionata a Destra) */
 .col-testo {
-    flex: 1; 
+    flex: 1; /* Occupa tutto lo spazio orizzontale rimanente nel contenitore flex */
     padding: 20px;
     font-size: 0.95rem;
     color: #cbd5e1;
 }
 
-/* Forzatura Responsive per schermi piccoli (Smartphone) */
-@media (max-width: 650px) {
-    .item-flex {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    .col-img {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 150px;
-        border-right: none;
-        border-bottom: 1px solid #1e2d42;
-    }
-}
 
-/* Box del codice / Algoritmi testuali */
+/* ====================================================
+   [10] BLOCCHI DI CODICE, FLOWCHART E ALGORITMI
+   ==================================================== */
 .code-box {
     background: #050b14;
-    border-left: 3px solid #0ea5e9;
+    border-left: 3px solid #0ea5e9; /* Barra decorativa azzurra sul bordo sinistro */
     padding: 15px;
     margin: 15px 0;
     font-size: 0.9rem;
@@ -303,7 +371,6 @@ li strong {
     margin-bottom: 5px;
 }
 
-/* Nota/Descrizione Flowchart */
 .flowchart-note {
     font-style: italic;
     color: #64748b;
@@ -312,18 +379,84 @@ li strong {
     padding-left: 5px;
 }
 
-/* STILE TABELLA */
+.flowchart-container {
+    background-color: #1e1e24;
+    border-left: 4px solid #4a90e2;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); /* Crea un'ombra interna per un effetto incassato */
+}
+
+.flowchart-container h3 {
+    color: #4a90e2;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+pre.flowchart {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: #e0e0e0;
+    margin: 0;
+    white-space: pre; /* Mantiene fedelmente spazi e a capo del testo originale */
+    overflow-x: auto; /* Attiva lo scorrimento orizzontale se il diagramma testuale esce dal box */
+}
+
+pre.code-block {
+    background-color: #111116;
+    border: 1px solid #2d2d3a;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 15px 0;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+pre.code-block code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    font-size: 0.95rem;
+    color: #a6e22e; /* Verde brillante per il codice C */
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+p code {
+    background-color: #2d2d3a;
+    color: #f92672; /* Rosa/Rosso vivido per evidenziare le parole chiave isolate nel testo */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.9rem;
+}
+
+.warning-note {
+    background-color: #3a2a18;
+    border-left: 4px solid #f39c12; /* Barra arancione laterale di avvertimento */
+    color: #f39c12;
+    padding: 12px 15px;
+    border-radius: 0 6px 6px 0;
+    margin: 15px 0;
+    font-size: 0.95rem;
+}
+
+
+/* ====================================================
+   [11] STRUTTURE TABELLARI (DATI COMPARATIVI)
+   ==================================================== */
 .tabella-container {
     margin: 30px 0;
     background: #1e2d42;
     padding: 1px;
     box-shadow: 0 4px 20px rgba(56, 189, 248, 0.05);
-    overflow-x: auto;
+    overflow-x: auto; /* Rende la tabella fruibile orizzontalmente sui dispositivi mobili */
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* Unisce i bordi delle celle confinanti */
     background: #050b14;
 }
 
@@ -349,11 +482,11 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: rgba(11, 21, 36, 0.4); 
+    background-color: rgba(11, 21, 36, 0.4); /* Righe alterne leggermente opacizzate */
 }
 
 tr:hover td {
-    background-color: #0f1f33;
+    background-color: #0f1f33; /* Colore di evidenziazione riga all'hover */
     color: #f0f9ff;
 }
 
@@ -362,8 +495,33 @@ td strong {
     font-weight: bold;
 }
 
+/* Stili specifici sovrascritti per le Tabelle interne all'UDA C */
+.tabella-container table {
+    background-color: #1f1f2e;
+}
+
+.tabella-container th, 
+.tabella-container td {
+    border-bottom: 1px solid #2d2d3a;
+    font-size: 0.95rem;
+}
+
+.tabella-container th {
+    background-color: #2d2d3a;
+    color: #4a90e2;
+}
+
+.tabella-container tr:hover {
+    background-color: #252538;
+}
+
+.tabella-container td strong {
+    color: #e6db74; /* Giallino per concetti UDA C */
+}
+
+
 /* ====================================================
-   LOGICA STRUTTURALE COMPONENTE SEZIONE 4 (FLEX AFFIANCATO)
+   [12] LOGICA STRUTTURALE SEZIONE 4 (FLEX AFFIANCATO)
    ==================================================== */
 .sezione4-flex-wrapper {
     display: flex;
@@ -394,7 +552,7 @@ td strong {
 
 /* Colonna di Destra: Contiene l'immagine fissa */
 .col-immagine-destra {
-    flex: 0 0 350px; 
+    flex: 0 0 350px; /* Dimensione fissa a 350px originale preservata */
     background: #050b14; 
     border: 1px solid #1e2d42; 
     border-radius: 4px;
@@ -407,12 +565,12 @@ td strong {
 .col-immagine-destra img {
     width: 100%;
     height: auto;
-    object-fit: contain; 
+    object-fit: contain; /* Adatta e scala l'immagine senza tagliarla o deformarla */
     opacity: 0.85;
     transition: opacity 0.3s, border-color 0.3s;
 }
 
-/* Effetto illuminazione della colonna immagine all'hover sulla sezione */
+/* Effetto illuminazione della colonna immagine all'hover globale sul wrapper */
 .sezione4-flex-wrapper:hover .col-immagine-destra {
     border-color: #38bdf8;
 }
@@ -421,22 +579,7 @@ td strong {
     opacity: 1;
 }
 
-/* Responsive Design per schermi piccoli (Mobile) */
-@media (max-width: 900px) {
-    .sezione4-flex-wrapper {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    
-    .col-immagine-destra {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 450px; 
-        margin: 10px auto 0 auto;
-    }
-}
-
-/* SEZIONE CENTRATA PER IMMAGINE */
+/* Sezione centrata indipendente per immagini intere maestose */
 .sezione-centrata {
     display: flex;
     justify-content: center; 
@@ -455,123 +598,9 @@ td strong {
 }
 
 
-/* ============================== */
-
-
-/* ==========================================================================
-   CSS Aggiuntivo per Blocchi di Codice, Flowchart e Tabelle (UDA C)
-   ========================================================================== */
-
-/* Contenitore dei diagrammi di flusso testuali */
-.flowchart-container {
-    background-color: #1e1e24;
-    border-left: 4px solid #4a90e2;
-    padding: 15px;
-    border-radius: 6px;
-    margin: 15px 0;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.flowchart-container h3 {
-    color: #4a90e2;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-/* Stile per i grafici testuali dentro <pre> */
-pre.flowchart {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 0.9rem;
-    line-height: 1.2;
-    color: #e0e0e0;
-    margin: 0;
-    white-space: pre;
-    overflow-x: auto;
-}
-
-/* Blocchi di codice sorgente C */
-pre.code-block {
-    background-color: #111116;
-    border: 1px solid #2d2d3a;
-    border-radius: 8px;
-    padding: 18px;
-    margin: 15px 0;
-    overflow-x: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-pre.code-block code {
-    font-family: "Consolas", "Monaco", "Courier New", monospace;
-    font-size: 0.95rem;
-    color: #a6e22e; /* Verde brillante per il codice */
-    line-height: 1.5;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-/* Evidenziazione inline per tag <code> nel testo normale */
-p code {
-    background-color: #2d2d3a;
-    color: #f92672; /* Rosa/Rosso per le parole chiave isolate */
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: "Consolas", "Monaco", monospace;
-    font-size: 0.9rem;
-}
-
-/* Note importanti o avvisi */
-.warning-note {
-    background-color: #3a2a18;
-    border-left: 4px solid #f39c12;
-    color: #f39c12;
-    padding: 12px 15px;
-    border-radius: 0 6px 6px 0;
-    margin: 15px 0;
-    font-size: 0.95rem;
-}
-
-/* Tabella comparativa e di laboratorio interna all'UDA */
-.tabella-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 20px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.tabella-container table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    background-color: #1f1f2e;
-    color: #ffffff;
-}
-
-.tabella-container th, 
-.tabella-container td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #2d2d3a;
-    font-size: 0.95rem;
-}
-
-.tabella-container th {
-    background-color: #2d2d3a;
-    color: #4a90e2;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.tabella-container tr:hover {
-    background-color: #252538;
-}
-
-.tabella-container td strong {
-    color: #e6db74; /* Giallino per evidenziare i concetti in tabella */
-}
-
-/* Lista degli errori tipici */
+/* ====================================================
+   [13] SEZIONE AGGIUNTIVA PER ERRORI TIPICI
+   ==================================================== */
 .error-list {
     padding-left: 20px;
 }
@@ -582,5 +611,5 @@ p code {
 }
 
 .error-list li strong {
-    color: #f92672; /* Colore d'impatto per gli errori */
+    color: #f92672; /* Tonalità di impatto per catturare l'attenzione sugli errori */
 }

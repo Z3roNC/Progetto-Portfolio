@@ -34,23 +34,23 @@
                 <!-- <h2>Sistemi e Reti <span>198h</span></h2> -->
             </div>
             <div class="uda-container spoiler-mode">
-                <div class="uda-box" onclick="location.href='sistemi.html#elaborazione'">
+                <div class="uda-box" onclick="location.href='#elaborazione'">
                     <h4>Il sistema di elaborazione</h4>
                     <p>20 ore - Architettura hardware e componenti.</p>
                 </div>
-                <div class="uda-box" onclick="location.href='sistemi.html#micro'">
+                <div class="uda-box" onclick="location.href='#micro'">
                     <h4>Microprocessore e Assembly</h4>
                     <p>20 ore - Basso livello e registri CPU.</p>
                 </div>
-                <div class="uda-box" onclick="location.href='sistemi.html#basi'">
+                <div class="uda-box" onclick="location.href='#basi'">
                     <h4>Basi della comunicazione in rete</h4>
                     <p>18 ore - Modello OSI e TCP/IP.</p>
                 </div>
-                <div class="uda-box" onclick="location.href='sistemi.html#cablaggio'">
+                <div class="uda-box" onclick="location.href='#cablaggio'">
                     <h4>Il cablaggio strutturato</h4>
                     <p>18 ore - Normative, mezzi trasmissivi e rack.</p>
                 </div>
-                <div class="uda-box" onclick="location.href='sistemi.html#reti'">
+                <div class="uda-box" onclick="location.href='#reti'">
                     <h4>Reti LAN, MAN e WAN</h4>
                     <p>23 ore - Topologie e gestione geografica.</p>
                 </div>
@@ -58,47 +58,189 @@
         </section> <br><br><br>
 
 
-
-        <div class="uda-box" id="elaborazione">
+            <div class="uda-box" id="elaborazione">
 
             <h3>Il sistema di elaborazione</h3>
-            <p>Architettura hardware e componenti.</p><br>
+            <p>Architettura hardware e componenti</p><br>
 
-            <div>
-                <h4>Topic 1.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
-        
-            <div>
-                <h4>Topic 2.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <p>
+                Lo studio dei sistemi di elaborazione analizza l'organizzazione logica e fisica dei calcolatori moderni. 
+                Comprendere l'interazione intima tra le unità di elaborazione, i sistemi di memorizzazione e i canali di 
+                interconnessione è un requisito fondamentale per operare consapevolmente nell'ingegneria del software e nell'amministrazione di rete.
+            </p>
 
-            <div>
-                <h4>Topic 3.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>1. Il Modello Funzionale di Von Neumann</h2>
+                <p>
+                    L'architettura classica descrive un sistema integrato in cui l'elaborazione dei dati e la loro 
+                    permanenza temporanea sono regolate da strutture logiche cooperanti:
+                </p>
+                <p>
+                    La <strong>CPU (Central Processing Unit)</strong> coordina le sequenze operative e calcola i flussi informativi; 
+                    la <strong>Memoria Centrale (RAM)</strong> immagazzina i codici operativi ed i vettori delle informazioni durante 
+                    il tempo di esecuzione; le <strong>Interfacce di I/O (Periferiche)</strong> creano i flussi di scambio dati con il mondo esterno.
+                </p>
+            </section>
 
-            <div>
-                <h4>Topic 4.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>2. Il Processore (CPU - Central Processing Unit)</h2>
+                <p>
+                    Il processore interpreta ed esegue le istruzioni binarie archiviate in memoria centrale. La sua microarchitettura interna si compone di:
+                </p>
+                <ul>
+                    <li><strong>CU (Control Unit):</strong> Genera i segnali di temporizzazione per la scansione sequenziale delle fases di Fetch, Decode ed Execute delle istruzioni.</li>
+                    <li><strong>ALU (Arithmetic Logic Unit):</strong> Esegue i calcoli matematici aritmetici e le commutazioni logiche booleane ad altissima velocità.</li>
+                    <li><strong>Registri Interni:</strong> Celle fisiche bistabili ultra-rapide destinate a contenere i dati di computazione immediata (es. Accumulatore, Program Counter).</li>
+                    <li><strong>Memoria Cache:</strong> Memoria SRAM integrata per mitigare il disallineamento prestazionale rispetto alla memoria RAM esterna.</li>
+                </ul>
+                <p>
+                    La sincronizzazione tra i vari stadi è orchestrata dal segnale di <strong>Clock</strong>, un treno di impulsi d'onda quadra periodica la cui frequenza nominale determina le prestazioni massime teoriche del silicio:
+                </p>
+                <div class="code-box">
+                    <div><strong>Formula Indicativa Prestazioni:</strong> <span class="formula-highlight">Prestazione &prop; Frequenza Clock (GHz) &middot; Parallelismo (Bit)</span></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Il Sistema dei Bus e il Chipset</h2>
+                <p>
+                    Il <strong>System Bus</strong> è il fascio di linee hardware in rame dedito al transito parallelo delle informazioni di stato, indirizzamento e computazione:
+                </p>
+                
+                <ul class="lista-flex">
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/sis_bus_dati.png" alt="Schema Bus Dati">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Bus Dati (Data Bus):</strong> Canale bidirezionale per lo spostamento dei bit dei dati veri e propri tra i registri della CPU, la memoria e i moduli di I/O.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/sis_bus_ind.png" alt="Schema Bus Indirizzi">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Bus Indirizzi (Address Bus):</strong> Canale monodirezionale emesso dalla CPU per selezionare univocamente l'indice della cella di memoria o della periferica da mappare.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/sis_bus_ctrl.png" alt="Schema Bus Controllo">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Bus di Controllo (Control Bus):</strong> Vettori di segnale esterni per sincronizzare le operazioni hardware di Read/Write e le linee di interruzione (IRQ).
+                        </div>
+                    </li>
+                </ul>
+
+                <p>
+                    Nelle schede madri, l'instradamento di questi canali è ottimizzato dall'architettura del <strong>Chipset</strong>, storicamente divisa in due core di controllo logico:
+                </p>
+                <div class="code-box code-box-green">
+                    <strong>Northbridge:</strong> Interfaccia i flussi critici e veloci ad alta frequenza (CPU, RAM, bus PCIe della scheda video).<br>
+                    <strong>Southbridge:</strong> Controlla i flussi e le interfacce di I/O a frequenze ridotte (Controller SATA, porte USB, audio).
+                </div>
+            </section>
+
+            <section>
+                <h2>4. La Gerarchia e l'Analisi delle Memorie</h2>
+                <p>I supporti di memorizzazione seguono una gerarchia piramidale rigida, atta a compensare il divario di velocità tra CPU e dischi di massa:</p>
+                
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipologia Memoria</th>
+                                <th>Tecnologia Costruttiva</th>
+                                <th>Volatilità dei Dati</th>
+                                <th>Parametro Prestazionale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cache (L1, L2, L3)</strong></td>
+                                <td>SRAM (Celle a flip-flop statiche integrate nel chip)</td>
+                                <td>Volatile (Richiede alimentazione)</td>
+                                <td class="formula-highlight">Latenza minima / Cache Hit Rate &rarr; max</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memoria Centrale</strong></td>
+                                <td>DRAM (Matrici di transistor e condensatori con Refresh)</td>
+                                <td>Volatile (Perdita allo spegnimento)</td>
+                                <td class="formula-highlight">Tempo Accesso Casuale (Random Access)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Firmware di Avvio</strong></td>
+                                <td>ROM / Flash NVRAM (Contiene codice BIOS/UEFI)</td>
+                                <td>Permanente (Non Volatile)</td>
+                                <td>Sola lettura in fase di Bootstrap</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Solid State Drive (SSD)</strong></td>
+                                <td>Memorie Flash NAND (Elettronica a stato solido)</td>
+                                <td>Permanente (Non Volatile)</td>
+                                <td class="formula-highlight">Transfer Rate Elevato via canali SATA/NVMe</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hard Disk Drive (HDD)</strong></td>
+                                <td>Dischi Magnetici (Tracce, Cilindri e Settori rotanti)</td>
+                                <td>Permanente (Non Volatile)</td>
+                                <td>Tempo di posizionamento testina (Seek Time)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Periferiche e Standard di Interfacciamento</h2>
+                <p>Le periferiche operano comunicando con il sistema tramite moduli hardware dedicati chiamati <strong>Controller Periferici</strong>:</p>
+                
+                <div class="sezione4-flex-wrapper">
+                    <div class="col-lista-sinistra">
+                        <ol class="lista-normale">
+                            <li>
+                                <strong>Dispositivi di Input:</strong> Convogliano i flussi informativi digitalizzati dall'esterno verso il processore (Tastiera, Mouse, Scanner ottici).
+                            </li>
+                            <li>
+                                <strong>Dispositivi di Output:</strong> Decodificano le matrici di bit prodotte dall'elaborazione della CPU per mostrarle all'esterno (Monitor LCD, Stampanti).
+                            </li>
+                            <li>
+                                <strong>Canali I/O Paritetici:</strong> Moduli ricetrasmittenti adatti allo scambio dati bi-direzionale in tempo reale (Schede di rete Ethernet, interfacce wireless).
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="col-immagine-destra">
+                        <img src="../img/sis_io_controller.png" alt="Schema Architettura di I/O e Controller">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>6. Evoluzione e Assemblaggio dei Sistemi Desktop</h2>
+                <p>
+                    Il superamento dei limiti strutturali fisici dell'architettura classica si ottiene mediante il <strong>Parallel Computing</strong> e lo sviluppo di paradigmi non convenzionali:
+                </p>
+                <ul>
+                    <li><strong>Cognitive Computer:</strong> Sistemi neuromorfi volti a emulare l'architettura logica e la modalità di lavoro del cervello umano.</li>
+                    <li><strong>Memristor (Memory Resistor):</strong> Nuovi circuiti integrati in grado di trasmettere, codificare e contemporaneamente memorizzare l'informazione sullo stesso elemento fisico.</li>
+                </ul>
+
+                <p>
+                    Durante la pianificazione e l'assemblaggio hardware di una macchina desktop, le decisioni ingegneristiche seguono un vincolo di dipendenza sequenziale rigido:
+                </p>
+                <div class="code-box code-box-green">
+                    <span class="formula-highlight">Motherboard [Form Factor: ATX / MicroATX] + Scelta del Processore (CPU)</span><br>
+                    &darr; Vincola la selezione hardware di:<br>
+                    <span class="sub-component-highlight">Case (Dimensioni) + Alimentatore (Power Wattage) + Tipologia Moduli RAM e Drive Storage</span>
+                </div>
+            </section>
+
+            <section class="sezione-centrata">
+                <img src="../img/sis_architecture_complete.jpg" alt="Mappa concettiva completa dell'architettura hardware">
+            </section>
 
         </div><br><br><br>
 

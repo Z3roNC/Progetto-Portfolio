@@ -47,6 +47,20 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: bold; 
+
+    display: inline-block; /* Permette all'elemento di subire la rotazione */
+    transition: transform 0.4s ease, color 0.3s; /* Rende la rotazione fluida */
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #06e056;
+    font-size: 1.2rem;
+    
+    /* Simula il grassetto senza far saltare o spostare i link vicini */
+    text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
+    
+    transform: rotate(375deg); /* Ruota su se stesso di 350 gradi */   
 }
 
 /* Stile per l'Header Hero della pagina della materia */
@@ -125,23 +139,23 @@ body {
     transition: 0.3s;
 }
 
-/* LOGICA SPOILER AUTOMATICA */
-.spoiler-mode .uda-box p, h2 span {
+/* LOGICA SPOILER AUTOMATICA (OTTIMIZZATA) */
+.uda-container.spoiler-mode .uda-box p, h2 span {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.4s ease;
-    color: #a7f3d0; /* Testo dello spoiler: Verde menta chiaro e leggibile */
+    color: #b3b3b3; 
     font-size: 0.85rem;
 }
 
-.spoiler-mode .uda-box:hover p {
+.uda-container.spoiler-mode .uda-box:hover p {
     max-height: 100px;
     opacity: 1;
     margin-top: 15px;
 }
 
-.spoiler-mode .uda-box:hover h4 {
+.uda-container.spoiler-mode .uda-box:hover h4 {
     transform: translateY(-5px);
 }
 
@@ -172,4 +186,294 @@ footer a{
 
 footer a:hover{ 
     color: #16a34a;
+}
+
+/* Sezioni del documento */
+section {
+    margin-bottom: 40px;
+    background: #121814; /* Sfondo box: Verde/Nero scuro */
+    border: 1px solid #223126; /* Bordo verde scuro */
+    padding: 30px;
+    border-radius: 4px;
+}
+
+h2 {
+    color: #4ade80; /* Verde brillante */
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #223126; /* Bordo inferiore */
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #f0fdf4; /* Bianco pulito con punta di verde */
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Elenchi standard */
+ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+li strong {
+    color: #4ade80; /* Evidenziato in verde brillante */
+}
+
+/* ====================================================
+   LOGICA FLEXBOX PER LE SEZIONI CON IMMAGINE A SINISTRA
+   ==================================================== */
+.lista-flex {
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.item-flex {
+    display: flex;
+    align-items: center; 
+    background: #0b0f0c; 
+    border: 1px solid #223126; 
+    border-radius: 4px;
+    overflow: hidden;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.item-flex:hover {
+    background: #19221b; 
+    border-color: #4ade80; /* Il bordo si illumina di verde */
+}
+
+/* Colonna Immagine (Posizionata a Sinistra) */
+.col-img {
+    flex: 0 0 420px; 
+    height: 120px;
+    background: #121814; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #223126;
+}
+
+.col-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}
+
+.item-flex:hover .col-img img {
+    opacity: 1; 
+}
+
+/* Colonna Testo (Posizionata a Destra) */
+.col-testo {
+    flex: 1; 
+    padding: 20px;
+    font-size: 0.95rem;
+    color: #cbd5e1; 
+}
+
+/* Forzatura Responsive per liste ad immagini (Smartphone) */
+@media (max-width: 650px) {
+    .item-flex {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    .col-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #223126;
+    }
+}
+
+/* Box del codice / Terminali logici */
+.code-box {
+    background: #0b0f0c;
+    border-left: 3px solid #2ecc71; /* Linea d'accento verde smeraldo */
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #a7f3d0; /* Testo verde menta chiaro */
+}
+
+.code-box div {
+    margin-bottom: 5px;
+}
+
+.code-box-green {
+    border-left-color: #16a34a; /* Variazione per distinguere sottoblocchi strutturali */
+}
+
+/* STILE TABELLA GERARCHICA MEMORIE */
+.tabella-container {
+    margin: 30px 0;
+    background: #223126; /* Spessore dei bordi verde scuro */
+    padding: 1px;
+    box-shadow: 0 4px 20px rgba(46, 204, 113, 0.05); /* Bagliore soffuso verde */
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0b0f0c;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: #121814;
+    color: #4ade80; /* Intestazioni verde brillante */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #2ecc71; 
+}
+
+td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #223126;
+    vertical-align: top;
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(18, 24, 20, 0.4); /* Righe alterne scure opache */
+}
+
+tr:hover td {
+    background-color: #19221b;
+    color: #f0fdf4;
+}
+
+/* ====================================================
+   LOGICA STRUTTURALE COMPONENTE SEZIONE 5 (FLEX AFFIANCATO)
+   ==================================================== */
+.sezione4-flex-wrapper {
+    display: flex;
+    gap: 30px; 
+    align-items: flex-start; 
+    margin: 25px 0;
+}
+
+/* Colonna di Sinistra: Contiene la lista <ol> */
+.col-lista-sinistra {
+    flex: 1; 
+}
+
+.lista-normale {
+    margin-left: 20px;
+}
+
+.lista-normale li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Colonna di Destra: Contiene l'immagine fissa del Controller */
+.col-immagine-destra {
+    flex: 0 0 350px; 
+    background: #0b0f0c; 
+    border: 1px solid #223126; 
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-immagine-destra img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+    opacity: 0.8;
+    transition: opacity 0.3s, border-color 0.3s;
+}
+
+.sezione4-flex-wrapper:hover .col-immagine-destra {
+    border-color: #4ade80; /* Si illumina all'hover globale sulla sezione */
+}
+
+.sezione4-flex-wrapper:hover .col-immagine-destra img {
+    opacity: 1;
+}
+
+/* Responsive Design per blocco affiancato (Mobile) */
+@media (max-width: 900px) {
+    .sezione4-flex-wrapper {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    
+    .col-immagine-destra {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px; 
+        margin: 10px auto 0 auto;
+    }
+}
+
+/* SEZIONE CENTRATA PER INFOGRAFICHE/MAPPE MAESTOSE */
+.sezione-centrata {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 60vh;       
+    width: 100%;             
+    box-sizing: border-box;
+    padding: 20px;
+    background: #0b0f0c;
+    border: 1px solid #223126;
+    border-radius: 4px;
+}
+
+.sezione-centrata img {
+    max-width: 100%;         
+    max-height: 80vh;        
+    object-fit: contain;     
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.sezione-centrata:hover img {
+    opacity: 1;
+}
+
+/* ====================================================
+   EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI (BLINDATA)
+   ==================================================== */
+.formula-highlight {
+    color: #16a34a !important; /* Verde smeraldo scuro intenso fisso */
+    font-weight: 900 !important; /* Massimo livello di grassetto */
+}
+
+.sub-component-highlight {
+    color: #2ecc71 !important; /* Verde smeraldo brillante vivido */
+    font-weight: bold;
 }

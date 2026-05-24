@@ -34,7 +34,7 @@
                 <!-- <h2>Telecomunicazioni <span>132h</span></h2> -->
             </div>
             <div class="uda-container spoiler-mode">
-                <div class="uda-box" onclick="location.href='tlc.html#reti-el'">
+                <div class="uda-box" onclick="location.href='tlc.html#reti-dc'">
                     <h4>Reti elettriche regime continuo</h4>
                     <p>26 ore - Elettrotecnica e leggi di Kirchhoff.</p>
                 </div>
@@ -54,46 +54,166 @@
         </section> <br><br><br>
 
 
-        <div class="uda-box" id="reti-el">
+        <div class="uda-box" id="reti-dc">
 
-            <h3>Reti elettriche regime continuo</h3>
-            <p>Elettrotecnica e leggi di Kirchhoff.</p><br>
+            <h3>Reti elettriche in regime continuo</h3>
+            <p>Elettrotecnica di base e leggi di Kirchhoff applicate alle telecomunicazioni.</p><br>
+
+            <p>
+                Nel contesto delle telecomunicazioni, lo studio delle reti in regime continuo (DC) 
+                costituisce il fondamento propedeutico per comprendere l'alimentazione dei circuiti elettronici, 
+                lo sfasamento dei segnali e il comportamento delle linee di trasmissione. L'analisi circuitale 
+                permette di determinare come la corrente e la tensione si distribuiscono all'interno di reti 
+                complesse prima di affrontare lo studio dei segnali in corrente alternata.
+            </p>
+
+            <section>
+                <h2>1. Il Regime Continuo e i Parametri Circuitale</h2>
+                <p>
+                    Il regime continuo identifica un sistema in cui la corrente fluisce in un unico verso 
+                    e mantiene un'intensità costante nel tempo. I tre parametri fondamentali che governano 
+                    qualsiasi circuito di telecomunicazioni sono:
+                </p>
+                <p>
+                    La <strong>Tensione elettrica (V)</strong>, che rappresenta l'energia per unità di carica 
+                    fornita dai generatori; la <strong>Corrente elettrica (I)</strong>, ovvero il flusso 
+                    ordinato di elettroni nel tempo; e la <strong>Resistenza (R)</strong>, che quantifica 
+                    l'opposizione dei materiali e dei componenti al passaggio della corrente.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Legge di Ohm ed Effetto Joule nelle Linee</h2>
+                <p>
+                    La relazione fondamentale tra le grandezze è espressa dalla Prima Legge di Ohm: 
+                    <span class="formula-highlight">V = R &middot; I</span>. 
+                    In ingegneria delle telecomunicazioni, questa legge è essenziale per calcolare 
+                    i cali di tensione lungo i cavi di trasmissione.
+                </p>
+                <p>
+                    Il passaggio di corrente genera inevitabilmente una perdita di energia sotto forma di calore, 
+                    nota come <strong>Effetto Joule</strong>. Questo fenomeno è responsabile dell'attenuazione 
+                    termica nei conduttori e viene calcolato con la formula della potenza dissipata:
+                </p>
+                <div class="code-box">
+                    <div><strong>Potenza Dissipata (Effetto Joule):</strong> <span class="formula-highlight">P = R &middot; I²</span> (espressa in Watt)</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Elementi Topologici dei Circuiti</h2>
+                <p>
+                    Per applicare i metodi di risoluzione, la rete elettrica viene scomposta in tre elementi 
+                    geometrici chiave, analogamente alle strutture logiche dei flussi di informazione:
+                </p>
                 
-            <div>
-                <h4>Topic 1.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
-        
-            <div>
-                <h4>Topic 2.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+                <ul class="lista-flex">
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/tlc_nodo1.png" alt="Schema di un Nodo Elettrico">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Nodo:</strong> Punto del circuito in cui si connettono tre o più conduttori. 
+                            Funge da vero e proprio "bivio" in cui la corrente si divide.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/tlc_ramo1.png" alt="Schema di un Ramo Elettrico">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Ramo:</strong> Il tratto di circuito compreso tra due nodi consecutivi. 
+                            Tutti i componenti disposti sul medesimo ramo condividono la stessa corrente.
+                        </div>
+                    </li>
+                    <li class="item-flex">
+                        <div class="col-img">
+                            <img src="../img/tlc_maglia1.png" alt="Schema di una Maglia Elettrica">
+                        </div>
+                        <div class="col-testo">
+                            <strong>Maglia:</strong> Un percorso chiuso ideale che parte da un nodo e ritorna 
+                            al punto di partenza senza incrociare due volte lo stesso nodo intermedio.
+                        </div>
+                    </li>
+                </ul>
+            </section>
 
-            <div>
-                <h4>Topic 3.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>4. Analisi Comparativa delle Connessioni Resistive</h2>
+                <p>I componenti passivi (resistori) possono essere combinati per sintetizzare una singola <strong>Resistenza Equivalente (R<sub>eq</sub>)</strong> in grado di semplificare il calcolo dei circuiti di carico:</p>
+                
+                <div class="tabella-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parametro Analitico</th>
+                                <th>Configurazione in Serie</th>
+                                <th>Configurazione in Parallelo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Allineamento Topologico</strong></td>
+                                <td>I componenti sono disposti uno di seguito all'altro sullo stesso ramo.</td>
+                                <td>I componenti sono collegati direttamente alla stessa coppia di nodi.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ripartizione Corrente</strong></td>
+                                <td class="formula-highlight">I<sub>tot</sub> = I<sub>1</sub> = I<sub>2</sub></td>
+                                <td>La corrente si divide nei rami in modo inversamente proporzionale.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ripartizione Tensione</strong></td>
+                                <td>La tensione si divide proporzionalmente al valore di R.</td>
+                                <td class="formula-highlight">V<sub>tot</sub> = V<sub>1</sub> = V<sub>2</sub></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Equazione Risolutiva</strong></td>
+                                <td class="formula-highlight">R<sub>eq</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + &hellip;</td>
+                                <td class="formula-highlight">1/R<sub>eq</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> + &hellip;</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Formula Rapida (2R)</strong></td>
+                                <td>Si applica la somma lineare diretta.</td>
+                                <td><code class="formula-highlight" style="background: #24170e; padding: 2px 6px; border-radius: 4px; display: inline-block;">R<sub>eq</sub> = (R<sub>1</sub> &middot; R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-            <div>
-                <h4>Topic 4.0</h4><br>
-                <p></p><br>
-                <p></p><br>
-                <h5></h5>
-                <img src="../img/" alt="...">
-                <p></p><br>
-            </div>
+            <section>
+                <h2>5. Analisi di Rete tramite le Leggi di Kirchhoff</h2>
+                <p>Quando i circuiti presentano maglie multiple interconnesse, si ricorre ai due principi fondamentali di Kirchhoff:</p>
+                
+                <div class="sezione4-flex-wrapper">
+                    <div class="col-lista-sinistra">
+                        <ol class="lista-normale">
+                            <li>
+                                <strong>Legge di Kirchhoff delle Correnti (LKC / Nodi):</strong> 
+                                Basata sulla conservazione della carica. La somma algebrica delle correnti 
+                                che convergono in un nodo è pari a zero. Le correnti entranti equivalgono esattamente 
+                                alle correnti uscenti: <br>
+                                <span class="formula-highlight">&Sigma; I<sub>entranti</sub> = &Sigma; I<sub>uscenti</sub></span>
+                            </li>
+                            <li style="margin-top: 15px;">
+                                <strong>Legge di Kirchhoff delle Tensioni (LKM / Maglie):</strong> 
+                                Basata sulla conservazione dell'energia. La somma algebrica delle differenze 
+                                di potenziale lungo i rami di una maglia percorsa in un verso stabilito è uguale a zero: <br>
+                                <span class="formula-highlight">&Sigma; V = 0</span>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="col-immagine-destra">
+                        <img src="../img/tlc_kirchhoff_laws.png" alt="Risoluzione circuitale tramite Kirchhoff">
+                    </div>
+                </div>
+            </section>
+
+            <section class="sezione-centrata">
+                <img src="../img/tlc_circuit_dc.png" alt="Circuito completo in regime continuo">
+            </section>
 
         </div><br><br><br>
 
