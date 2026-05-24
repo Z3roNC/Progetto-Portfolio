@@ -1,5 +1,46 @@
-/* New Home - Purple Dark Theme */
+/* ==========================================================================
+   FILE: style_tp.css
+   TEMA: Purple Dark Theme (TPSI)
+   ========================================================================== */
 
+/* ====================================================
+   [1] LAYOUT RESPONSIVE (MEDIA QUERIES)
+   ==================================================== */
+
+/* Gestione Mobile Sezione 2: Riorganizza la lista a immagini/simboli in verticale */
+@media (max-width: 650px) {
+    .item-flex {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    .col-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #2d1f3d;
+    }
+}
+
+/* Gestione Mobile Sezione 4/5: Riorganizza la lista e l'immagine in verticale */
+@media (max-width: 900px) {
+    .sezione4-flex-wrapper {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    
+    .col-immagine-destra {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px; 
+        margin: 10px auto 0 auto;
+    }
+}
+
+
+/* ====================================================
+   [2] RESET GLOBALE E COMPORTAMENTO BASE
+   ==================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +60,42 @@ body {
     padding: 20px;
 }
 
-/* Navbar */
+
+/* ====================================================
+   [3] BARRA DI NAVIGAZIONE (NAVBAR)
+   ==================================================== */
+
+   /* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
 .navbar { 
     position: sticky; top: 0; z-index: 1000; 
     background: #120d1a; /* Sfondo navbar leggermente più chiaro del body */
@@ -53,20 +129,22 @@ body {
 }
 
 nav a:hover {
-    cursor: pointer;
-    color: #810cee;
+    color: #c084fc; /* Viola leggermente più chiaro all'hover */
     font-size: 1.2rem;
     
     /* Simula il grassetto senza far saltare o spostare i link vicini */
     text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
     
-    transform: rotate(390deg); /* Ruota su se stesso di 350 gradi */   
+    transform: rotate(375deg); /* Ruota su se stesso di 350 gradi */   
 }
 
-/* Stile per l'Header Hero della pagina della materia */
+
+/* ====================================================
+   [4] SEZIONE HERO (TESTATA PRINCIPALE)
+   ==================================================== */
 .hero {
-    background: rgba(18, 13, 26, 0.4);   /* Sfondo viola/nero opaco coerente */
-    border: 1px solid #2d1f3d;          /* Contorno del box in viola scuro */
+    background: rgba(18, 13, 26, 0.15); /* Sfondo del box viola scuro opaco al 15% */
+    border: 1px solid #2d1f3d;           /* Contorno del box in viola scuro */
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
@@ -79,42 +157,44 @@ nav a:hover {
     font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
     color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
     
-    /* Crea il contorno del font con il colore azzurro/blu principale */
-    -webkit-text-stroke: 2px #c084fc;    
-    text-stroke: 2px #c084fc;            
+    /* Crea il contorno del font con il colore viola principale */
+    -webkit-text-stroke: 2px #a855f7;    
+    text-stroke: 2px #a855f7;            
     
     letter-spacing: 4px;                 /* Spaziatura tra le lettere stile cyberpunk */
     margin-bottom: 15px;
 }
 
 .hero p {
-    color: #e9d5ff;                      /* Sottotitolo lavanda chiaro leggibile */
+    color: #e2e8f0;                      /* Sottotitolo azzurro ghiaccio chiaro */
     font-size: 1rem;
     letter-spacing: 1px;
 }
 
-/* Header Materia Centrato */
+
+/* ====================================================
+   [5] PANNELLO INIZIALE E GRIGLIA BLOCCHI UDA
+   ==================================================== */
 .materia-header { 
-    background: #1c1429; /* Sfondo header viola scuro */
+    background: #120d1a; 
     padding: 20px; 
     display: flex; 
     justify-content: center; 
     align-items: center;
-    border-bottom: 2px solid #9333ea; /* Linea d'accento viola vibrante */
+    border-bottom: 2px solid #a855f7; /* Accento viola accattivante */
     gap: 15px;
 }
 
 .materia-header h2 {
-    color: #faf5ff; /* Titolo principale: Bianco con punta di viola */
+    color: #f3e8ff; /* Titolo principale: Bianco con punta di viola */
     text-align: center;
 }
 
 .materia-header span {
-    color: #718096; /* Testo secondario */
+    color: #94a3b8; /* Testo secondario */
     font-size: 1rem;
 }
 
-/* Griglia UDA */
 .uda-container { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -123,14 +203,14 @@ nav a:hover {
 }
 
 .uda-box { 
-    background: #120d1a; /* Box interno scuro */
+    background: #09060f; /* Box interno scuro */
     padding: 25px; 
-    cursor: pointer;
+    cursor: default;
     transition: background 0.3s;
 }
 
 .uda-box:hover {
-    background: #1c1429; /* Schiarimento al passaggio del mouse */
+    background: #120d1a; /* Schiarimento al passaggio del mouse */
 }
 
 .uda-box h4, .uda-box h3 {
@@ -138,19 +218,16 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* Sottotitolo interno alle UDA */
-.uda-subtitle {
-    color: #c084fc;
-    font-size: 0.95rem;
-}
 
-/* LOGICA SPOILER AUTOMATICA (OTTIMIZZATA) */
+/* ====================================================
+   [6] LOGICA EFFETTO SPOILER
+   ==================================================== */
 .uda-container.spoiler-mode .uda-box p, h2 span {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.4s ease;
-    color: #b3b3b3; 
+    color: #94a3b8; 
     font-size: 0.85rem;
 }
 
@@ -164,10 +241,13 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-/* Bottone Top */
+
+/* ====================================================
+   [7] ELEMENTI DI INTERFACCIA (BOTTONE E FOOTER)
+   ==================================================== */
 .top-btn { 
     position: fixed; bottom: 25px; right: 25px; 
-    background: #7e22ce; /* Bottone viola intenso */
+    background: #7e22ce; /* Viola scuro per il terminal style */
     color: white; width: 45px; height: 45px;
     display: flex; align-items: center; justify-content: center; 
     border-radius: 5px; text-decoration: none; font-weight: bold;
@@ -175,65 +255,98 @@ nav a:hover {
 }
 
 .top-btn:hover {
-    background: #9333ea; /* Si illumina leggermente all'hover */
+    background: #a855f7; /* Si illumina leggermente all'hover */
 }
 
 footer { 
     text-align: center;
     padding: 40px 0; 
-    color: #5b4e6d; /* Testo footer prugna/grigio spento */
+    color: #581c87; /* Testo del footer viola scuro spento */
 }
 
-footer a{ 
+footer a { 
     color: #7e22ce;
     text-decoration-line: none;
 }
 
-footer a:hover{ 
-    color: #9333ea;
+footer a:hover { 
+    color: #a855f7;
+}
+
+.bottom-btn { 
+    position: fixed; 
+    bottom: 80px; /* Sta esattamente sopra la freccia che punta in su */
+    right: 25px; 
+    width: 45px; 
+    height: 45px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    background: #7e22ce; /* <--- Cambia questo per ogni file */
+}
+
+.bottom-btn:hover {
+    background: #a855f7; /* <--- Cambia questo per ogni file */
+    transform: translateY(3px); /* Si sposta leggermente in basso all'hover */
 }
 
 
-/* Struttura interna delle Sezioni */
-main section {
+/* ====================================================
+   [8] LOGICA STRUTTURE DEL CONTENUTO E BLOCCHI TEXT/LIST
+   ==================================================== */
+section {
     margin-bottom: 40px;
-    background: #120d1a;                /* Sfondo box interno scuro */
-    border: 1px solid #2d1f3d;          /* Bordo viola scuro */
+    background: #120d1a; 
+    border: 1px solid #2d1f3d; /* Bordo viola scuro */
     padding: 30px;
     border-radius: 4px;
 }
 
-main h2 {
-    color: #a855f7;                     /* Viola brillante */
+h2 {
+    color: #a855f7; /* Viola brillante */
     font-size: 1.4rem;
     margin-bottom: 20px;
-    border-bottom: 1px solid #2d1f3d;   /* Separatore inferiore scuro */
+    border-bottom: 1px solid #2d1f3d; /* Bordo inferiore */
     padding-bottom: 10px;
 }
 
-main p {
+h3 {
+    color: #f3e8ff; /* Bianco pulito con punta di viola */
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+}
+
+p {
     margin-bottom: 15px;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-main ul, main ol {
+ul {
     margin-left: 25px;
     margin-bottom: 20px;
 }
 
-main li {
+li {
     margin-bottom: 10px;
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
-main li strong {
-    color: #a855f7;                     /* Evidenziato in viola neon */
+li strong {
+    color: #a855f7; /* Evidenziato in viola brillante */
 }
 
+
 /* ====================================================
-   LOGICA FLEXBOX PER LE LISTE CON IMMAGINE A SINISTRA
+   [9] LOGICA FLEXBOX PER LE SEZIONI CON IMMAGINE A SINISTRA
    ==================================================== */
 .lista-flex {
     list-style: none; 
@@ -255,11 +368,10 @@ main li strong {
 }
 
 .item-flex:hover {
-    background: #1c1429; 
-    border-color: #a855f7;              /* Il bordo si illumina di viola neon */
+    background: #120d1a; 
+    border-color: #a855f7; /* Il bordo si illumina di viola */
 }
 
-/* Colonna Immagine (Posizionata a Sinistra) */
 .col-img {
     flex: 0 0 420px; 
     height: 120px;
@@ -282,7 +394,6 @@ main li strong {
     opacity: 1; 
 }
 
-/* Colonna Testo (Posizionata a Destra) */
 .col-testo {
     flex: 1; 
     padding: 20px;
@@ -290,86 +401,9 @@ main li strong {
     color: #e2e8f0; 
 }
 
-/* Responsive per liste con immagini (Smartphone) */
-@media (max-width: 650px) {
-    .item-flex {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    .col-img {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 150px;
-        border-right: none;
-        border-bottom: 1px solid #2d1f3d;
-    }
-}
-
-/* Box del codice / Terminali logici */
-.code-box {
-    background: #09060f;
-    border-left: 3px solid #9333ea;     /* Linea d'accento viola vibrante */
-    padding: 15px;
-    margin: 15px 0;
-    font-size: 0.9rem;
-    color: #e9d5ff;                     /* Testo lavanda chiaro */
-}
-
-.code-box div {
-    margin-bottom: 5px;
-}
-
-.code-box-green {
-    border-left-color: #7e22ce;         /* Variazione viola intenso per sottoblocchi */
-}
-
-/* STILE TABELLA GERARCHICA */
-.tabella-container {
-    margin: 30px 0;
-    background: #2d1f3d;                /* Spessore dei bordi viola scuro */
-    padding: 1px;
-    box-shadow: 0 4px 20px rgba(147, 51, 234, 0.05); /* Bagliore soffuso viola */
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #09060f;
-}
-
-th, td {
-    padding: 16px 20px;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-th {
-    background-color: #120d1a;
-    color: #a855f7;                     /* Intestazioni viola brillante */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #9333ea; 
-}
-
-td {
-    color: #e2e8f0;
-    border-bottom: 1px solid #2d1f3d;
-    vertical-align: top;
-}
-
-tr:nth-child(even) td {
-    background-color: rgba(18, 13, 26, 0.4); /* Righe alterne scure opache */
-}
-
-tr:hover td {
-    background-color: #1c1429;
-    color: #faf5ff;
-}
 
 /* ====================================================
-   LOGICA STRUTTURALE COMPONENTE SEZIONE OVERFLOW (FLEX)
+   [10] STRUTTURE DEL CONTENUTO MISTO (LISTA + IMG A DESTRA)
    ==================================================== */
 .sezione4-flex-wrapper {
     display: flex;
@@ -378,7 +412,6 @@ tr:hover td {
     margin: 25px 0;
 }
 
-/* Colonna di Sinistra: Contiene la lista logica */
 .col-lista-sinistra {
     flex: 1; 
 }
@@ -394,7 +427,6 @@ tr:hover td {
     line-height: 1.6;
 }
 
-/* Colonna di Destra: Contiene l'immagine fissa */
 .col-immagine-destra {
     flex: 0 0 350px; 
     background: #09060f; 
@@ -410,34 +442,18 @@ tr:hover td {
     width: 100%;
     height: auto;
     object-fit: contain; 
-    opacity: 0.8;
+    opacity: 0.85;
     transition: opacity 0.3s, border-color 0.3s;
 }
 
 .sezione4-flex-wrapper:hover .col-immagine-destra {
-    border-color: #a855f7;              /* Si illumina all'hover globale */
+    border-color: #a855f7; /* Si illumina all'hover globale */
 }
 
 .sezione4-flex-wrapper:hover .col-immagine-destra img {
     opacity: 1;
 }
 
-/* Responsive Design per blocco affiancato (Mobile) */
-@media (max-width: 900px) {
-    .sezione4-flex-wrapper {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    
-    .col-immagine-destra {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 450px; 
-        margin: 10px auto 0 auto;
-    }
-}
-
-/* SEZIONE CENTRATA PER INFOGRAFICHE E MAPPE */
 .sezione-centrata {
     display: flex;
     justify-content: center; 
@@ -464,15 +480,81 @@ tr:hover td {
     opacity: 1;
 }
 
+
 /* ====================================================
-   EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI
+   [11] BOX SPECIALI, TERMINALI E TABELLE INLINE
+   ==================================================== */
+.code-box {
+    background: #09060f;
+    border-left: 3px solid #7e22ce; 
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #f3e8ff; 
+}
+
+.code-box div {
+    margin-bottom: 5px;
+}
+
+.code-box-green {
+    border-left-color: #a855f7; 
+}
+
+.tabella-container {
+    margin: 30px 0;
+    background: #2d1f3d; 
+    padding: 1px;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.05); /* Bagliore soffuso viola */
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #09060f;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: #120d1a;
+    color: #a855f7; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #7e22ce; 
+}
+
+td {
+    color: #e2e8f0;
+    border-bottom: 1px solid #2d1f3d;
+    vertical-align: top;
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(18, 13, 26, 0.4); 
+}
+
+tr:hover td {
+    background-color: #120d1a;
+    color: #f3e8ff;
+}
+
+
+/* ====================================================
+   [12] EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI
    ==================================================== */
 .formula-highlight {
-    color: #c084fc !important;          /* Viola chiaro ad altissimo contrasto per formule */
+    color: #7e22ce !important; /* Viola scuro intenso fisso */
     font-weight: 900 !important; 
 }
 
 .sub-component-highlight {
-    color: #e9d5ff !important;          /* Lavanda chiaro per sottoelementi binarizzati */
+    color: #a855f7 !important; /* Viola neon brillante vivido */
     font-weight: bold;
 }

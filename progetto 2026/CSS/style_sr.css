@@ -1,5 +1,46 @@
-/* New Home - Green Dark Theme */
+/* ==========================================================================
+   FILE: style_sr.css
+   TEMA: Green Dark Theme (Sistemi e Reti)
+   ========================================================================== */
 
+/* ====================================================
+   [1] LAYOUT RESPONSIVE (MEDIA QUERIES)
+   ==================================================== */
+
+/* Gestione Mobile Sezione 2: Riorganizza la lista a immagini/simboli in verticale */
+@media (max-width: 650px) {
+    .item-flex {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    .col-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #223126;
+    }
+}
+
+/* Gestione Mobile Sezione 4/5: Riorganizza la lista e l'immagine in verticale */
+@media (max-width: 900px) {
+    .sezione4-flex-wrapper {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    
+    .col-immagine-destra {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px; 
+        margin: 10px auto 0 auto;
+    }
+}
+
+
+/* ====================================================
+   [2] RESET GLOBALE E COMPORTAMENTO BASE
+   ==================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +60,43 @@ body {
     padding: 20px;
 }
 
-/* Navbar */
+
+/* ====================================================
+   [3] BARRA DI NAVIGAZIONE (NAVBAR)
+   ==================================================== */
+
+
+   /* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
 .navbar { 
     position: sticky; top: 0; z-index: 1000; 
     background: #121814; /* Sfondo navbar leggermente più chiaro del body */
@@ -53,25 +130,26 @@ body {
 }
 
 nav a:hover {
-    cursor: pointer;
     color: #06e056;
     font-size: 1.2rem;
     
     /* Simula il grassetto senza far saltare o spostare i link vicini */
     text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
     
-    transform: rotate(375deg); /* Ruota su se stesso di 350 gradi */   
+    transform: rotate(375deg); /* Ruota su se stesso */   
 }
 
-/* Stile per l'Header Hero della pagina della materia */
+
+/* ====================================================
+   [4] SEZIONE HERO (TESTATA PRINCIPALE)
+   ==================================================== */
 .hero {
-    background: rgba(11, 21, 36, 0.15); /* Sfondo del box blu scuro opaco al 15% */
-    border: 1px solid #1e2d42;          /* Contorno del box in blu navy scuro */
+    background: rgba(18, 24, 20, 0.15); /* Sfondo del box verde scuro opaco al 15% (Armonizzato) */
+    border: 1px solid #223126;          /* Contorno del box in verde scuro (Armonizzato) */
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 10px;
-    
 }
 
 /* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
@@ -80,7 +158,7 @@ nav a:hover {
     font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
     color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
     
-    /* Crea il contorno del font con il colore azzurro/blu principale */
+    /* Crea il contorno del font con il colore verde principale */
     -webkit-text-stroke: 2px #34d399;    
     text-stroke: 2px #34d399;            
     
@@ -89,12 +167,15 @@ nav a:hover {
 }
 
 .hero p {
-    color: #cbd5e1;                      /* Sottotitolo azzurro ghiaccio chiaro */
+    color: #cbd5e1;                      /* Sottotitolo chiaro */
     font-size: 1rem;
     letter-spacing: 1px;
 }
 
-/* Header Materia Centrato */
+
+/* ====================================================
+   [5] PANNELLO INIZIALE E GRIGLIA BLOCCHI UDA
+   ==================================================== */
 .materia-header { 
     background: #19221b; /* Sfondo header verde/grigio scuro */
     padding: 20px; 
@@ -115,7 +196,6 @@ nav a:hover {
     font-size: 1rem;
 }
 
-/* Griglia UDA */
 .uda-container { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -126,7 +206,7 @@ nav a:hover {
 .uda-box { 
     background: #121814; /* Box interno scuro */
     padding: 25px; 
-    cursor: pointer;
+    cursor: default; /* Mantiene la freccetta standard ed evita il ditino */
     transition: background 0.3s;
 }
 
@@ -139,7 +219,10 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* LOGICA SPOILER AUTOMATICA (OTTIMIZZATA) */
+
+/* ====================================================
+   [6] LOGICA EFFETTO SPOILER (COERENTE CON IL MODELLO)
+   ==================================================== */
 .uda-container.spoiler-mode .uda-box p, h2 span {
     max-height: 0;
     opacity: 0;
@@ -159,7 +242,10 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-/* Bottone Top */
+
+/* ====================================================
+   [7] ELEMENTI DI INTERFACCIA (BOTTONE E FOOTER)
+   ==================================================== */
 .top-btn { 
     position: fixed; bottom: 25px; right: 25px; 
     background: #15803d; /* Verde bottone scuro "cyber/terminal" */
@@ -179,16 +265,43 @@ footer {
     color: #526356; /* Testo footer verde oliva spento */
 }
 
-footer a{ 
+footer a { 
     color: #15803d;
     text-decoration-line: none;
 }
 
-footer a:hover{ 
+footer a:hover { 
     color: #16a34a;
 }
 
-/* Sezioni del documento */
+.bottom-btn { 
+    position: fixed; 
+    bottom: 80px; /* Sta esattamente sopra la freccia che punta in su */
+    right: 25px; 
+    width: 45px; 
+    height: 45px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    background: #15803d; /* <--- Cambia questo per ogni file */
+}
+
+.bottom-btn:hover {
+    background: #16a34a; /* <--- Cambia questo per ogni file */
+    transform: translateY(3px); /* Si sposta leggermente in basso all'hover */
+}
+
+
+/* ====================================================
+   [8] LOGICA STRUTTURE DEL CONTENUTO E BLOCCHI TEXT/LIST
+   ==================================================== */
 section {
     margin-bottom: 40px;
     background: #121814; /* Sfondo box: Verde/Nero scuro */
@@ -201,7 +314,7 @@ h2 {
     color: #4ade80; /* Verde brillante */
     font-size: 1.4rem;
     margin-bottom: 20px;
-    border-bottom: 1px solid #223126; /* Bordo inferiore */
+    border-bottom: 1px solid #223126; /* Bordo inferior */
     padding-bottom: 10px;
 }
 
@@ -217,7 +330,6 @@ p {
     line-height: 1.6;
 }
 
-/* Elenchi standard */
 ul {
     margin-left: 25px;
     margin-bottom: 20px;
@@ -233,8 +345,9 @@ li strong {
     color: #4ade80; /* Evidenziato in verde brillante */
 }
 
+
 /* ====================================================
-   LOGICA FLEXBOX PER LE SEZIONI CON IMMAGINE A SINISTRA
+   [9] LOGICA FLEXBOX PER LE SEZIONI CON IMMAGINE A SINISTRA
    ==================================================== */
 .lista-flex {
     list-style: none; 
@@ -291,21 +404,92 @@ li strong {
     color: #cbd5e1; 
 }
 
-/* Forzatura Responsive per liste ad immagini (Smartphone) */
-@media (max-width: 650px) {
-    .item-flex {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    .col-img {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 150px;
-        border-right: none;
-        border-bottom: 1px solid #223126;
-    }
+
+/* ====================================================
+   [10] STRUTTURE DEL CONTENUTO MISTO (LISTA + IMG A DESTRA)
+   ==================================================== */
+.sezione4-flex-wrapper {
+    display: flex;
+    gap: 30px; 
+    align-items: flex-start; 
+    margin: 25px 0;
 }
 
+/* Colonna di Sinistra: Contiene la lista <ol> o <ul> */
+.col-lista-sinistra {
+    flex: 1; 
+}
+
+.lista-normale {
+    margin-left: 20px;
+}
+
+.lista-normale li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Colonna di Destra: Contiene l'immagine fissa del Controller/Reti */
+.col-immagine-destra {
+    flex: 0 0 350px; 
+    background: #0b0f0c; 
+    border: 1px solid #223126; 
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-immagine-destra img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+    opacity: 0.8;
+    transition: opacity 0.3s, border-color 0.3s;
+}
+
+.sezione4-flex-wrapper:hover .col-immagine-destra {
+    border-color: #4ade80; /* Si illumina all'hover globale sulla sezione */
+}
+
+.sezione4-flex-wrapper:hover .col-immagine-destra img {
+    opacity: 1;
+}
+
+/* SEZIONE CENTRATA PER INFOGRAFICHE/MAPPE MAESTOSE */
+.sezione-centrata {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 60vh;       
+    width: 100%;             
+    box-sizing: border-box;
+    padding: 20px;
+    background: #0b0f0c;
+    border: 1px solid #223126;
+    border-radius: 4px;
+}
+
+.sezione-centrata img {
+    max-width: 100%;         
+    max-height: 80vh;        
+    object-fit: contain;     
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.sezione-centrata:hover img {
+    opacity: 1;
+}
+
+
+/* ====================================================
+   [11] BOX SPECIALI, TERMINALI E TABELLE INLINE
+   ==================================================== */
 /* Box del codice / Terminali logici */
 .code-box {
     background: #0b0f0c;
@@ -324,7 +508,7 @@ li strong {
     border-left-color: #16a34a; /* Variazione per distinguere sottoblocchi strutturali */
 }
 
-/* STILE TABELLA GERARCHICA MEMORIE */
+/* STILE TABELLA GERARCHICA MEMORIE E RETI */
 .tabella-container {
     margin: 30px 0;
     background: #223126; /* Spessore dei bordi verde scuro */
@@ -369,104 +553,9 @@ tr:hover td {
     color: #f0fdf4;
 }
 
-/* ====================================================
-   LOGICA STRUTTURALE COMPONENTE SEZIONE 5 (FLEX AFFIANCATO)
-   ==================================================== */
-.sezione4-flex-wrapper {
-    display: flex;
-    gap: 30px; 
-    align-items: flex-start; 
-    margin: 25px 0;
-}
-
-/* Colonna di Sinistra: Contiene la lista <ol> */
-.col-lista-sinistra {
-    flex: 1; 
-}
-
-.lista-normale {
-    margin-left: 20px;
-}
-
-.lista-normale li {
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    color: #cbd5e1;
-    line-height: 1.6;
-}
-
-/* Colonna di Destra: Contiene l'immagine fissa del Controller */
-.col-immagine-destra {
-    flex: 0 0 350px; 
-    background: #0b0f0c; 
-    border: 1px solid #223126; 
-    border-radius: 4px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.col-immagine-destra img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; 
-    opacity: 0.8;
-    transition: opacity 0.3s, border-color 0.3s;
-}
-
-.sezione4-flex-wrapper:hover .col-immagine-destra {
-    border-color: #4ade80; /* Si illumina all'hover globale sulla sezione */
-}
-
-.sezione4-flex-wrapper:hover .col-immagine-destra img {
-    opacity: 1;
-}
-
-/* Responsive Design per blocco affiancato (Mobile) */
-@media (max-width: 900px) {
-    .sezione4-flex-wrapper {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    
-    .col-immagine-destra {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 450px; 
-        margin: 10px auto 0 auto;
-    }
-}
-
-/* SEZIONE CENTRATA PER INFOGRAFICHE/MAPPE MAESTOSE */
-.sezione-centrata {
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    min-height: 60vh;       
-    width: 100%;             
-    box-sizing: border-box;
-    padding: 20px;
-    background: #0b0f0c;
-    border: 1px solid #223126;
-    border-radius: 4px;
-}
-
-.sezione-centrata img {
-    max-width: 100%;         
-    max-height: 80vh;        
-    object-fit: contain;     
-    display: block;
-    opacity: 0.85;
-    transition: opacity 0.3s;
-}
-
-.sezione-centrata:hover img {
-    opacity: 1;
-}
 
 /* ====================================================
-   EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI (BLINDATA)
+   [12] EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI
    ==================================================== */
 .formula-highlight {
     color: #16a34a !important; /* Verde smeraldo scuro intenso fisso */

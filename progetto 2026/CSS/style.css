@@ -7,6 +7,37 @@
     scroll-behavior: smooth;
 }
 
+/* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
 body { 
     font-family: 'Consolas', monospace; 
     background: #0a0a0a; /* Sfondo principale: Nero profondo */
@@ -45,9 +76,25 @@ body {
 .navbar a {
     color: #ffffff; /* Link: Bianco puro per il massimo contrasto */
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold; 
+    font-size: 1rem;
+    font-weight: bold;
+
+    display: inline-block; /* Permette all'elemento di subire la rotazione */
+    transition: transform 0.4s ease, color 0.3s; /* Rende la rotazione fluida */
+
 }
+
+nav a:hover {
+    cursor: pointer;
+    color: #5a5a5aee;
+    font-size: 1.1rem;
+    
+    /* Simula il grassetto senza far saltare o spostare i link vicini */
+    text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
+    
+    transform: rotate(180deg); /* Ruota su se stesso di 180 gradi */  
+} 
+
 
 /* Header Materia Centrato */
 .materia-header { 
@@ -141,4 +188,31 @@ footer a{
 
 footer a:hover{ 
     color: #bbbbbb;
+}
+
+/* ====================================================
+   PULSANTE PER SCENDERE A FINE PAGINA (BOTTOM BTN)
+   ==================================================== */
+.bottom-btn { 
+    position: fixed; 
+    bottom: 80px; /* Sta esattamente sopra la freccia che punta in su */
+    right: 25px; 
+    width: 45px; 
+    height: 45px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    background: #333333; /* <--- Cambia questo per ogni file */
+}
+
+.bottom-btn:hover {
+    background: #444444; /* <--- Cambia questo per ogni file */
+    transform: translateY(3px); /* Si sposta leggermente in basso all'hover */
 }

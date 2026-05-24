@@ -64,6 +64,38 @@ body {
 /* ====================================================
    [3] BARRA DI NAVIGAZIONE (NAVBAR)
    ==================================================== */
+
+   /* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
 .navbar { 
     position: sticky; /* Blocca la barra in cima alla viewport durante lo scorrimento */
     top: 0; 
@@ -99,7 +131,6 @@ body {
 }
 
 nav a:hover {
-    cursor: pointer;
     color: #63cbf8;
     font-size: 1.2rem;
     
@@ -249,6 +280,30 @@ footer a{
 
 footer a:hover{ 
     color: #0ea5e9;
+}
+
+.bottom-btn { 
+    position: fixed; 
+    bottom: 80px; /* Sta esattamente sopra la freccia che punta in su */
+    right: 25px; 
+    width: 45px; 
+    height: 45px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    background: #0284c7; /* <--- Cambia questo per ogni file */
+}
+
+.bottom-btn:hover {
+    background: #0ea5e9; /* <--- Cambia questo per ogni file */
+    transform: translateY(3px); /* Si sposta leggermente in basso all'hover */
 }
 
 

@@ -1,7 +1,43 @@
 /* ==========================================================================
-   New Home - Orange Dark Theme (Completo e Armonizzato)
+   FILE: style_tl.css
+   TEMA: Orange Dark Theme (Telecomunicazioni)
    ========================================================================== */
 
+/* ====================================================
+   [1] LAYOUT RESPONSIVE (MEDIA QUERIES)
+   ==================================================== */
+@media (max-width: 650px) {
+    .item-flex {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    .col-img {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #3d2616;
+    }
+}
+
+@media (max-width: 900px) {
+    .sezione4-flex-wrapper {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    
+    .col-immagine-destra {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px; 
+        margin: 10px auto 0 auto;
+    }
+}
+
+
+/* ====================================================
+   [2] RESET GLOBALE E COMPORTAMENTO BASE
+   ==================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +57,44 @@ body {
     padding: 20px;
 }
 
-/* Navbar */
+
+/* ====================================================
+   [3] BARRA DI NAVIGAZIONE (NAVBAR)
+   ==================================================== */
+
+
+   /* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
+
 .navbar { 
     position: sticky; top: 0; z-index: 1000; 
     background: #1a110a; /* Sfondo navbar leggermente più chiaro del body */
@@ -38,7 +111,6 @@ body {
     padding: 0 20px;
 }
 
-
 .logo {
     font-weight: bold;
     color: #fff7ed;
@@ -51,9 +123,9 @@ body {
 }
 
 .navbar a {
-    color: #f97316; /* Link: Arancione brillante molto visibile */
+    color: #f97316; /* Link: Arancione brillante ad alta visibilità */
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: bold; 
 
     display: inline-block; /* Permette all'elemento di subire la rotazione */
@@ -61,21 +133,22 @@ body {
 }
 
 nav a:hover {
-    cursor: pointer;
-    color: #fc9851;
+    color: #fb923c;
     font-size: 1.2rem;
     
     /* Simula il grassetto senza far saltare o spostare i link vicini */
     text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
     
-    transform: rotate(350deg); /* Ruota su se stesso di 350 gradi */   
+    transform: rotate(375deg); /* Ruota su se stesso */   
 }
 
 
-/* Stile per l'Header Hero della pagina della materia */
+/* ====================================================
+   [4] SEZIONE HERO (TESTATA PRINCIPALE)
+   ==================================================== */
 .hero {
-    background: rgba(26, 17, 10, 0.4);   /* Corretto: Sfondo marrone scuro ambra opaco */
-    border: 1px solid #3d2616;          /* Corretto: Contorno del box in color ruggine scuro */
+    background: rgba(26, 17, 10, 0.15); /* Sfondo del box arancione scuro opaco al 15% */
+    border: 1px solid #3d2616;           /* Contorno del box in ruggine scuro */
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
@@ -84,76 +157,81 @@ nav a:hover {
 
 /* EFFETTO CONTORNO SUI CARATTERI (Ghost Text) */
 .hero h1 {
-    font-size: 3.5rem;                   
-    font-weight: 900;                    
+    font-size: 3.5rem;                   /* Reso più grande per valorizzare l'effetto */
+    font-weight: 900;                    /* Tratto spesso per far vedere bene l'interno */
     color: rgba(255, 255, 255, 0.15);    /* L'interno dei caratteri è BIANCO OPACO al 15% */
     
-    /* Contorno del font con il colore arancione principale */
-    -webkit-text-stroke: 2px #fb923c;    
-    text-stroke: 2px #fb923c;            
+    /* Crea il contorno del font con il colore arancione principale */
+    -webkit-text-stroke: 2px #f97316;    
+    text-stroke: 2px #f97316;            
     
     letter-spacing: 4px;                 /* Spaziatura tra le lettere stile cyberpunk */
     margin-bottom: 15px;
 }
 
 .hero p {
-    color: #ffedd5;                      /* Corretto: Sottotitolo color pesca chiaro ad alta leggibilità */
+    color: #e2e8f0;                      /* Sottotitolo chiaro */
     font-size: 1rem;
     letter-spacing: 1px;
 }
 
-/* Header Materia Centrato */
+
+/* ====================================================
+   [5] PANNELLO INIZIALE E GRIGLIA BLOCCHI UDA
+   ==================================================== */
 .materia-header { 
-    background: #24170e; /* Sfondo header marrone scuro */
+    background: #1a110a; 
     padding: 20px; 
     display: flex; 
     justify-content: center; 
     align-items: center;
-    border-bottom: 2px solid #ea580c; /* Linea d'accento arancione vibrante */
+    border-bottom: 2px solid #ea580c; /* Accento arancione scuro intenso */
     gap: 15px;
 }
 
 .materia-header h2 {
-    color: #fff7ed; /* Titolo principale: Bianco caldo con punta di arancione */
+    color: #fff7ed; 
     text-align: center;
 }
 
 .materia-header span {
-    color: #718096; /* Testo secondario */
+    color: #94a3b8; 
     font-size: 1rem;
 }
 
-/* Griglia UDA */
 .uda-container { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    background: #3d2616; /* Spessore dei bordi della griglia (ruggine scuro) */
+    background: #3d2616; /* Spessore dei bordi color ruggine scuro */
     gap: 1px;
 }
 
 .uda-box { 
-    background: #1a110a; /* Box interno scuro */
+    background: #0f0a06; 
     padding: 25px; 
-    cursor: pointer;
+    cursor: default;
     transition: background 0.3s;
 }
 
 .uda-box:hover {
-    background: #24170e; /* Schiarimento al passaggio del mouse */
+    background: #1a110a; 
 }
 
 .uda-box h4, .uda-box h3 {
-    color: #f97316; /* Titolo della scheda arancione brillante */
+    color: #f97316; 
     transition: 0.3s;
 }
 
-/* LOGICA SPOILER AUTOMATICA (ISOLATA ALLA SOLA GRIGLIA) */
+
+/* ====================================================
+   [6] LOGICA EFFETTO SPOILER
+   ==================================================== */
 .uda-container.spoiler-mode .uda-box p, h2 span {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.4s ease;
-    color: #b3b3b3; 
+    color: #94a3b8; 
     font-size: 0.85rem;
 }
 
@@ -167,55 +245,84 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-/* Bottone Top */
+
+/* ====================================================
+   [7] ELEMENTI DI INTERFACCIA (BOTTONE E FOOTER)
+   ==================================================== */
 .top-btn { 
     position: fixed; bottom: 25px; right: 25px; 
-    background: #c2410c; /* Bottone arancione scuro intenso */
+    background: #ea580c; 
     color: white; width: 45px; height: 45px;
     display: flex; align-items: center; justify-content: center; 
     border-radius: 5px; text-decoration: none; font-weight: bold;
     transition: background 0.2s;
-    z-index: 1000;
 }
 
 .top-btn:hover {
-    background: #ea580c; /* Si illumina leggermente all'hover */
+    background: #f97316; 
 }
 
 footer { 
     text-align: center;
     padding: 40px 0; 
-    color: #6e5645; /* Testo footer terra bruciata spento */
+    color: #7c2d12; /* Testo del footer color terracotta/ruggine spento */
 }
 
 footer a { 
-    color: #c2410c;
+    color: #ea580c;
     text-decoration-line: none;
 }
 
 footer a:hover { 
-    color: #ea580c;
+    color: #f97316;
 }
 
-/* Sezioni del documento */
+.bottom-btn { 
+    position: fixed; 
+    bottom: 80px; /* Sta esattamente sopra la freccia che punta in su */
+    right: 25px; 
+    width: 45px; 
+    height: 45px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    background: #ea580c; /* <--- Cambia questo per ogni file */
+}
+
+.bottom-btn:hover {
+    background: #f97316; /* <--- Cambia questo per ogni file */
+    transform: translateY(3px); /* Si sposta leggermente in basso all'hover */
+}
+
+
+/* ====================================================
+   [8] LOGICA STRUTTURE DEL CONTENUTO E BLOCCHI TEXT/LIST
+   ==================================================== */
 section {
     margin-bottom: 40px;
-    background: #1a110a; /* Sfondo box: Marrone scuro / Nero ambra */
-    border: 1px solid #3d2616; /* Bordo color ruggine scuro */
+    background: #1a110a; 
+    border: 1px solid #3d2616; 
     padding: 30px;
     border-radius: 4px;
 }
 
 h2 {
-    color: #f97316; /* Arancione brillante */
+    color: #f97316; 
     font-size: 1.4rem;
     margin-bottom: 20px;
-    border-bottom: 1px solid #3d2616; /* Bordo inferiore ruggine */
+    border-bottom: 1px solid #3d2616; 
     padding-bottom: 10px;
 }
 
 h3 {
-    color: #fff7ed; /* Bianco caldo con punta di arancione */
+    color: #fff7ed; 
     font-size: 1.1rem;
     margin: 20px 0 10px 0;
 }
@@ -223,9 +330,9 @@ h3 {
 p {
     margin-bottom: 15px;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* Elenchi standard */
 ul {
     margin-left: 25px;
     margin-bottom: 20px;
@@ -234,14 +341,16 @@ ul {
 li {
     margin-bottom: 10px;
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 li strong {
     color: #f97316; /* Evidenziato in arancione brillante */
 }
 
+
 /* ====================================================
-   LOGICA FLEXBOX PER LA SEZIONE 2 (UL SIMBOLI)
+   [9] LOGICA FLEXBOX PER LE SEZIONI CON IMMAGINE A SINISTRA
    ==================================================== */
 .lista-flex {
     list-style: none; 
@@ -249,30 +358,28 @@ li strong {
     flex-direction: column;
     gap: 20px; 
     margin: 20px 0;
+    padding-left: 0;
 }
 
 .item-flex {
     display: flex;
     align-items: center; 
-    background: #0f0a06; /* Sfondo principale scuro */
-    border: 1px solid #3d2616; /* Bordo ruggine scuro */
+    background: #0f0a06; 
+    border: 1px solid #3d2616; 
     border-radius: 4px;
     overflow: hidden;
     transition: background 0.3s, border-color 0.3s;
 }
 
 .item-flex:hover {
-    background: #24170e; /* Schiarimento marrone scuro all'hover */
-    border-color: #f97316; /* Il bordo si accende di arancione */
+    background: #1a110a; 
+    border-color: #f97316; /* Il bordo si illumina di arancione */
 }
 
-/* Colonna Immagine (Posizionata a Sinistra) */
 .col-img {
-    flex: 0 0 480px; 
-    margin-left: -40px;
-    margin-bottom:  -30px;
-    height: 360px;
-    background: #1a110a; /* Sfondo box immagine */
+    flex: 0 0 420px; 
+    height: 120px;
+    background: #1a110a; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,7 +390,7 @@ li strong {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    opacity: 0.8;
+    opacity: 0.75;
     transition: opacity 0.3s;
 }
 
@@ -291,104 +398,16 @@ li strong {
     opacity: 1; 
 }
 
-/* Colonna Testo (Posizionata a Destra) */
 .col-testo {
     flex: 1; 
     padding: 20px;
     font-size: 0.95rem;
-    color: #e2e8f0; /* Testo grigio chiarissimo */
+    color: #e2e8f0; 
 }
 
-/* Forzatura Responsive per schermi piccoli (Smartphone) */
-@media (max-width: 650px) {
-    .item-flex {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    .col-img {
-        flex: 0 0 auto;
-        width: 100%;
-        height: 150px;
-        border-right: none;
-        border-bottom: 1px solid #3d2616;
-    }
-}
-
-/* Box del codice / Algoritmi testuali */
-.code-box {
-    background: #0f0a06;
-    border-left: 3px solid #ea580c; /* Linea d'accento arancione vibrante */
-    padding: 15px;
-    margin: 15px 0;
-    font-size: 0.9rem;
-    color: #ffedd5; /* Testo color pesca chiaro */
-}
-
-.code-box div {
-    margin-bottom: 5px;
-}
-
-/* Nota/Descrizione Flowchart */
-.flowchart-note {
-    font-style: italic;
-    color: #6e5645; /* Terra bruciata spento */
-    font-size: 0.9rem;
-    margin-top: 5px;
-    padding-left: 5px;
-}
-
-/* STILE TABELLA */
-.tabella-container {
-    margin: 30px 0;
-    background: #3d2616; /* Spessore dei bordi color ruggine */
-    padding: 1px;
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.05); /* Bagliore soffuso arancione */
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #0f0a06;
-}
-
-th, td {
-    padding: 16px 20px;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-th {
-    background-color: #1a110a;
-    color: #f97316; /* Intestazioni arancione brillante */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #ea580c; /* Linea d'accento arancione vibrante */
-}
-
-td {
-    color: #e2e8f0;
-    border-bottom: 1px solid #3d2616;
-    vertical-align: top;
-}
-
-tr:nth-child(even) td {
-    background-color: rgba(26, 17, 10, 0.4); /* Righe alterne marrone opaco */
-}
-
-tr:hover td {
-    background-color: #24170e;
-    color: #fff7ed;
-}
-
-td strong {
-    color: #f97316;
-    font-weight: bold;
-}
 
 /* ====================================================
-   LOGICA STRUTTURALE COMPONENTE SEZIONE 4 (FLEX AFFIANCATO)
+   [10] STRUTTURE DEL CONTENUTO MISTO (LISTA + IMG A DESTRA)
    ==================================================== */
 .sezione4-flex-wrapper {
     display: flex;
@@ -397,7 +416,6 @@ td strong {
     margin: 25px 0;
 }
 
-/* Colonna di Sinistra: Contiene la lista <ol> */
 .col-lista-sinistra {
     flex: 1; 
 }
@@ -406,7 +424,6 @@ td strong {
     margin-left: 20px;
 }
 
-/* Corretto: Risolto errore di troncamento del codice precedente */
 .lista-normale li {
     margin-bottom: 15px;
     font-size: 0.95rem;
@@ -414,11 +431,6 @@ td strong {
     line-height: 1.6;
 }
 
-.lista-normale li strong {
-    color: #f97316;
-}
-
-/* Colonna di Destra: Contiene l'immagine fissa */
 .col-immagine-destra {
     flex: 0 0 350px; 
     background: #0f0a06; 
@@ -446,22 +458,6 @@ td strong {
     opacity: 1;
 }
 
-/* Responsive Design per schermi piccoli (Mobile) */
-@media (max-width: 900px) {
-    .sezione4-flex-wrapper {
-        flex-direction: column; 
-        align-items: stretch;
-    }
-    
-    .col-immagine-destra {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 450px; 
-        margin: 10px auto 0 auto;
-    }
-}
-
-/* SEZIONE CENTRATA PER IMMAGINE */
 .sezione-centrata {
     display: flex;
     justify-content: center; 
@@ -474,16 +470,92 @@ td strong {
 
 .sezione-centrata img {
     max-width: 100%;         
-    max-height: 90vh;        
+    max-height: 80vh;        
     object-fit: contain;     
     display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s;
 }
 
+.sezione-centrata:hover img {
+    opacity: 1;
+}
+
+
 /* ====================================================
-   EVIDENZIAZIONE FORMULE (BLINDATA CONTRO I CONFLITTI)
+   [11] BOX SPECIALI, TERMINALI E TABELLE INLINE
    ==================================================== */
-.formula-highlight, 
-.formula-highlight sub {
-    color: #c2410c !important; /* Arancione scuro intenso fisso */
-    font-weight: 900 !important; /* Massimo livello di grassetto */
+.code-box {
+    background: #0f0a06;
+    border-left: 3px solid #ea580c; 
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #ffedd5; /* Testo color pesca chiarissimo */
+}
+
+.code-box div {
+    margin-bottom: 5px;
+}
+
+.code-box-green {
+    border-left-color: #f97316; 
+}
+
+.tabella-container {
+    margin: 30px 0;
+    background: #3d2616; 
+    padding: 1px;
+    box-shadow: 0 4px 20px rgba(234, 88, 12, 0.05); /* Bagliore soffuso arancione */
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f0a06;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: #1a110a;
+    color: #f97316; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ea580c; 
+}
+
+td {
+    color: #e2e8f0;
+    border-bottom: 1px solid #3d2616;
+    vertical-align: top;
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(26, 17, 10, 0.4); 
+}
+
+tr:hover td {
+    background-color: #1a110a;
+    color: #fff7ed;
+}
+
+
+/* ====================================================
+   [12] EVIDENZIAZIONE SINTASSI E PARAMETRI TECNICI
+   ==================================================== */
+.formula-highlight {
+    color: #ea580c !important; /* Arancione scuro intenso fisso */
+    font-weight: 900 !important; 
+}
+
+.sub-component-highlight {
+    color: #f97316 !important; /* Arancione neon brillante vivido */
+    font-weight: bold;
 }

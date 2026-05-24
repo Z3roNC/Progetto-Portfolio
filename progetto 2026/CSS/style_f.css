@@ -22,6 +22,38 @@ body {
 }
 
 /* Navbar */
+
+/* Contenitore principale */
+.logo {
+  display: inline-flex;  /* Allinea gli elementi sulla stessa linea */
+  align-items: center;   /* Centra perfettamente il testo sul logo in verticale */
+  gap: 12px;             /* Spazio orizzontale tra il logo e il testo */
+  text-decoration: none; /* Rimuove la sottolineatura del link dal testo */
+}
+
+/* Gestione e misure del logo */
+.logo img {
+  width: 50px;           /* Larghezza fissa */
+  height: 50px;          /* Altezza fissa */
+  border-radius: 50%;    /* Arrotondamento perfetto */
+  object-fit: cover;     /* Impedisce all'immagine di deformarsi */
+  display: block;        /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+  
+  /* AGGIUNTA: Rende l'effetto di inversione fluido (0.3 secondi) */
+  transition: filter 0.3s ease; 
+}
+
+/* Stile del testo (Nickname) */
+.logo .nickname {
+  font-size: 16px;       /* Dimensione del testo */
+  font-weight: 600;      /* Spessore del testo */
+  line-height: 1;        /* Mantiene il testo centrato senza aggiungere margini */
+}
+
+.logo:hover img {
+  filter: invert(1);     /* Inverte al 100% tutti i colori dell'immagine */
+}
+
 .navbar { 
     position: sticky; top: 0; z-index: 1000; 
     background: #141414; /* Sfondo navbar leggermente più chiaro del body */
@@ -47,8 +79,23 @@ body {
 .navbar a {
     color: #ffffff; /* Link: Bianco puro per il massimo contrasto */
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold; 
+    font-size: 1rem;
+    font-weight: bold;
+
+    display: inline-block; /* Permette all'elemento di subire la rotazione */
+    transition: transform 0.4s ease, color 0.3s; /* Rende la rotazione fluida */
+
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #414042;
+    font-size: 1.1rem;
+    
+    /* Simula il grassetto senza far saltare o spostare i link vicini */
+    text-shadow: 0.6px 0 0 currentColor, -0.6px 0 0 currentColor; 
+    
+    transform: rotate(180deg); /* Ruota su se stesso di 180 gradi */   
 }
 
 /* Stile per l'Header Hero della pagina della materia */
