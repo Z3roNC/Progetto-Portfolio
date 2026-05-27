@@ -378,7 +378,9 @@ li strong {
 
 .col-img {
     flex: 0 0 420px; 
-    height: 120px;
+    height: 320px;
+    margin-bottom: -20px;
+    margin-left: -40px;
     background: #1a110a; 
     display: flex;
     align-items: center;
